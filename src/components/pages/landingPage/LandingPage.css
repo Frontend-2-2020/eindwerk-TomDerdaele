@@ -1,0 +1,82 @@
+/* //////////// */
+/* MOBILE FIRST */
+/* //////////// */
+
+.landingpage-container{
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+	align-items: center;
+}
+
+.landingpage-container__title{
+  font-size: 4rem;
+  line-height: 4.5rem;
+  font-weight: 700;
+  color: #EB4511;
+  text-align: center;
+}
+
+.landingpage-container__tagline{
+  position: absolute;
+  text-align: center;
+  font-size: 1rem;
+  bottom: 4rem;
+}
+
+/* ///////////////// */
+/* MOBILE LANDSCAPE */
+/* /////////////// */
+
+@media screen and (min-width: 415px){
+  
+  /* .landingpage-container__title{
+    font-size: 6rem;
+    line-height: 6.5rem;
+  } */
+}
+
+/* ///////////////// */
+/* TABLET PORTRAIT */
+/* /////////////// */
+
+@media screen and (min-width: 750px){
+  
+  .landingpage-container__title{
+    font-size: 7rem;
+    line-height: 7.5rem;
+  }
+
+  .landingpage-container__tagline{
+    font-size: 1.5rem;
+    bottom: 3rem;
+  }
+}
+
+/* //////////////// */
+/* TABLET LANDSCAPE*/
+/* ////////////// */
+
+@media screen and (min-width: 996px) {
+  
+  .landingpage-container__title{
+    font-size: 10rem;
+    line-height: 10.5rem;
+  }
+}
+
+/* //////////////// */
+/* LAP- and DESKTOP */
+/* //////////////// */
+
+@media screen and (min-width: 1300px) {
+  
+  .landingpage-container__title{
+    font-size: 10rem;
+    line-height: 10.5rem;
+  }
+  
+  .landingpage-container__tagline{
+    bottom: 3rem;
+  }
+}

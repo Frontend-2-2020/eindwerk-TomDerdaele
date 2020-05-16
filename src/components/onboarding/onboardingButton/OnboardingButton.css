@@ -1,0 +1,24 @@
+.onboarding-button{
+  position: absolute;
+  display: flex;
+  justify-content: center;
+	align-items: center;
+  top: 70vh;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  height: 140px;
+  width: 140px;
+  background-color: #83C0E6;
+  border-radius: 50%;
+}
+
+.onboarding-button__text{
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 700;
+  font-style: italic;
+  transform: rotate(-10deg);
+  color: white;
+}
+
