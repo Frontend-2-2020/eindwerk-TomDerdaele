@@ -1,14 +1,11 @@
 import React, { Fragment } from "react";
 
 import "./LandingPage.css";
-import OnboardingButton from "../../onboarding/onboardingButton/OnboardingButton";
+import OnboardingButton from "../../layout/buttons/onboardingButton/OnboardingButton";
 
 const LandingPage = () => {
   return (
     <Fragment>
-      <OnboardingButton>
-        <p>JOIN!</p>
-      </OnboardingButton>
       <div className="landingpage-container">
         <h1 className="landingpage-container__title">
           Blab about <br /> anything!
@@ -17,6 +14,9 @@ const LandingPage = () => {
           Join for free and blab along with us…
         </p>
       </div>
+      <OnboardingButton path="/login">
+        <p>JOIN!</p>
+      </OnboardingButton>
     </Fragment>
   );
 };
