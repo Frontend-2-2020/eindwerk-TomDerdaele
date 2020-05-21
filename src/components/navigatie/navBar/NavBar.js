@@ -5,12 +5,12 @@ import { Link } from "react-router-dom";
 import "./NavBar.css";
 import BlabbleLogo from "../../layout/logo/BlabbleLogo";
 
-const NavBar = ({ soort, kleur }) => {
+const NavBar = ({ soort }) => {
   return (
     <Fragment>
       <nav className="nav-container">
         <Link to="/">
-          <BlabbleLogo className="nav-container__logo" color={kleur} />
+          <BlabbleLogo className="nav-container__logo" color={soort !== "users" ? "#26284A" : "white"} />
         </Link>
 
         {soort === "auth" ? (
@@ -21,8 +21,9 @@ const NavBar = ({ soort, kleur }) => {
           </div>
         ) : (
           <div className="nav-container__links">
+            {/* dit moet nog aangepast worden ifv loggedIn uit store */}
             <Link className="nav-container__links__link" to="/login">
-              login
+              login 
             </Link>
             <Link className="nav-container__links__link" to="/posts">
               latest
@@ -35,8 +36,7 @@ const NavBar = ({ soort, kleur }) => {
 };
 
 NavBar.propTypes = {
-  soort: PropTypes.oneOf(["general", "auth"]).isRequired,
-  kleur: PropTypes.string.isRequired,
+  soort: PropTypes.oneOf(["posts", "auth", "users"]).isRequired,
 };
 
 export default NavBar;

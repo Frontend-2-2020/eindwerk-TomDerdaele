@@ -4,6 +4,7 @@
   display: flex;
   align-items: center;
   padding: 2rem 2rem 0rem 2rem;
+  z-index: 100;
 }
 
 .nav-container__logo {

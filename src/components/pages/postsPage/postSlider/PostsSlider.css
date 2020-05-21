@@ -1,0 +1,32 @@
+.post-slider {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  height: 100vh;
+  /* background-color: pink; */
+}
+
+.Main-post-container {
+  position: relative;
+  height: 20vh;
+  margin: 2rem 0;
+}
+
+.Main-post-container:hover {
+  cursor: pointer;
+}
+.Main-post-container:focus {
+  outline: none;
+}
+
+.Main-post-container--inner {
+  font-size: 2.5rem;
+  text-decoration: none;
+  color: rgb(14, 14, 179);
+  position: absolute;
+  width: 100%;
+  top: 40%;
+  text-align: center;
+  /* background-color: red; */
+}

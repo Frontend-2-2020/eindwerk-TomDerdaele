@@ -1,10 +1,12 @@
 import React from 'react';
+import PostsSlider from './postSlider/PostsSlider';
+import "./PostsPage.css"
 
 const PostsPage = () => {
   return (
-    <div>
-      Posts
-    </div>
+    <section className="posts-page-container">
+      <PostsSlider/>
+    </section>
   );
 };
 

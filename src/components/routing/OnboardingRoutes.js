@@ -10,7 +10,7 @@ import NavBar from "../navigatie/navBar/NavBar";
 const OnboardingRoutes = () => {
   return (
     <div>
-      <NavBar soort="auth" kleur="#26284A" />
+      <NavBar soort="auth" />
       <Switch>
         <Route path="/login" component={LoginPage} />
         <Route path="/" exact component={LandingPage} />
