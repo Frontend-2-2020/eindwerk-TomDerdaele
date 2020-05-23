@@ -15,10 +15,11 @@
 
 .onboarding-button__text{
   text-align: center;
-  font-size: 2rem;
+  font-size: 2.5rem;
   font-weight: 700;
   font-style: italic;
   transform: rotate(-10deg);
   color: white;
+  margin-bottom: 10px;
 }
 

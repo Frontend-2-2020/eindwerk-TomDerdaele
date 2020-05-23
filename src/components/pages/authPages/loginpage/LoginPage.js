@@ -1,13 +1,20 @@
 import React from "react";
 import { Formik } from "formik";
+import { connect } from "react-redux";
+import { Redirect } from "react-router-dom";
+import { loginActie } from "../../../../redux/actions/authActions";
+
 import * as Yup from "yup";
-// import PropTypes from "prop-types";
-import LoginPageForm from "./LoginPageForm";
 import "../Authpages.css";
 import "../AuthInputField.css";
 
+import LoginPageForm from "./LoginPageForm";
+
 
 const LoginPage = (props) => {
+
+  const {auth, loginActie} = props
+  
   const loginSchema = Yup.object().shape({
     email: Yup.string().email("Invalid email").required("Required"),
     password: Yup.string()
@@ -17,9 +24,16 @@ const LoginPage = (props) => {
   });
 
   const onSubmitHandler = (values, actions) => {
+    loginActie(values); // Fuctie uit Redux om Login token op te halen
     actions.resetForm(); // Fuctie uit Formik om Form te resetten
     console.log("blab!");
   };
+
+  // LoginPage niet meer bereikbaar na inloggen
+  // push prop in redirect is nodig voor animated routes
+  if (auth.loggedIn === true) {
+    return <Redirect push to="/posts" />;
+  }
 
   return (
     <div className="authpage-container">
@@ -36,6 +50,8 @@ const LoginPage = (props) => {
   );
 };
 
-// LoginPage.propTypes = {};
+const mapStateToProps = (state) => ({
+  auth: state.auth,
+});
 
-export default LoginPage;
+export default connect(mapStateToProps, { loginActie })(LoginPage);

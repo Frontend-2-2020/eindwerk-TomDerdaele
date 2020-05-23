@@ -2,8 +2,10 @@ import React, { Fragment } from "react";
 
 import "./LandingPage.css";
 import OnboardingButton from "../../layout/buttons/onboardingButton/OnboardingButton";
+import { connect } from "react-redux";
 
-const LandingPage = () => {
+const LandingPage = ({auth:{loggedIn}}) => {
+
   return (
     <Fragment>
       <div className="landingpage-container">
@@ -15,14 +17,17 @@ const LandingPage = () => {
         </p>
       </div>
       <OnboardingButton path="/login">
-        <p>JOIN!</p>
+        <p>{loggedIn ? "blab!" : "join!"}</p> 
       </OnboardingButton>
     </Fragment>
   );
 };
 
+const mapStateToProps = (state) => ({
+  auth: state.auth,
+});
 
-export default LandingPage;
+export default connect(mapStateToProps)(LandingPage);
 
 
 
