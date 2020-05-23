@@ -1,0 +1,13 @@
+.loginpage-container{
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background-color: lightblue; */
+}
+
+.loginpage-container__form{
+  width: 50vw;
+  height: 40vh;
+  /* background-color: pink; */
+}

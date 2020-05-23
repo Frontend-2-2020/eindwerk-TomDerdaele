@@ -1,0 +1,86 @@
+input:-webkit-autofill::first-line,
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  border-bottom: 3px solid #0b2a45;
+  font-size: 2rem;
+  font-family: raleway, sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  -webkit-text-fill-color: #0b2a45;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+.input-wrapper {
+  position: relative;
+  width: 100%;
+  margin: 2rem auto;
+  padding: 0;
+}
+
+.blabble-input {
+  height: 4rem;
+  min-width: 100%;
+  font-family: raleway, sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 2rem;
+  padding: 0;
+  border-radius: 0;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  border-bottom: 3px solid #0b2a45;
+}
+
+.blabble-input::placeholder {
+  color: #0b2a45;
+}
+
+.blabble-input:focus + .input-highlight {
+  border-top: 3px solid white;
+}
+
+.blabble-input--error {
+  color: #EB4511;
+  border-bottom: 3px solid #EB4511;
+}
+
+.blabble-input--error:focus + .input-highlight {
+  border-top: 3px solid white;
+}
+
+.blabble-input--error::placeholder {
+  color: #EB4511;
+}
+
+.input-highlight {
+  font-family: raleway, sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 2rem;
+  user-select: none;
+  border-top: 3px solid white;
+  position: absolute;
+  height: 0;
+  left: 0;
+  bottom: 0;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.blabble-input__feedback {
+  position: absolute;
+  left: 0;
+  top: 4rem;
+  font-size: 1rem;
+  color: #EB4511;
+  margin-top: 0.5rem;
+  z-index: 100;
+}

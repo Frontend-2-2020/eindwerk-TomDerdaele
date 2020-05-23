@@ -1,7 +1,7 @@
 import React from "react";
 import { Switch, Route } from "react-router-dom";
 
-import LoginPage from "../pages/authPages/LoginPage";
+import LoginPage from "../pages/authPages/loginpage/LoginPage";
 import LandingPage from "../pages/landingPage/LandingPage";
 import NotFound from "../pages/notFound/NotFound";
 import NavBar from "../navigatie/navBar/NavBar";
