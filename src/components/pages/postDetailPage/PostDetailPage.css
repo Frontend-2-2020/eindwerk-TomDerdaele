@@ -28,17 +28,19 @@
 
 .grid-container__name {
   grid-area: name;
-  padding-top: 2rem;
+  padding-top: 3rem;
 }
+
 .grid-container__body {
   grid-area: body;
-  padding-top: 2rem;
+  padding-top: 3rem;
 }
 
 .grid-container__commenttitel {
-  align-self: end;
   grid-area: commenttitel;
+  align-self: end;
 }
+
 .grid-container__commenttitel h2 {
   margin: 0;
   font-size: 1.5rem;
@@ -46,5 +48,5 @@
 
 .grid-container__comment {
   grid-area: comment;
-  padding-top: 2rem;
+  padding-top: 3rem;
 }

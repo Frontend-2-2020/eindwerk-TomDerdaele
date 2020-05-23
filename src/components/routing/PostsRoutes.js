@@ -12,7 +12,7 @@ const PostsRoutes = () => {
     <div>
       <NavBar soort="posts"/>
       <Switch>
-        <Route path="/posts/detail" component={PostDetailPage} />
+        <Route path="/posts/:id" component={PostDetailPage} />
         <Route path="/posts" exact component={PostsPage} />
         <Route component={NotFound}/>
       </Switch>

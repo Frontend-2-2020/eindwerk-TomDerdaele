@@ -1,9 +1,8 @@
 import { API, LOCALSTORAGE_KEY, TOKEN } from "../../API";
 import { LOGIN_OK, LOGOUT_OK, LOGIN_ERROR } from "./actionTypes";
 
-//check als er iemand is ingelogd bij load
+// Check als er iemand is ingelogd bij het laden van de applicatie
 export const checkOnLoad = () => {
-  // const TOKEN = window.localStorage.getItem(LOCALSTORAGE_KEY);
   return function (dispatch) {
     if (TOKEN) {
       API.defaults.headers.common["Authorization"] = "Bearer " + TOKEN;

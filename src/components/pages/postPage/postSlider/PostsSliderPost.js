@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 const PostsSliderPost = ({post}) => {
   return (
     <div key={post.id} className="Main-post-container">
-      <Link to="/posts/detail" className="Main-post-container--inner">
+      <Link to={`/posts/${post.id}`} className="Main-post-container--inner">
         <div>
           {post.title}
         </div>
