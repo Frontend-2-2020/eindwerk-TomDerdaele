@@ -2,9 +2,9 @@ import React from "react";
 import { Switch, Route } from "react-router-dom";
 
 import NavBar from "../navigatie/navBar/NavBar";
-import PostsPage from "../pages/postsPage/PostsPage";
+import PostsPage from "../pages/postPage/PostsPage";
 import NotFound from "../pages/notFound/NotFound";
-import PostDetailPage from "../pages/postsPage/postDetailPage/PostDetailPage";
+import PostDetailPage from "../pages/postDetailPage/PostDetailPage";
 
 
 const PostsRoutes = () => {
@@ -12,7 +12,7 @@ const PostsRoutes = () => {
     <div>
       <NavBar soort="posts"/>
       <Switch>
-        <Route path="/posts/detail" exact component={PostDetailPage} />
+        <Route path="/posts/detail" component={PostDetailPage} />
         <Route path="/posts" exact component={PostsPage} />
         <Route component={NotFound}/>
       </Switch>

@@ -1,0 +1,50 @@
+.postdetail-page-container{
+  height: 100vh;
+  padding: 0 2rem;
+  /* background-color: pink; */
+}
+
+.grid-container {
+  /* background-color: lightPink; */
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(5, 20%);
+  grid-template-rows: 43vh auto;
+  grid-template-areas:
+    "titel titel titel . commenttitel"
+    "name body body . comment";
+}
+
+.grid-container__titel {
+  grid-area: titel;
+  align-self: end;
+  padding: 0;
+}
+
+.grid-container__titel h1 {
+  font-size: 3rem;
+  margin: 0;
+}
+
+.grid-container__name {
+  grid-area: name;
+  padding-top: 2rem;
+}
+.grid-container__body {
+  grid-area: body;
+  padding-top: 2rem;
+}
+
+.grid-container__commenttitel {
+  align-self: end;
+  grid-area: commenttitel;
+}
+.grid-container__commenttitel h2 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.grid-container__comment {
+  grid-area: comment;
+  padding-top: 2rem;
+}

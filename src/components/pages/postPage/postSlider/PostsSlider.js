@@ -1,9 +1,11 @@
 import React, { Component } from "react";
-import testslider from "./testslider"; // DUMMY DATA
-import Slider from "react-slick";
-import PostsSliderPost from "./PostsSliderPost";
+import PropTypes from 'prop-types';
+
 import "slick-carousel/slick/slick.css";
 import "./PostsSlider.css"
+
+import Slider from "react-slick";
+import PostsSliderPost from "./PostsSliderPost";
 
 class PostsSlider extends Component {
   sliderRef = React.createRef();
@@ -30,8 +32,9 @@ class PostsSlider extends Component {
   };
 
   render() {
+    const {allposts} = this.props
     const settings = {
-      infinite: true,
+      infinite: false,
       speed: 800,
       slidesToShow: 3,
       slidesToScroll: 1,
@@ -62,7 +65,7 @@ class PostsSlider extends Component {
     return (
       <div>
         <Slider ref={this.sliderRef} {...settings}>
-          {testslider.map((post) => {
+          {allposts.map((post) => {
             return <PostsSliderPost post={post} key={post.id} />;
           })}
         </Slider>
@@ -70,5 +73,9 @@ class PostsSlider extends Component {
     );
   }
 }
+
+PostsSlider.propTypes = {
+allposts: PropTypes.array.isRequired,
+};
 
 export default PostsSlider;
