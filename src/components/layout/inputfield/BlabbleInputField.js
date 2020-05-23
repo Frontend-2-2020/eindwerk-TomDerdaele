@@ -1,12 +1,11 @@
 import React from "react";
 import { Field, ErrorMessage } from "formik";
 import PropTypes from "prop-types";
-import "./BlabbleInputField.css"
 
 const BlabbleInputField = (props) => {
-  const { type, name, placeHolder, values, className } = props;
+  const { type, name, placeHolder, values, className, borderColor } = props;
   return (
-    <div className="input-wrapper">
+    <div className={className + "__input-wrapper"}>
       <Field id={name} {...props}>
         {({ field, meta }) => (
           <input
@@ -23,7 +22,7 @@ const BlabbleInputField = (props) => {
       </Field>
       {/* Speciaal element dat evenlang is als inputValue, maakt stukje lijn onzichtbaar */}
       {/* Klein regexje om spaties en paswoord dots te vervangen */}
-      <span className="input-highlight">
+      <span className={className + "__input-highlight"} style={{borderColor: borderColor}}>
         {name === "password"
           ? values[name].replace(/./g, "•")
           : values[name].replace(/ /g, "\u00a0")}
@@ -42,6 +41,7 @@ BlabbleInputField.propTypes = {
   placeHolder: PropTypes.string.isRequired,
   values: PropTypes.object.isRequired,
   className: PropTypes.string.isRequired,
+  borderColor: PropTypes.string,
 };
 
 export default BlabbleInputField;

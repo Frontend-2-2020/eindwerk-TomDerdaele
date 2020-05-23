@@ -4,9 +4,11 @@ import * as Yup from "yup";
 // import PropTypes from "prop-types";
 import LoginPageForm from "./LoginPageForm";
 import "../Authpages.css";
+import "../AuthInputField.css";
+
 
 const LoginPage = (props) => {
-  const LoginSchema = Yup.object().shape({
+  const loginSchema = Yup.object().shape({
     email: Yup.string().email("Invalid email").required("Required"),
     password: Yup.string()
       .min(5, "Use at least 5 character password")
@@ -16,17 +18,16 @@ const LoginPage = (props) => {
 
   const onSubmitHandler = (values, actions) => {
     actions.resetForm(); // Fuctie uit Formik om Form te resetten
-    console.log("submit");
+    console.log("blab!");
   };
 
   return (
-    <div className="loginpage-container">
-      <div className="loginpage-container__form">
+    <div className="authpage-container">
+      <div className="authpage-container__form">
         <Formik
           initialValues={{ email: "", password: "" }}
           onSubmit={onSubmitHandler}
-          validationSchema={LoginSchema}
-          // validateOnChange={false}
+          validationSchema={loginSchema}
         >
           {(props) => <LoginPageForm {...props} />}
         </Formik>

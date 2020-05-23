@@ -4,22 +4,26 @@ import BlabbleInputField from "../../../layout/inputfield/BlabbleInputField";
 
 const LoginPageForm = (props) => {
   return (
-      <Form noValidate> {/* om browser validatie uit te zetten */}
+      <Form noValidate> 
+      {/* om browser validatie uit te zetten */}
         <BlabbleInputField
-          className="blabble-input"
+          className="authfield"
           name="email"
           type="email"
           placeHolder="email"
+          borderColor="white"
+          // om lijn onzichtbaar te maken //
           {...props}
         />
         <BlabbleInputField
-          className="blabble-input"
+          className="authfield"
           name="password"
           type="password"
           placeHolder="password"
+          borderColor="white"
           {...props}
         />
-        <button type="submit">Submit</button>
+        <button type="submit">Blab!</button>
       </Form>
   );
 };
