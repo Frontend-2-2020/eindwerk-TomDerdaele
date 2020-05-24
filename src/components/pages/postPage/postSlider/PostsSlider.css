@@ -1,16 +1,19 @@
 .post-slider {
-  display: flex;
+  /* display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
-  justify-content: center;
+  justify-content: center; */
   height: 100vh;
-  /* background-color: pink; */
+  /* background-color: blue; */
 }
 
 .Main-post-container {
+  display: flex;
+  justify-content: center;
   position: relative;
-  height: 20vh;
-  margin: 2rem 0;
+  height: 55vh;
+  margin: 45vh 0 0 0;
+  /* background-color: pink; */
 }
 
 .Main-post-container:hover {
@@ -24,9 +27,10 @@
   font-size: 2.5rem;
   text-decoration: none;
   color: rgb(14, 14, 179);
-  position: absolute;
-  width: 100%;
-  top: 40%;
+  /* position: absolute; */
+  /* height: 100%; */
+  width: 60%;
+  /* top: 40%; */
   text-align: center;
   /* background-color: red; */
 }
