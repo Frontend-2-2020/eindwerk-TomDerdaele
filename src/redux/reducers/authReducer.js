@@ -3,7 +3,7 @@ import { LOGIN_OK, LOGOUT_OK, LOGIN_ERROR } from "../actions/actionTypes";
 const initialState = {
   loggedIn: false,
   currentUser: {},
-  authError: null,
+  errorAuth: null,
 };
 
 const authReducer = (state = initialState, action) => {
@@ -13,7 +13,7 @@ const authReducer = (state = initialState, action) => {
         ...state,
         loggedIn: true,
         currentUser: action.payload,
-        authError: null,
+        errorAuth: null,
       };
 
     case LOGIN_ERROR:
@@ -22,7 +22,7 @@ const authReducer = (state = initialState, action) => {
         ...state,
         loggedIn: false,
         currentUser: {},
-        authError: action.payload,
+        errorAuth: action.payload,
       };
 
     default:

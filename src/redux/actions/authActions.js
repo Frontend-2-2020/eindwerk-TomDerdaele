@@ -23,7 +23,7 @@ export const checkOnLoad = () => {
 };
 
 // LOGIN ACTION om token te krijgen
-export const loginActie = ({ email, password }) => {
+export const loginActie = ({ email, password }, doorverwijzen) => {
   return function (dispatch) {
     API.post("oauth/token", {
       grant_type: "password",
@@ -44,14 +44,16 @@ export const loginActie = ({ email, password }) => {
             type: LOGIN_OK,
             payload: userRes.data,
           });
+          doorverwijzen("/posts");
         });
       })
-      .catch((e) => {
+      .catch(() => {
         API.defaults.headers.common["Authorization"] = undefined;
         dispatch({
           type: LOGIN_ERROR,
-          payload: e.response.data.message
+          payload:"Login ERROR, please check login and password"
         });
+        doorverwijzen("/error");
       });
   };
 };
