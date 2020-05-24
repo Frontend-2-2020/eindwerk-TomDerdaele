@@ -21,11 +21,13 @@ const BlabbleInputField = (props) => {
         )}
       </Field>
       {/* Speciaal element dat evenlang is als inputValue, maakt stukje lijn onzichtbaar */}
+      {/* Wel een if check als er een value aanwezig is, anders maakt hij van zijn oren :) */}
       {/* Klein regexje om spaties en paswoord dots te vervangen */}
       <span className={className + "__input-highlight"} style={{borderColor: borderColor}}>
-        {name === "password"
+        {values[name] ? 
+        (name === "password"
           ? values[name].replace(/./g, "•")
-          : values[name].replace(/ /g, "\u00a0")}
+          : values[name].replace(/ /g, "\u00a0")) : null}
       </span>
       <ErrorMessage
         name={name}

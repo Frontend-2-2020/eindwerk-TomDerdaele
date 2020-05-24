@@ -20,11 +20,10 @@ export const EDIT_COMMENT = "EDIT_COMMENT"
 
 // Authenticatie constantes
 export const LOGIN_OK = "LOGIN_OK"
-export const LOGIN_ERROR = "LOGIN_ERROR"
 export const LOGOUT_OK = "LOGOUT_OK"
-// export const SIGNUP_OK = "SIGNUP_OK"
+export const SIGNUP_OK = "SIGNUP_OK"
+
+// Errors
 export const SIGNUP_ERROR = "SIGNUP_ERROR"
-
-//KEY local storage om token op te slaan
-
+export const LOGIN_ERROR = "LOGIN_ERROR"
 

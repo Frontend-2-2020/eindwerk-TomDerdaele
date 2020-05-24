@@ -1,11 +1,23 @@
-import React from "react";
+import React, { Component } from "react";
+import { connect } from "react-redux";
 import { Form } from "formik";
 import BlabbleInputField from "../../../layout/inputfield/BlabbleInputField";
 
-const LoginPageForm = (props) => {
-  return (
-      <Form noValidate> 
-      {/* om browser validatie uit te zetten */}
+class LoginPageForm extends Component {
+
+  componentDidMount() {
+    // Als je specifiek van registerpage naar hier komt vult hij automatisch het email adress in. Nice ee! :) 
+    // specifiek wel email adress aangesproken, geeft error op uncontrolled element bij passwoord
+    if (this.props.auth.signupSucces) {
+      this.props.setFieldValue('email', this.props.auth.signupSucces.email)
+    }
+  }
+  
+
+  render() {
+    return (
+      <Form noValidate>
+        {/* om browser validatie uit te zetten */}
         <BlabbleInputField
           className="authfield"
           name="email"
@@ -13,7 +25,7 @@ const LoginPageForm = (props) => {
           placeHolder="email"
           borderColor="white"
           // om lijn onzichtbaar te maken //
-          {...props}
+          {...this.props}
         />
         <BlabbleInputField
           className="authfield"
@@ -21,11 +33,16 @@ const LoginPageForm = (props) => {
           type="password"
           placeHolder="password"
           borderColor="white"
-          {...props}
+          {...this.props}
         />
         <button type="submit">Blab!</button>
       </Form>
-  );
-};
+    );
+  }
+}
 
-export default LoginPageForm;
+const mapStateToProps = (state) => ({
+  auth: state.auth,
+});
+
+export default connect(mapStateToProps)(LoginPageForm);

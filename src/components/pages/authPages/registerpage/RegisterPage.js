@@ -2,6 +2,9 @@ import React from 'react';
 import { Formik } from "formik";
 import * as Yup from "yup";
 import RegisterPageForm from './RegisterPageForm';
+
+import { connect } from 'react-redux';
+import { registerActie } from '../../../../redux/actions/authActions';
 // import PropTypes from 'prop-types';
 
 const RegisterPage = props => {
@@ -22,8 +25,10 @@ const RegisterPage = props => {
   });
 
   const onSubmitHandler = (values, actions) => {
+    props.registerActie(values, (path)=>{
+      props.history.push(path)
+    }) // Fuctie in redux om door te verwijzen naar de login pagina
     actions.resetForm(); // Fuctie uit Formik om Form te resetten
-    console.log("blab!");
   };
   return (
     <div className="authpage-container authpage-container--register">
@@ -44,4 +49,4 @@ const RegisterPage = props => {
   
 // };
 
-export default RegisterPage;
+export default connect(null, {registerActie})(RegisterPage);

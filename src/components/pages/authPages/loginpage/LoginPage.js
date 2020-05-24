@@ -1,7 +1,7 @@
 import React from "react";
 import { Formik } from "formik";
 import { connect } from "react-redux";
-import { Redirect } from "react-router-dom";
+import { Redirect, Link } from "react-router-dom";
 import { loginActie } from "../../../../redux/actions/authActions";
 
 import * as Yup from "yup";
@@ -10,11 +10,9 @@ import "../AuthInputField.css";
 
 import LoginPageForm from "./LoginPageForm";
 
-
 const LoginPage = (props) => {
+  const { auth, loginActie } = props;
 
-  const {auth, loginActie} = props
-  
   const loginSchema = Yup.object().shape({
     email: Yup.string().email("Invalid email").required("Required"),
     password: Yup.string()
@@ -24,7 +22,9 @@ const LoginPage = (props) => {
   });
 
   const onSubmitHandler = (values, actions) => {
-    loginActie(values,(path)=>{props.history.push(path)}); // Fuctie uit Redux om Login token op te halen en doorverwijzen
+    loginActie(values, (path) => {
+      props.history.push(path);
+    }); // Fuctie uit Redux om Login token op te halen en doorverwijzen
     actions.resetForm(); // Fuctie uit Formik om Form te resetten
   };
 
@@ -44,6 +44,13 @@ const LoginPage = (props) => {
         >
           {(props) => <LoginPageForm {...props} />}
         </Formik>
+      </div>
+      <div className="authpage-container__link">
+        {auth.signupSucces ? (
+          "Just confirm your password and Blab!"
+        ) : (
+          <Link to="/register">No account yet? Please join.</Link>
+        )}
       </div>
     </div>
   );
