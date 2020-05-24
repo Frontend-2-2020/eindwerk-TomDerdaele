@@ -16,12 +16,12 @@
   /* background-color: pink; */
 }
 
-.Main-post-container:hover {
+/* .Main-post-container:hover {
   cursor: pointer;
 }
 .Main-post-container:focus {
   outline: none;
-}
+} */
 
 .Main-post-container--inner {
   font-size: 2.5rem;

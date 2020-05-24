@@ -1,7 +1,10 @@
 import React, { Component } from "react";
 
 import { connect } from "react-redux";
-import { getPostDetail, clearPostDetail } from "../../../redux/actions/postActions";
+import {
+  getPostDetail,
+  clearPostDetail,
+} from "../../../redux/actions/postActions";
 
 import "./PostDetailPage.css";
 
@@ -20,7 +23,9 @@ class PostDetailPage extends Component {
     return (
       <div className="postdetail-page-container">
         {postDetail === null ? (
-          <h1>LOADING</h1>
+          <div className="postdetail-page-container__loadingbox">
+            <h1>loading...</h1>
+          </div>
         ) : (
           <div className="grid-container">
             <div className="grid-container__titel">
@@ -68,4 +73,6 @@ const mapStateToProps = (state) => ({
   auth: state.auth,
 });
 
-export default connect(mapStateToProps, { getPostDetail, clearPostDetail })( PostDetailPage );
+export default connect(mapStateToProps, { getPostDetail, clearPostDetail })(
+  PostDetailPage
+);

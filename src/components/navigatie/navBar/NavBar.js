@@ -4,27 +4,57 @@ import { Link } from "react-router-dom";
 
 import "./NavBar.css";
 import BlabbleLogo from "../../layout/logo/BlabbleLogo";
+import { connect } from "react-redux";
+import { logoutActie } from "../../../redux/actions/authActions";
 
-const NavBar = ({ soort }) => {
+const NavBar = (props) => {
+  const { soort, auth } = props;
+
+  const logout = () => {
+    props.logoutActie();
+  };
+
   return (
     <Fragment>
       <nav className="nav-container">
         <Link to="/">
-          <BlabbleLogo className="nav-container__logo" color={soort !== "users" ? "#26284A" : "white"} />
+          <BlabbleLogo
+            className="nav-container__logo"
+            color={soort !== "users" ? "#26284A" : "white"}
+          />
         </Link>
 
         {soort === "auth" ? (
           <div className="nav-container__links">
-            <Link className="nav-container__links__link" to="/posts">
-              Visit as guest
-            </Link>
+            {auth.loggedIn ? (
+              <div
+                className="nav-container__links__link nav-container__links__link--logout"
+                onClick={logout}
+              >
+                Logout
+              </div>
+            ) : (
+              <Link className="nav-container__links__link" to="/posts">
+                Visit as guest
+              </Link>
+            )}
           </div>
         ) : (
           <div className="nav-container__links">
             {/* dit moet nog aangepast worden ifv loggedIn uit store */}
-            <Link className="nav-container__links__link" to="/login">
-              login 
-            </Link>
+            {auth.loggedIn ? (
+              <div
+                className="nav-container__links__link nav-container__links__link--logout"
+                onClick={logout}
+              >
+                Logout
+              </div>
+            ) : (
+              <Link className="nav-container__links__link" to="/login">
+                Login
+              </Link>
+            )}
+
             <Link className="nav-container__links__link" to="/posts">
               latest
             </Link>
@@ -35,8 +65,12 @@ const NavBar = ({ soort }) => {
   );
 };
 
+const mapStateToProps = (state) => ({
+  auth: state.auth,
+});
+
 NavBar.propTypes = {
   soort: PropTypes.oneOf(["posts", "auth", "users"]).isRequired,
 };
 
-export default NavBar;
+export default connect(mapStateToProps, { logoutActie })(NavBar);

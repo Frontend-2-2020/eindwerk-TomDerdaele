@@ -12,7 +12,6 @@ class PostsSlider extends Component {
 
   componentDidMount() {
     window.addEventListener("wheel", this.slideWheel);
-    console.log("add scroll event");
   }
 
   componentWillUnmount() {
@@ -21,7 +20,6 @@ class PostsSlider extends Component {
   }
 
   slideWheel = (e) => {
-    console.log("scollr");
     this.slide(e.wheelDelta);
   };
 
@@ -34,12 +32,12 @@ class PostsSlider extends Component {
   render() {
     const {allposts} = this.props
     const settings = {
+      className: "post-slider",
       infinite: false,
       speed: 800,
       slidesToShow: 3,
       slidesToScroll: 1,
       arrows: false,
-      className: "post-slider",
       vertical: false,
       verticalSwiping: false,
       swipeToSlide: false,

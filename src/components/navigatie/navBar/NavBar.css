@@ -17,3 +17,11 @@
   flex-direction: column;
   margin-left: 20vw;
 }
+
+.nav-container__links__link:hover{
+  color: #EB4511
+}
+
+.nav-container__links__link--logout:hover {
+  cursor: pointer;
+}

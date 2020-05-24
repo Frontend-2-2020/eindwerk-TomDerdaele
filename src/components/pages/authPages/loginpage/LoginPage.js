@@ -26,7 +26,6 @@ const LoginPage = (props) => {
   const onSubmitHandler = (values, actions) => {
     loginActie(values,(path)=>{props.history.push(path)}); // Fuctie uit Redux om Login token op te halen en doorverwijzen
     actions.resetForm(); // Fuctie uit Formik om Form te resetten
-    console.log("blab!");
   };
 
   // LoginPage niet meer bereikbaar na inloggen

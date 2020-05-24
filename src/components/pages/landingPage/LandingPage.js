@@ -4,7 +4,7 @@ import "./LandingPage.css";
 import OnboardingButton from "../../layout/buttons/onboardingButton/OnboardingButton";
 import { connect } from "react-redux";
 
-const LandingPage = ({auth:{loggedIn}}) => {
+const LandingPage = ({auth:{loggedIn, currentUser}}) => {
 
   return (
     <Fragment>
@@ -13,7 +13,7 @@ const LandingPage = ({auth:{loggedIn}}) => {
           Blab about <br /> anything!
         </h1>
         <p className="landingpage-container__tagline">
-          Join for free and blab along with us…
+        {loggedIn ? "Hi " + currentUser.first_name + ", blab along with us!" : "Join for free and blab along with us…"}
         </p>
       </div>
       <OnboardingButton path="/login">
