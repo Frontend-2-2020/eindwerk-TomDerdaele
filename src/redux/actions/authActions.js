@@ -20,10 +20,10 @@ export const checkOnLoad = () => {
       });
     } else {
       API.defaults.headers.common["Authorization"] = undefined;
-      dispatch({
-        type: LOGIN_ERROR,
-        payload: "No user signed in yet",
-      });
+      // dispatch({
+      //   type: LOGIN_ERROR,
+      //   payload: "No user signed in yet",
+      // });
     }
   };
 };

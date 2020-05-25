@@ -23,7 +23,14 @@ export const LOGIN_OK = "LOGIN_OK"
 export const LOGOUT_OK = "LOGOUT_OK"
 export const SIGNUP_OK = "SIGNUP_OK"
 
-// Errors
+// User constantes
+export const GET_USERDETAIL = "GET_USERDETAIL"
+export const WEG_USERDETAIL = "WEG_USERDETAIL"
+
+// Error constantes
 export const SIGNUP_ERROR = "SIGNUP_ERROR"
 export const LOGIN_ERROR = "LOGIN_ERROR"
+export const GET_USER_ERROR = "GET_USER_ERROR"
+export const CLEAR_ERROR = "CLEAR_ERROR"
+
 

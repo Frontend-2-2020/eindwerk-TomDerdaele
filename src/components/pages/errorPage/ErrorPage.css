@@ -1,0 +1,83 @@
+/* //////////// */
+/* MOBILE FIRST */
+/* //////////// */
+
+.errorpage-container{
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 20vh;
+}
+
+.errorpage-container__title{
+  font-size: 2rem;
+  line-height: 2.5rem;
+  font-weight: 700;
+  color: #EB4511;
+  text-align: center;
+}
+
+/* .errorpage-container__tagline{
+  position: absolute;
+  text-align: center;
+  font-size: 1rem;
+  bottom: 4rem;
+} */
+
+/* ///////////////// */
+/* MOBILE LANDSCAPE */
+/* /////////////// */
+
+@media screen and (min-width: 415px){
+  
+  /* .errorpage-container__title{
+    font-size: 6rem;
+    line-height: 6.5rem;
+  } */
+}
+
+/* ///////////////// */
+/* TABLET PORTRAIT */
+/* /////////////// */
+
+@media screen and (min-width: 750px){
+  
+  .errorpage-container__title{
+    font-size: 3.5rem;
+    line-height: 3.75rem;
+  }
+
+  /* .errorpage-container__tagline{
+    font-size: 1.5rem;
+    bottom: 3rem;
+  } */
+}
+
+/* //////////////// */
+/* TABLET LANDSCAPE*/
+/* ////////////// */
+
+@media screen and (min-width: 996px) {
+  
+  .errorpage-container__title{
+    font-size: 5rem;
+    line-height: 5.25rem;
+  }
+}
+
+/* //////////////// */
+/* LAP- and DESKTOP */
+/* //////////////// */
+
+@media screen and (min-width: 1300px) {
+  
+  .errorpage-container__title{
+    font-size: 5rem;
+    line-height: 5.25rem;
+  }
+/*   
+  .errorpage-container__tagline{
+    bottom: 3rem;
+  } */
+}

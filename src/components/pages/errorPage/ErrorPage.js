@@ -1,28 +1,41 @@
-import React from "react";
+import React, { Component, Fragment } from "react";
 import { connect } from "react-redux";
+import { CLEAR_ERROR } from "../../../redux/actions/actionTypes";
 
-const ErrorPage = (props) => {
-  const { errorAuth } = props;
+import "./ErrorPage.css";
+import OnboardingButton from "../../layout/buttons/onboardingButton/OnboardingButton";
 
-  return (
-    <div
-      style={{
-        position: "absolute",
-        backgroundColor: "white",
-        height: "100vh",
-        width: "100vw",
-        top: 0,
-        left: 0,
-        zIndex: 100,
-      }}
-    >
-      <h1>{errorAuth ? errorAuth : "PAGE NOT FOUND 404"}</h1>
-    </div>
-  );
-};
+class ErrorPage extends Component {
+  componentWillUnmount() {
+    this.props.clearError();
+  }
+
+  render() {
+    const { error } = this.props;
+
+    return (
+      <Fragment>
+        <div className="errorpage-container">
+          <h1 className="errorpage-container__title">
+            {error ? error : "PAGE NOT FOUND"}
+          </h1>
+        </div>
+        <OnboardingButton path="/">
+          <p>retry!</p>
+        </OnboardingButton>
+      </Fragment>
+    );
+  }
+}
 
 const mapStateToProps = (state) => ({
-  errorAuth: state.auth.errorAuth,
+  error: state.error,
 });
 
-export default connect(mapStateToProps)(ErrorPage);
+const mapDispatchToProps = (dispatch) => {
+  return {
+    clearError: () => dispatch({ type: CLEAR_ERROR }),
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(ErrorPage);

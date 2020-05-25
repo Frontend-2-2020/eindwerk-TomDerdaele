@@ -13,6 +13,10 @@
   border-radius: 50%;
 }
 
+.onboarding-button:hover{
+  cursor: pointer;
+}
+
 .onboarding-button__text{
   text-align: center;
   font-size: 2.5rem;

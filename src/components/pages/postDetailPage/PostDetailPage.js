@@ -7,6 +7,7 @@ import {
 } from "../../../redux/actions/postActions";
 
 import "./PostDetailPage.css";
+import { Link } from "react-router-dom";
 
 class PostDetailPage extends Component {
   componentDidMount() {
@@ -32,9 +33,10 @@ class PostDetailPage extends Component {
               <h1>{postDetail.title}</h1>
             </div>
             <div className="grid-container__name">
+              <Link to={`/user/${postDetail.user_id}`}>
               <p>
                 {postDetail.user.first_name} {postDetail.user.last_name}
-              </p>
+              </p></Link>
               <p>{postDetail.user.created_at}</p>
             </div>
             <div className="grid-container__body">

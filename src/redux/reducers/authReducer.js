@@ -1,10 +1,10 @@
-import { LOGIN_OK, LOGOUT_OK, LOGIN_ERROR, SIGNUP_OK, SIGNUP_ERROR } from "../actions/actionTypes";
+import { LOGIN_OK, LOGOUT_OK, SIGNUP_OK} from "../actions/actionTypes";
 
 const initialState = {
   loggedIn: false,
   currentUser: {},
   signupSucces: null,
-  errorAuth: null,
+  // errorAuth: null,
 };
 
 const authReducer = (state = initialState, action) => {
@@ -15,31 +15,31 @@ const authReducer = (state = initialState, action) => {
         loggedIn: true,
         currentUser: action.payload,
         signupSucces: null,
-        errorAuth: null,
+        // errorAuth: null,
       };
 
     case SIGNUP_OK:
       return {
         ...state,
         signupSucces: action.payload,
-        errorAuth: null,
+        // errorAuth: null,
       };
 
-    case SIGNUP_ERROR:
-      return {
-        ...state,
-        signupSucces: null,
-        errorAuth: action.payload,
-      };
+    // case SIGNUP_ERROR:
+    //   return {
+    //     ...state,
+    //     signupSucces: null,
+    //     errorAuth: action.payload,
+    //   };
 
-    case LOGIN_ERROR:
+    // case LOGIN_ERROR:
     case LOGOUT_OK:
       return {
         ...state,
         loggedIn: false,
         currentUser: {},
         signupSucces: null,
-        errorAuth: action.payload,
+        // errorAuth: action.payload,
       };
 
     default:

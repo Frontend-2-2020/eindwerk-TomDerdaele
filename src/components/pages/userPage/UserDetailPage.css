@@ -1,0 +1,65 @@
+.userdetail-page-container{
+  min-height: 100vh;
+  padding: 0 2rem;
+  color: white;
+  background-color: #EB4511;
+}
+
+.userdetail-page-container__loadingbox{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  /* background-color: pink; */
+}
+
+.userdetail-page-container__loadingbox h1{
+  font-size: 4rem;
+}
+
+.grid-container-user {
+  /* background-color: lightPink; */
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(5, 20%);
+  grid-template-rows: 43vh auto;
+  grid-template-areas:
+    "titel titel titel . commenttitel"
+    "name body body . comment";
+}
+
+.grid-container-user__titel {
+  grid-area: titel;
+  align-self: end;
+  padding: 0;
+}
+
+.grid-container-user__titel h1 {
+  font-size: 3rem;
+  margin: 0;
+}
+
+.grid-container-user__name {
+  grid-area: name;
+  padding-top: 3rem;
+}
+
+.grid-container-user__body {
+  grid-area: body;
+  padding-top: 3rem;
+}
+
+.grid-container-user__commenttitel {
+  grid-area: commenttitel;
+  align-self: end;
+}
+
+.grid-container-user__commenttitel h2 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.grid-container-user__comment {
+  grid-area: comment;
+  padding-top: 3rem;
+}

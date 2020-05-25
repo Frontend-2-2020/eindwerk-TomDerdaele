@@ -10,6 +10,7 @@ import "./stylesGlobal/typoBasic.css";
 
 import OnboardingRoutes from "./components/routing/OnboardingRoutes";
 import PostsRoutes from "./components/routing/PostsRoutes";
+import UserRoutes from "./components/routing/UserRoutes";
 
 
 class App extends Component {
@@ -22,6 +23,7 @@ class App extends Component {
     return (
       <Router>
         <Switch>
+          <Route path="/user" component={UserRoutes} />
           <Route path="/posts" component={PostsRoutes} />
           <Route path="/" component={OnboardingRoutes} />
         </Switch>
