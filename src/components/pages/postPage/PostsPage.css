@@ -4,3 +4,13 @@
   width: 100vw;
   /* background-color: thistle; */
 }
+
+.posts-page-container__bottomtext{
+  display: flex;
+  justify-content: center;
+	align-items: flex-end;
+  height: 10vh;
+  padding: 0 0 2rem 0;
+  width: 100vw;
+  /* background-color: thistle; */
+}

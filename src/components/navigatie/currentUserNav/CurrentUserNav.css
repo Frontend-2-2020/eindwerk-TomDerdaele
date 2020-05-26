@@ -1,0 +1,22 @@
+.currentuser-nav-container{
+  position: fixed;
+  bottom: 2rem;
+  left: 2rem;
+  width: 150px;
+  height: 150px;
+  /* background-color: lightpink; */
+  z-index: 50;
+}
+
+.currentuser-nav-container__avatar{
+  position: absolute;
+  bottom: 0rem;
+  left: 0rem;
+  width: 140px;
+  height: 140px;
+  background-color: #C7E0F0;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 50%;
+}

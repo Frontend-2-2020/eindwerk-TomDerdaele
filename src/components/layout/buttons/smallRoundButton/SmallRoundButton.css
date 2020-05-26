@@ -1,0 +1,35 @@
+.small-round-button{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  background-color: black;
+  border-radius: 50%;
+}
+
+.small-round-button:hover{
+  cursor: pointer;
+  background-color: #26284A;
+}
+
+.small-round-button:focus{
+  background-color: #EB4511;
+  border: none;
+  outline: none;
+}
+
+.small-round-button--logout{
+  position: absolute;
+  top: 0rem;
+  right: 0rem;
+  width: 50px;
+  height: 50px;
+}
+
+.small-round-button--addpost{
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 50px;
+  height: 50px;
+}
