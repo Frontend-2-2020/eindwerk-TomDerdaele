@@ -8,6 +8,8 @@ import {
 
 import "./PostDetailPage.css";
 import { Link } from "react-router-dom";
+import PostDetailCommentAdjust from "./postDetailComment/PostDetailCommentAdjust";
+import PostDetailCommentItem from "./postDetailComment/PostDetailCommentItem";
 
 class PostDetailPage extends Component {
   componentDidMount() {
@@ -46,20 +48,16 @@ class PostDetailPage extends Component {
               <h2>COMMENTS</h2>
             </div>
             <div className="grid-container__comment">
-              <input type="text" />
-              <ul>
+              
+              {/* Comment form */}
+              {this.props.auth.loggedIn === true ? <PostDetailCommentAdjust id={postDetail.id}/> : ""}
+              {/* <input type="text" /> */}
+              
+              <ul className="postdetail-page-container__commentlist">
                 {postDetailComments.map((comment) => (
-                  <li key={comment.id}>
-                    <p>
-                      {comment.user
-                        ? comment.user.first_name + " " + comment.user.last_name
-                        : ""}
-                    </p>
-                    <h3>{comment.created_at}</h3>
-                    <p>{comment.body}</p>
-                    {/* <PrivateButtonComment what={comment} buttonText="Delete comment"/>
-                      <PrivateButtonEditComment what={comment} buttonText="Edit comment"/> */}
-                  </li>
+                  <PostDetailCommentItem 
+                  key={comment.id}
+                  commentData={comment}/>
                 ))}
               </ul>
             </div>

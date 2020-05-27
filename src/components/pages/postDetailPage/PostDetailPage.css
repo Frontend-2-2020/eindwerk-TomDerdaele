@@ -16,6 +16,15 @@
   font-size: 4rem;
 }
 
+.postdetail-page-container__commentlist{
+  margin-top: 2rem;
+}
+
+.postdetail-page-container__commentlist__item{
+  margin: 0.5rem 0;
+}
+
+
 .grid-container {
   /* background-color: lightPink; */
   height: 100%;
