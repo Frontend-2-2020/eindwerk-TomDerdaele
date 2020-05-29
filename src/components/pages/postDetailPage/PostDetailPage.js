@@ -10,6 +10,8 @@ import "./PostDetailPage.css";
 import { Link } from "react-router-dom";
 import PostDetailCommentAdjust from "./postDetailComment/PostDetailCommentAdjust";
 import PostDetailCommentItem from "./postDetailComment/PostDetailCommentItem";
+import DeleteChangeButton from "../../layout/buttons/deleteChangeButton/DeleteChangeButton";
+import { DELETE_POST, SET_EDIT_POST } from "../../../redux/actions/actionTypes";
 
 class PostDetailPage extends Component {
   componentDidMount() {
@@ -36,10 +38,24 @@ class PostDetailPage extends Component {
             </div>
             <div className="grid-container__name">
               <Link to={`/user/${postDetail.user_id}`}>
-              <p>
-                {postDetail.user.first_name} {postDetail.user.last_name}
-              </p></Link>
+                <p>
+                  {postDetail.user.first_name} {postDetail.user.last_name}
+                </p>
+              </Link>
               <p>{postDetail.user.created_at}</p>
+
+              <div className="deletechangebutton-container">
+                <DeleteChangeButton
+                  buttonData={postDetail}
+                  clickFunctie={DELETE_POST}
+                  buttonText="Delete post"
+                />
+                <DeleteChangeButton
+                  buttonData={postDetail}
+                  clickFunctie={SET_EDIT_POST}
+                  buttonText="Edit post"
+                />
+              </div>
             </div>
             <div className="grid-container__body">
               <p>{postDetail.body}</p>
@@ -48,16 +64,20 @@ class PostDetailPage extends Component {
               <h2>COMMENTS</h2>
             </div>
             <div className="grid-container__comment">
-              
               {/* Comment form */}
-              {this.props.auth.loggedIn === true ? <PostDetailCommentAdjust id={postDetail.id}/> : ""}
+              {this.props.auth.loggedIn === true ? (
+                <PostDetailCommentAdjust id={postDetail.id} />
+              ) : (
+                ""
+              )}
               {/* <input type="text" /> */}
-              
+
               <ul className="postdetail-page-container__commentlist">
                 {postDetailComments.map((comment) => (
-                  <PostDetailCommentItem 
-                  key={comment.id}
-                  commentData={comment}/>
+                  <PostDetailCommentItem
+                    key={comment.id}
+                    commentData={comment}
+                  />
                 ))}
               </ul>
             </div>

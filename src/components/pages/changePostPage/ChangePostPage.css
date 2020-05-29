@@ -1,0 +1,18 @@
+.changepost-container{
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.changepost-container--register{
+  background-color: #C7E0F0;
+}
+
+
+.changepost-container__form{
+  width: 50vw;
+  height: 40vh;
+  /* background-color: pink; */
+}

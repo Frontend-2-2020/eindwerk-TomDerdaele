@@ -1,0 +1,58 @@
+.comment-textArea-input-wrapper {
+  position: relative;
+  width: 100%;
+  margin: 0rem 0rem 2rem 0rem;
+  padding: 0;
+}
+
+.comment-textArea {
+  height: 2rem;
+  width: 100%;
+  min-width: 100%;
+  font-family: raleway, sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 0;
+  border-radius: 0;
+  line-height: 20px;
+  background-color: transparent;
+  color: blue;
+  border: none;
+  outline: none;
+  border-bottom: 3px solid blue;
+  overflow: hidden;
+  resize: none;
+  margin-top: 3px
+
+}
+
+.comment-textArea::placeholder {
+  color: blue;
+}
+
+/* .comment-textArea:focus + .input-highlight {
+  border-top: 3px solid white;
+} */
+
+.comment-textArea--error {
+  color: #EB4511;
+  border-bottom: 3px solid #EB4511;
+}
+
+.comment-textArea--error:focus + .input-highlight {
+  border-top: 3px solid white;
+}
+
+.comment-textArea--error::placeholder {
+  color: #EB4511;
+}
+
+.comment-textArea__feedback {
+  color: #EB4511;
+  font-size: 0.8rem;
+  margin-top: 0.5rem;
+  position: absolute;
+  left: 0;
+  bottom: -20px;
+}

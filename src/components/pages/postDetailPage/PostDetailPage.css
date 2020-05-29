@@ -21,9 +21,12 @@
 }
 
 .postdetail-page-container__commentlist__item{
-  margin: 0.5rem 0;
+  margin: 1rem 0;
 }
 
+.deletechangebutton-container{
+  margin: .5rem 0;
+}
 
 .grid-container {
   /* background-color: lightPink; */

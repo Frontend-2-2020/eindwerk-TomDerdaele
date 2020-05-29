@@ -19,8 +19,7 @@ const PostDetailCommentAdjust = (props) => {
 
   const commentSchema = Yup.object().shape({
     body: Yup.string()
-      .min(2, "Use at least 2 characters")
-      .max(50, "Too Long!")
+      .min(2, 'Too Short!')
       .required("Required"),
   });
 
@@ -30,7 +29,6 @@ const PostDetailCommentAdjust = (props) => {
         initialValues={{ body: "" }}
         onSubmit={onSubmitHandler}
         validationSchema={commentSchema}
-        validateOnChange={false}
       >
         {(props) => <PostDetailCommentAdjustForm {...props} />}
       </Formik>

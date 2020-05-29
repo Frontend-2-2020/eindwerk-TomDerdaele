@@ -1,0 +1,111 @@
+/* TITEL CSS */
+.post-textarea-input-wrapper {
+  position: relative;
+  width: 100%;
+  margin: 0rem 0rem 2rem 0rem;
+  padding: 0;
+}
+
+.post-textarea {
+  height: 60px;
+  width: 100%;
+  min-width: 100%;
+  font-family: dinosaur, sans-serif;
+  font-style: italic;
+  font-weight: 600;
+  font-size: 2rem;
+  padding: 0;
+  border-radius: 0;
+  line-height: 2.4rem;
+  background-color: transparent;
+  color: blue;
+  border: none;
+  outline: none;
+  border-bottom: 3px solid blue;
+  overflow: hidden;
+  resize: none;
+  margin-top: 3px
+}
+
+.post-textarea::placeholder {
+  color: blue;
+}
+
+.post-textarea--error {
+  color: #EB4511;
+  border-bottom: 3px solid #EB4511;
+}
+
+.post-textarea--error:focus + .input-highlight {
+  border-top: 3px solid white;
+}
+
+.post-textarea--error::placeholder {
+  color: #EB4511;
+}
+
+.post-textarea__feedback {
+  color: #EB4511;
+  font-size: 0.8rem;
+  margin-top: 0.5rem;
+  position: absolute;
+  left: 0;
+  bottom: -20px;
+}
+
+
+/* BODY CSS */
+.post-textarea--body-input-wrapper {
+  position: relative;
+  width: 100%;
+  margin: 0rem 0rem 2rem 0rem;
+  padding: 0;
+}
+
+.post-textarea--body {
+  height: 2rem;
+  width: 100%;
+  min-width: 100%;
+  font-family: dinosaur, sans-serif;
+  font-style: italic;
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 0;
+  border-radius: 0;
+  line-height: 1.2rem;
+  background-color: transparent;
+  color: blue;
+  border: none;
+  outline: none;
+  border-bottom: 3px solid blue;
+  overflow: hidden;
+  resize: none;
+  margin-top: 3px
+}
+
+.post-textarea--body::placeholder {
+  color: blue;
+}
+
+.post-textarea--body--error {
+  color: #EB4511;
+  border-bottom: 3px solid #EB4511;
+}
+
+.post-textarea--body--error:focus + .input-highlight {
+  border-top: 3px solid white;
+}
+
+.post-textarea--body--error::placeholder {
+  color: #EB4511;
+}
+
+.post-textarea--body__feedback {
+  color: #EB4511;
+  font-size: 0.8rem;
+  margin-top: 0.5rem;
+  position: absolute;
+  left: 0;
+  bottom: -20px;
+}
+

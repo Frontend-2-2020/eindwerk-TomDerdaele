@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Form } from "formik";
-import "./PostDetailInputField.css";
-import BlabbleInputField from "../../../layout/inputfield/BlabbleInputField";
+import "./PostDetailCommentTextArea.css";
+import BlabbleTextArea from "../../../layout/inputfield/BlabbleTextArea";
 
 class PostDetailCommentAdjustForm extends Component {
   componentDidUpdate(prevProps) {
@@ -17,17 +17,17 @@ class PostDetailCommentAdjustForm extends Component {
   render() {
     return (
       <Form noValidate>
-        <BlabbleInputField
-          className="comment-input"
-          name="body"
+        <BlabbleTextArea
           type="text"
+          name="body"
           placeHolder="Add comment..."
-          borderColor="white"
+          className="comment-textArea"
+          height="2rem" // check CSS file voor juist getal
           {...this.props}
         />
         <button
           type="submit"
-          style={{ display: "block", backgroundColor: "pink" }}
+          style={{ display: "block", backgroundColor: "pink", marginTop: "1rem" }}
           disabled={this.props.isSubmitting}
         >
           {this.props.posts.setCommentForEdit ? "Save changes" : "Add Comment"}
