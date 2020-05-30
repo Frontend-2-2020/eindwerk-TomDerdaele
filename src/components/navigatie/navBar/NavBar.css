@@ -21,7 +21,3 @@
 .nav-container__links__link:hover{
   color: #EB4511
 }
-
-.nav-container__links__link--regular:hover {
-  cursor: pointer;
-}

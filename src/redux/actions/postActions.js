@@ -15,12 +15,16 @@ import {
 } from "./actionTypes";
 
 //ALLE POSTS OPHALEN
-export const getPosts = () => {
+export const getPosts = (page) => {
   return function (dispatch) {
-    API.get("api/posts").then((response) => {
+    API.get(
+      page && page > 1
+        ? `api/posts?page=${page}`
+        : "api/posts"
+    ).then((response) => {
       dispatch({
         type: GET_POSTS,
-        payload: response.data.data,
+        payload: response.data,
       });
     });
   };

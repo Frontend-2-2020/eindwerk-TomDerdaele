@@ -12,7 +12,9 @@ class ChangePostPageForm extends Component {
   }
 
   componentWillUnmount() {
-    this.props.clearSetEdit();
+    if (this.props.posts.setPostForEdit) {
+      this.props.clearSetEdit();
+    }
   }
 
   render() {

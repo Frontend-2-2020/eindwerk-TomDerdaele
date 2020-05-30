@@ -12,6 +12,7 @@ import {
   SET_EDIT_COMMENT,
   EDIT_COMMENT,
 } from "../actions/actionTypes";
+import { BASE_POSTSPAGE_URL } from "../../API";
 
 const initialState = {
   allposts: [],
@@ -19,6 +20,9 @@ const initialState = {
   postDetailComments: null,
   setPostForEdit: null,
   setCommentForEdit: null,
+  prevPage: null,
+  currentPage: null,
+  nextPage: null,
 };
 
 const postReducer = (state = initialState, { type, payload }) => {
@@ -27,7 +31,14 @@ const postReducer = (state = initialState, { type, payload }) => {
     case GET_POSTS:
       return {
         ...state,
-        allposts: payload,
+        allposts: payload.data,
+        currentPage: payload.current_page,
+        prevPage: parseInt(payload.prev_page_url
+          ? payload.prev_page_url.replace(BASE_POSTSPAGE_URL,"")
+          : payload.prev_page_url),
+        nextPage: parseInt(payload.next_page_url
+          ? payload.next_page_url.replace(BASE_POSTSPAGE_URL,"")
+          : payload.next_page_url),
       };
     case DELETE_POST:
       return {
@@ -68,6 +79,7 @@ const postReducer = (state = initialState, { type, payload }) => {
     case WEG_POSTDETAIL:
       return {
         ...state,
+        allposts: [],
         postDetail: null,
         postDetailComments: null,
       };

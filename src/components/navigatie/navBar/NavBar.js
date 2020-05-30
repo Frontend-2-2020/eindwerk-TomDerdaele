@@ -6,12 +6,18 @@ import "./NavBar.css";
 import BlabbleLogo from "../../layout/logo/BlabbleLogo";
 import { connect } from "react-redux";
 import { logoutActie } from "../../../redux/actions/authActions";
+import { getPosts } from "../../../redux/actions/postActions";
+import TextButton from "../../layout/buttons/textButton/TextButton";
 
 const NavBar = (props) => {
-  const { soort, auth } = props;
+  const { soort, auth, getPosts, logoutActie } = props;
 
   const logout = () => {
-    props.logoutActie();
+    logoutActie();
+  };
+
+  const latestResetHandler = () => {
+    getPosts();
   };
 
   return (
@@ -27,49 +33,44 @@ const NavBar = (props) => {
         {soort === "auth" ? (
           <div className="nav-container__links">
             {auth.loggedIn ? (
-              <div
-                className="nav-container__links__link nav-container__links__link--logout"
-                onClick={logout}
-              >
-                Logout
-              </div>
+              <TextButton
+                className="nav-container__links__link"
+                click={logout}
+                buttonText="logout"
+              />
             ) : (
-              <Link className="nav-container__links__link" to="/posts">
-                Visit as guest
+              <Link to="/posts">
+                <TextButton
+                  className="nav-container__links__link"
+                  buttonText="visit as guest"
+                />
               </Link>
             )}
           </div>
         ) : (
           <div className="nav-container__links">
-            {/* dit moet nog aangepast worden ifv loggedIn uit store */}
             {auth.loggedIn ? (
-              <div
-                className="nav-container__links__link nav-container__links__link--regular"
-                onClick={logout}
-              >
-                Logout
-              </div>
+              <TextButton
+                className="nav-container__links__link"
+                click={logout}
+                buttonText="logout"
+              />
             ) : (
-              <Link className="nav-container__links__link" to="/login">
-                Login
+              <Link to="/login">
+                <TextButton
+                  className="nav-container__links__link"
+                  buttonText="login"
+                />
               </Link>
             )}
 
-            <Link className="nav-container__links__link" to="/posts">
-              latest
+            <Link to="/posts">
+              <TextButton
+                className="nav-container__links__link"
+                click={latestResetHandler}
+                buttonText="latest blabs"
+              />
             </Link>
-            <div
-              className="nav-container__links__link nav-container__links__link--regular"
-              onClick={logout}
-            >
-              previous
-            </div>
-            <div
-              className="nav-container__links__link nav-container__links__link--regular"
-              onClick={logout}
-            >
-              next
-            </div>
           </div>
         )}
       </nav>
@@ -85,4 +86,4 @@ NavBar.propTypes = {
   soort: PropTypes.oneOf(["posts", "auth", "users"]).isRequired,
 };
 
-export default connect(mapStateToProps, { logoutActie })(NavBar);
+export default connect(mapStateToProps, { logoutActie, getPosts })(NavBar);

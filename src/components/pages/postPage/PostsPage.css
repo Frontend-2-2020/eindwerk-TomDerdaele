@@ -1,16 +1,36 @@
-.posts-page-container{
+.posts-page-container {
   position: absolute;
   height: 100vh;
   width: 100vw;
   /* background-color: thistle; */
 }
 
-.posts-page-container__bottomtext{
+.posts-page-container__bottomtext {
+  position: fixed;
+  left:0;
+  bottom: 0;
   display: flex;
   justify-content: center;
-	align-items: flex-end;
   height: 10vh;
   padding: 0 0 2rem 0;
   width: 100vw;
   /* background-color: thistle; */
+}
+
+.posts-page-container__bottomtext__item{
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  height: 100%;
+  width: 20vw;
+  /* background-color: blue; */
+}
+
+.posts-page-container__bottomtext__item__link{
+  color: #5c7e9c;
+}
+
+.posts-page-container__bottomtext__item__link:hover {
+  cursor: pointer;
+  color: #EB4511;
 }
