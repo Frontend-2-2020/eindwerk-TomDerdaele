@@ -8,7 +8,7 @@ const UserRoutes = () => {
   return (
     <div>
       <NavBar soort="users" />
-      <Route path="/user/:id" component={UserDetailPage} />
+      <Route path="/users/:id" component={UserDetailPage} />
     </div>
   );
 };

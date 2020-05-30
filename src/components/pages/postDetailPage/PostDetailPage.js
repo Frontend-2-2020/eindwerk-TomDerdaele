@@ -37,7 +37,7 @@ class PostDetailPage extends Component {
               <h1>{postDetail.title}</h1>
             </div>
             <div className="grid-container__name">
-              <Link to={`/user/${postDetail.user_id}`}>
+              <Link to={`/users/${postDetail.user_id}`}>
                 <p>
                   {postDetail.user.first_name} {postDetail.user.last_name}
                 </p>

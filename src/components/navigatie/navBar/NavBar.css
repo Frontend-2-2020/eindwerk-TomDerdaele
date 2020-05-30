@@ -22,6 +22,6 @@
   color: #EB4511
 }
 
-.nav-container__links__link--logout:hover {
+.nav-container__links__link--regular:hover {
   cursor: pointer;
 }

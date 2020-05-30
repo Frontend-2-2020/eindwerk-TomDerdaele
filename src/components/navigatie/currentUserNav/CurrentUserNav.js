@@ -14,7 +14,7 @@ const CurrentUserNav = ({ auth: { currentUser, loggedIn }, logoutActie }) => {
     <Fragment>
       {loggedIn ? (
         <div className="currentuser-nav-container">
-          <Link to={`/user/${currentUser.id}`}>
+          <Link to={`/users/${currentUser.id}`}>
             <div
               className="currentuser-nav-container__avatar"
               style={{ backgroundImage: `url(${currentUser.avatar})` }}

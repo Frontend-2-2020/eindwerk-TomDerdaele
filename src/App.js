@@ -23,7 +23,7 @@ class App extends Component {
     return (
       <Router>
         <Switch>
-          <Route path="/user" component={UserRoutes} />
+          <Route path="/users" component={UserRoutes} />
           <Route path="/posts" component={PostsRoutes} />
           <Route path="/" component={OnboardingRoutes} />
         </Switch>

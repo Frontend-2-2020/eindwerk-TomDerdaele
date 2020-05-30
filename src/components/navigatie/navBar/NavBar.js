@@ -44,7 +44,7 @@ const NavBar = (props) => {
             {/* dit moet nog aangepast worden ifv loggedIn uit store */}
             {auth.loggedIn ? (
               <div
-                className="nav-container__links__link nav-container__links__link--logout"
+                className="nav-container__links__link nav-container__links__link--regular"
                 onClick={logout}
               >
                 Logout
@@ -58,6 +58,18 @@ const NavBar = (props) => {
             <Link className="nav-container__links__link" to="/posts">
               latest
             </Link>
+            <div
+              className="nav-container__links__link nav-container__links__link--regular"
+              onClick={logout}
+            >
+              previous
+            </div>
+            <div
+              className="nav-container__links__link nav-container__links__link--regular"
+              onClick={logout}
+            >
+              next
+            </div>
           </div>
         )}
       </nav>
