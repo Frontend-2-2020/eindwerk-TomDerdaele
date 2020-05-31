@@ -7,12 +7,13 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-bottom: 20vh;
+  padding: 2rem;
+  /* padding-bottom: 20vh; */
 }
 
 .landingpage-container__title{
-  font-size: 4rem;
-  line-height: 4.5rem;
+  font-size: 3rem;
+  line-height: 3.6rem;
   font-weight: 700;
   color: #EB4511;
   text-align: center;
@@ -22,7 +23,7 @@
   position: absolute;
   text-align: center;
   font-size: 1rem;
-  bottom: 4rem;
+  bottom: 3rem;
 }
 
 /* ///////////////// */

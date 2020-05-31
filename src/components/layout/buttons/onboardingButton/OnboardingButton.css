@@ -1,3 +1,7 @@
+/* //////////// */
+/* MOBILE FIRST */
+/* //////////// */
+
 .onboarding-button{
   position: absolute;
   display: flex;
@@ -7,8 +11,8 @@
   left: 0;
   right: 0;
   margin: 0 auto;
-  height: 140px;
-  width: 140px;
+  height: 80px;
+  width: 80px;
   background-color: #83C0E6;
   border-radius: 50%;
 }
@@ -19,11 +23,82 @@
 
 .onboarding-button__text{
   text-align: center;
-  font-size: 2.5rem;
+  font-size: 1.5rem;
   font-weight: 700;
   font-style: italic;
   transform: rotate(-10deg);
   color: white;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
 }
 
+/* ///////////////// */
+/* MOBILE LANDSCAPE */
+/* /////////////// */
+
+@media screen and (min-width: 415px){
+  
+  .onboarding-button{
+    top: 60vh;
+    height: 50px;
+    width: 50px;
+  }
+  
+  .onboarding-button__text{
+    font-size: 1rem;
+    margin-bottom: 7px;
+  }
+}
+
+/* //////////////////////// */
+/* MOBILE LANDSCAPE NextGen */
+/* //////////////////////// */
+
+@media screen and (min-width: 700px){
+  
+  .onboarding-button{
+    top: 60vh;
+    height: 80px;
+    width: 80px;
+  }
+  
+  .onboarding-button__text{
+    font-size: 1.5rem;
+    margin-bottom: 8px;
+  }
+}
+
+/* ///////////////// */
+/* TABLET PORTRAIT */
+/* /////////////// */
+
+@media screen and (min-width: 750px){
+  
+  .onboarding-button{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 70vh;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    height: 140px;
+    width: 140px;
+    background-color: #83C0E6;
+    border-radius: 50%;
+  }
+  
+  .onboarding-button:hover{
+    cursor: pointer;
+  }
+  
+  .onboarding-button__text{
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 700;
+    font-style: italic;
+    transform: rotate(-10deg);
+    color: white;
+    margin-bottom: 10px;
+  }
+}

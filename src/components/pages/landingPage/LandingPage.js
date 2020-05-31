@@ -10,7 +10,8 @@ const LandingPage = ({auth:{loggedIn, currentUser}}) => {
     <Fragment>
       <div className="landingpage-container">
         <h1 className="landingpage-container__title">
-          Blab about <br /> anything!
+          {/* Blab about <br /> anything! */}
+          Blab about anything!
         </h1>
         <p className="landingpage-container__tagline">
         {loggedIn ? "Hi " + currentUser.first_name + ", blab along with us!" : "Join for free and blab along with us…"}
