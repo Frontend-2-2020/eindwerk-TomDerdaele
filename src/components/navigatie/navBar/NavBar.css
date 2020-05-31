@@ -19,5 +19,6 @@
 }
 
 .nav-container__links__link:hover{
+  cursor: pointer;
   color: #EB4511
 }

@@ -17,7 +17,7 @@ import {
 import "./DeleteChangeButton.css"
 
 const DeleteChangeButton = (props) => {
-  const { auth, buttonData, buttonText, clickFunctie } = props;
+  const { auth, buttonData, buttonText, clickFunctie, doorverwijsPath }= props;
 
   const history = useHistory();
 
@@ -25,7 +25,7 @@ const DeleteChangeButton = (props) => {
     if (clickFunctie === DELETE_POST) {
       props.deletePost(buttonData.id, (path) => {
         history.push(path);
-      });
+      }, doorverwijsPath);
     } else if (clickFunctie === SET_EDIT_POST) {
       props.setEditPost(buttonData);
       history.push("/posts/add");
@@ -60,6 +60,7 @@ DeleteChangeButton.propTypes = {
     DELETE_COMMENT,
     SET_EDIT_COMMENT,
   ]).isRequired,
+  doorverwijsPath: PropTypes.string,
 };
 
 export default connect(mapStateToProps, {

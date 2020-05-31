@@ -31,14 +31,14 @@ export const getPosts = (page) => {
 };
 
 //DELETE EIGEN POST
-export const deletePost = (id, doorverwijzen) => {
+export const deletePost = (id, doorverwijzen, doorverwijsPath) => {
   return function (dispatch) {
     API.delete(`api/posts/${id}`).then((response) => {
       dispatch({
         type: DELETE_POST,
         payload: id,
       });
-      doorverwijzen("/posts");
+      doorverwijzen(doorverwijsPath);
     });
   };
 };

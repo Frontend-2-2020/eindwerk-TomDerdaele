@@ -6,19 +6,19 @@ import "./NavBar.css";
 import BlabbleLogo from "../../layout/logo/BlabbleLogo";
 import { connect } from "react-redux";
 import { logoutActie } from "../../../redux/actions/authActions";
-import { getPosts } from "../../../redux/actions/postActions";
+// import { getPosts } from "../../../redux/actions/postActions";
 import TextButton from "../../layout/buttons/textButton/TextButton";
 
 const NavBar = (props) => {
-  const { soort, auth, getPosts, logoutActie } = props;
+  const { soort, auth, logoutActie } = props;
 
   const logout = () => {
     logoutActie();
   };
 
-  const latestResetHandler = () => {
-    getPosts();
-  };
+  // const latestResetHandler = () => {
+  //   getPosts();
+  // };
 
   return (
     <Fragment>
@@ -67,8 +67,8 @@ const NavBar = (props) => {
             <Link to="/posts">
               <TextButton
                 className="nav-container__links__link"
-                click={latestResetHandler}
-                buttonText="latest blabs"
+                // click={latestResetHandler}
+                buttonText="blabs"
               />
             </Link>
           </div>
@@ -86,4 +86,4 @@ NavBar.propTypes = {
   soort: PropTypes.oneOf(["posts", "auth", "users"]).isRequired,
 };
 
-export default connect(mapStateToProps, { logoutActie, getPosts })(NavBar);
+export default connect(mapStateToProps, { logoutActie })(NavBar);

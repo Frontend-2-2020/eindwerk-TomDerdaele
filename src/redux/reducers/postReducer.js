@@ -48,7 +48,9 @@ const postReducer = (state = initialState, { type, payload }) => {
     case ADD_POST:
       return {
         ...state,
-        allposts: [payload, ...state.allposts],
+        // allposts: [payload, ...state.allposts],
+        allposts: [],
+        currentPage: null,
       };
     case SET_EDIT_POST:
       return {
@@ -79,7 +81,7 @@ const postReducer = (state = initialState, { type, payload }) => {
     case WEG_POSTDETAIL:
       return {
         ...state,
-        allposts: [],
+        // allposts: [],
         postDetail: null,
         postDetailComments: null,
       };

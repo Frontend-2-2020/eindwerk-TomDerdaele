@@ -13,6 +13,10 @@ class PostsPage extends Component {
     this.props.getPosts(this.props.posts.currentPage);
   }
 
+  latestHandler = () => {
+    this.props.getPosts();
+  };
+
   nextPageHandler = () => {
     this.props.getPosts(this.props.posts.nextPage);
   };
@@ -26,42 +30,55 @@ class PostsPage extends Component {
   };
 
   render() {
-    const { allposts, nextPage, prevPage } = this.props.posts;
+    const { allposts, nextPage, prevPage, currentPage } = this.props.posts;
 
     return (
       <div className="posts-page-container">
         {allposts.length ? (
           <PostsSlider allposts={allposts} />
         ) : (
-          <h1>LOADING</h1>
+          <div className="posts-page-container__loadingbox">
+            <h1>loading...</h1>
+          </div>
         )}
 
         {/* Paginatie bar onderaan */}
         <div className="posts-page-container__bottomtext">
           <div className="posts-page-container__bottomtext__item">
-            {prevPage ? (
+            <p>scroll for more</p>
+          </div>
+        </div>
+
+        <div className="posts-page-container__pagineringbox">
+          <div className="posts-page-container__pagineringbox__item">
+            {currentPage > 1 ? (
               <TextButton
-                className={"posts-page-container__bottomtext__item__link"}
-                click={this.prevPageHandler}
-                buttonText="newer blabs"
+                className={"posts-page-container__pagineringbox__item__link"}
+                click={this.latestHandler}
+                buttonText="latest"
               />
             ) : null}
           </div>
-
-          <div className="posts-page-container__bottomtext__item">
-            <p>scroll for more</p>
+          <div className="posts-page-container__pagineringbox__item">
+            {prevPage ? (
+              <TextButton
+                className={"posts-page-container__pagineringbox__item__link"}
+                click={this.prevPageHandler}
+                buttonText="newer"
+              />
+            ) : null}
           </div>
-
-          <div className="posts-page-container__bottomtext__item">
+          <div className="posts-page-container__pagineringbox__item">
             {nextPage ? (
               <TextButton
-                className="posts-page-container__bottomtext__item__link"
+                className="posts-page-container__pagineringbox__item__link"
                 click={this.nextPageHandler}
-                buttonText="olderblabs"
+                buttonText="older"
               />
             ) : null}
           </div>
         </div>
+
         {this.props.auth.loggedIn === true ? (
           <SmallRoundButton click={this.pushHandler} soort="addpost">
             <p>add</p>

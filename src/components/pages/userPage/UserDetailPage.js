@@ -8,12 +8,21 @@ import {
 } from "../../../redux/actions/userActions";
 
 import "./UserDetailPage.css";
+import { DELETE_POST } from "../../../redux/actions/actionTypes";
+import DeleteChangeButton from "../../layout/buttons/deleteChangeButton/DeleteChangeButton";
 
 
 class UserDetailPage extends Component {
   componentDidMount() {
     this.props.getUserDetail(this.props.match.params.id,(path) => {
       this.props.history.push(path)} );
+  }
+
+  componentDidUpdate(prevProps) {
+    // console.log(this.props.location.key);
+    if (prevProps.location.key !== this.props.location.key) {
+      this.props.getUserDetail(this.props.match.params.id);
+    }
   }
 
   componentWillUnmount() {
@@ -50,6 +59,12 @@ class UserDetailPage extends Component {
                     <Link to={`/posts/${blog_post.id}`}>
                       <p>{blog_post.title}</p>
                     </Link>
+                    <DeleteChangeButton
+                  buttonData={blog_post}
+                  clickFunctie={DELETE_POST}
+                  buttonText="Delete post"
+                  doorverwijsPath={`/users/${userData.id}`}
+                />
                   </li>
                 ))}
               </ul>

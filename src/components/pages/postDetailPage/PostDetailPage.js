@@ -49,6 +49,8 @@ class PostDetailPage extends Component {
                   buttonData={postDetail}
                   clickFunctie={DELETE_POST}
                   buttonText="Delete post"
+                  doorverwijsPath="/posts"
+
                 />
                 <DeleteChangeButton
                   buttonData={postDetail}
