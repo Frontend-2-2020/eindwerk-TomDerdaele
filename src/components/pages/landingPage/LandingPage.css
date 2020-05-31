@@ -2,24 +2,24 @@
 /* MOBILE FIRST */
 /* //////////// */
 
-.landingpage-container{
+.landingpage-container {
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 2rem;
-  /* padding-bottom: 20vh; */
 }
 
-.landingpage-container__title{
+.landingpage-container__title {
+  width: 100%;
   font-size: 3rem;
-  line-height: 3.6rem;
+  line-height: 3.5rem;
   font-weight: 700;
-  color: #EB4511;
+  color: #eb4511;
   text-align: center;
 }
 
-.landingpage-container__tagline{
+.landingpage-container__tagline {
   position: absolute;
   text-align: center;
   font-size: 1rem;
@@ -30,26 +30,23 @@
 /* MOBILE LANDSCAPE */
 /* /////////////// */
 
-@media screen and (min-width: 415px){
-  
-  /* .landingpage-container__title{
-    font-size: 6rem;
-    line-height: 6.5rem;
-  } */
+@media screen and (min-width: 415px) {
+  .landingpage-container__tagline {
+    bottom: 2rem;
+  }
 }
 
 /* ///////////////// */
 /* TABLET PORTRAIT */
 /* /////////////// */
 
-@media screen and (min-width: 750px){
-  
-  .landingpage-container__title{
+@media screen and (min-width: 750px) {
+  .landingpage-container__title {
     font-size: 7rem;
     line-height: 7.5rem;
   }
 
-  .landingpage-container__tagline{
+  .landingpage-container__tagline {
     font-size: 1.5rem;
     bottom: 3rem;
   }
@@ -59,11 +56,11 @@
 /* TABLET LANDSCAPE*/
 /* ////////////// */
 
-@media screen and (min-width: 996px) {
-  
-  .landingpage-container__title{
-    font-size: 10rem;
-    line-height: 10.5rem;
+@media screen and (min-width: 992px) {
+  .landingpage-container__title {
+    font-size: 8rem;
+    line-height: 8.5rem;
+    padding-bottom: 6rem;
   }
 }
 
@@ -72,13 +69,15 @@
 /* //////////////// */
 
 @media screen and (min-width: 1300px) {
-  
-  .landingpage-container__title{
+  .landingpage-container__title {
+    width: 75%;
+    margin-left: auto;
+    margin-right: auto;
     font-size: 10rem;
     line-height: 10.5rem;
   }
-  
-  .landingpage-container__tagline{
+
+  .landingpage-container__tagline {
     bottom: 3rem;
   }
 }

@@ -5,12 +5,12 @@ import "./SmallRoundButton.css"
 
 const SmallRoundButton = ({children, click, soort}) => {
   return (
-    <button
+    <div
       className={`small-round-button small-round-button--${soort}`}
       onClick={click}
     >
       {children}
-    </button>
+    </div>
   );
 };
 

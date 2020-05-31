@@ -6,7 +6,6 @@ import "./NavBar.css";
 import BlabbleLogo from "../../layout/logo/BlabbleLogo";
 import { connect } from "react-redux";
 import { logoutActie } from "../../../redux/actions/authActions";
-// import { getPosts } from "../../../redux/actions/postActions";
 import TextButton from "../../layout/buttons/textButton/TextButton";
 
 const NavBar = (props) => {
@@ -15,10 +14,6 @@ const NavBar = (props) => {
   const logout = () => {
     logoutActie();
   };
-
-  // const latestResetHandler = () => {
-  //   getPosts();
-  // };
 
   return (
     <Fragment>
@@ -31,7 +26,8 @@ const NavBar = (props) => {
         </Link>
 
         {soort === "auth" ? (
-          <div className="nav-container__links">
+          // VERSIE 1 voor AUTH PAGINAS
+          <div className="nav-container__links nav-container__links--auth">
             {auth.loggedIn ? (
               <TextButton
                 className="nav-container__links__link"
@@ -48,6 +44,7 @@ const NavBar = (props) => {
             )}
           </div>
         ) : (
+          // VERSIE 2 voor ANDERE PAGINAS
           <div className="nav-container__links">
             {auth.loggedIn ? (
               <TextButton

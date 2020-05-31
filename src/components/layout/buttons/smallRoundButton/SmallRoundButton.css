@@ -1,4 +1,9 @@
-.small-round-button{
+/* //////////// */
+/* MOBILE FIRST */
+/* //////////// */
+
+/* BASIS */
+.small-round-button {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -7,30 +12,106 @@
   border-radius: 50%;
 }
 
-.small-round-button:hover{
+.small-round-button:hover {
   cursor: pointer;
-  background-color: #26284A;
+  background-color: #eb4511;
 }
 
-.small-round-button:focus{
-  background-color: #EB4511;
+.small-round-button:focus {
+  background-color: #eb4511;
   border: none;
   outline: none;
 }
 
-.small-round-button--logout{
+/* VERSIES */
+.small-round-button--logout {
   position: absolute;
   top: 0rem;
   right: 0rem;
-  width: 50px;
-  height: 50px;
+  width: 3rem;
+  height: 3rem;
 }
 
-.small-round-button--addpost{
+.small-round-button--addpost {
   position: fixed;
-  top: 2rem;
-  right: 2rem;
-  width: 50px;
-  height: 50px;
+  top: 1rem;
+  right: 1rem;
+  width: 3rem;
+  height: 3rem;
   z-index: 200;
+}
+
+/* ///////////////// */
+/* MOBILE LANDSCAPE */
+/* /////////////// */
+
+@media screen and (min-width: 415px) {
+  /* VERSIES */
+  .small-round-button--logout {
+    position: absolute;
+    top: 0rem;
+    right: 0rem;
+    width: 3rem;
+    height: 3rem;
+  }
+}
+
+/* ///////////////// */
+/* TABLET PORTRAIT */
+/* /////////////// */
+
+@media screen and (min-width: 750px) {
+  /* VERSIES */
+  .small-round-button--logout {
+    position: absolute;
+    top: 0rem;
+    right: 0rem;
+    width: 3rem;
+    height: 3rem;
+  }
+
+  .small-round-button--addpost {
+    top: 3rem;
+    right: 3rem;
+  }
+}
+
+/* //////////////// */
+/* TABLET LANDSCAPE*/
+/* ////////////// */
+
+@media screen and (min-width: 992px) {
+  /* VERSIES */
+  .small-round-button--logout {
+    position: absolute;
+    top: 0rem;
+    right: 0rem;
+    width: 3rem;
+    height: 3rem;
+  }
+
+  .small-round-button--addpost {
+    top: 3rem;
+    right: 4rem;
+  }
+}
+
+/* //////////////// */
+/* LAP- and DESKTOP */
+/* //////////////// */
+
+@media screen and (min-width: 1300px) {
+  /* VERSIES */
+  .small-round-button--logout {
+    position: absolute;
+    top: 0rem;
+    right: 0rem;
+    width: 3rem;
+    height: 3rem;
+  }
+
+  .small-round-button--addpost {
+    top: 3rem;
+    right: 5rem;
+  }
 }

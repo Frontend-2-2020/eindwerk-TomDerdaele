@@ -5,6 +5,7 @@ import { connect } from "react-redux";
 import { getPosts } from "../../../redux/actions/postActions";
 
 import "./PostsPage.css";
+
 import SmallRoundButton from "../../layout/buttons/smallRoundButton/SmallRoundButton";
 import TextButton from "../../layout/buttons/textButton/TextButton";
 
