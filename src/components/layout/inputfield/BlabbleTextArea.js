@@ -1,26 +1,28 @@
 import React from "react";
 import { Field, ErrorMessage } from "formik";
 import PropTypes from "prop-types";
+import TextareaAutosize from "react-textarea-autosize";
 
 const BlabbleTextArea = (props) => {
-  const { type, name, placeHolder, className, values, height } = props;
+  // const { type, name, placeHolder, className, values, height } = props;
+  const { type, name, placeHolder, className } = props;
 
-  const emptyHeight = values[name] === "" ? { height: height } : null;
+  // const emptyHeight = values[name] === "" ? { height: height } : null;
 
-  const autosize = ({ target }) => {
-    setTimeout(() => {
-      target.style.cssText = "height:" + (target.scrollHeight + 3) + "px";
-    }, 0);
-  };
+  // const autosize = ({ target }) => {
+  //   setTimeout(() => {
+  //     target.style.cssText = "height:" + (target.scrollHeight + 3) + "px";
+  //   }, 0);
+  // };
 
   return (
     <div className={className +"-input-wrapper"}>
       <Field id={name} {...props}>
         {({ field, meta }) => (
-          <textarea
+          <TextareaAutosize
             {...field}
-            style={emptyHeight}
-            onKeyDown={autosize}
+            // style={emptyHeight}
+            // onKeyDown={autosize}
             autoComplete="off"
             type={type}
             placeholder={placeHolder}
