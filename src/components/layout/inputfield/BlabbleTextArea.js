@@ -47,8 +47,8 @@ BlabbleTextArea.propTypes = {
   name: PropTypes.string.isRequired,
   placeHolder: PropTypes.string.isRequired,
   className: PropTypes.string.isRequired,
-  values: PropTypes.object.isRequired,
-  height: PropTypes.string.isRequired
+  // values: PropTypes.object.isRequired,
+  // height: PropTypes.string.isRequired
 };
 
 export default BlabbleTextArea;
