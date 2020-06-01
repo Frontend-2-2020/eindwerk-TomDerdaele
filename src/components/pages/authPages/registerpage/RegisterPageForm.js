@@ -1,6 +1,7 @@
 import React from "react";
 import { Form } from "formik";
 import BlabbleInputField from "../../../layout/inputfield/BlabbleInputField";
+import OnboardingButton from "../../../layout/buttons/onboardingButton/OnboardingButton";
 
 const RegisterPageForm = (props) => {
   return (
@@ -39,7 +40,11 @@ const RegisterPageForm = (props) => {
           borderColor="#C7E0F0"
           {...props}
         />
-        <button type="submit">Join!</button>
+        <OnboardingButton type="submit">
+          <p>Join!</p>
+        </OnboardingButton>
+
+        {/* <button type="submit">Join!</button> */}
       </Form>
   );
 };

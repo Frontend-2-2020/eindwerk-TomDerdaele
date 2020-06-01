@@ -114,7 +114,7 @@ select:-webkit-autofill:focus {
   }
 
   .authfield__input-wrapper {
-    margin: 2rem auto;
+    margin: 1rem auto;
   }
 
   .authfield {

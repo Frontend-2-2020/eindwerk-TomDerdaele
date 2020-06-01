@@ -7,12 +7,12 @@
   display: flex;
   justify-content: center;
 	align-items: center;
-  top: 70vh;
+  top: 65vh;
   left: 0;
   right: 0;
   margin: 0 auto;
-  height: 75px;
-  width: 75px;
+  height: 100px;
+  width: 100px;
   background-color: #83C0E6;
   border-radius: 50%;
 }
@@ -27,7 +27,7 @@
 
 .onboarding-button__text{
   text-align: center;
-  font-size: 1.5rem;
+  font-size: 2rem;
   font-weight: 700;
   font-style: italic;
   transform: rotate(-10deg);
@@ -42,6 +42,7 @@
 @media screen and (min-width: 750px){
   
   .onboarding-button{
+    top: 65vh;
     height: 140px;
     width: 140px;
   }

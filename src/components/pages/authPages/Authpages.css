@@ -3,12 +3,14 @@
 /* //////////// */
 
 .authpage-container {
+  position: fixed;
+  width: 100%;
   height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+	justify-content: flex-start;
   align-items: center;
-  padding: 1rem;
+  padding: 15rem 2rem 0rem 2rem;
 }
 
 .authpage-container--register {
@@ -24,7 +26,7 @@
 
 .authpage-container__link {
   width: 100%;
-  font-size: 1rem;
+  font-size: 0.9rem;
 }
 
 .authpage-container__link__tagline{
@@ -48,7 +50,12 @@
 
 @media screen and (min-width: 750px) {
   .authpage-container {
-    padding: 1rem 15vw;
+    padding: 25vh 15vw 0rem 15vw
+  }
+
+  .authpage-container__form {
+    width: 100%;
+    padding-bottom: 1rem;
   }
 
   .authpage-container__link {
@@ -63,7 +70,7 @@
 
 @media screen and (min-width: 992px) {
   .authpage-container {
-    padding: 1rem 20vw;
+    padding: 20vh 20vw 0rem 20vw
   }
 }
 
@@ -73,6 +80,6 @@
 
 @media screen and (min-width: 1300px) {
   .authpage-container {
-    padding: 1rem 28vw;
+    padding: 20vh 28vw 0rem 28vw
   }
 }

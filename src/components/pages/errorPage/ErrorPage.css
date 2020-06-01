@@ -3,11 +3,14 @@
 /* //////////// */
 
 .errorpage-container {
+  position: fixed;
+  width: 100%;
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 2rem;
+  padding-bottom: 12rem;
 }
 
 .errorpage-container__title {
@@ -25,7 +28,7 @@
 
 @media screen and (min-width: 750px) {
   .errorpage-container {
-    width: 80%;
+    width: 100%;
     margin-left: auto;
     margin-right: auto;
     padding: 4rem;
