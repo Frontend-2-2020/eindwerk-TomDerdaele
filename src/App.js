@@ -11,17 +11,17 @@ import "./stylesGlobal/typoBasic.css";
 import OnboardingRoutes from "./components/routing/OnboardingRoutes";
 import PostsRoutes from "./components/routing/PostsRoutes";
 import UserRoutes from "./components/routing/UserRoutes";
-
+import LockMobileLandscape from "./components/layout/lockMobileLandscape/LockMobileLandscape";
 
 class App extends Component {
-
-  componentDidMount(){
-    this.props.checkOnLoad()
+  componentDidMount() {
+    this.props.checkOnLoad();
   }
-  
+
   render() {
     return (
       <Router>
+        <LockMobileLandscape />
         <Switch>
           <Route path="/users" component={UserRoutes} />
           <Route path="/posts" component={PostsRoutes} />
@@ -31,4 +31,4 @@ class App extends Component {
     );
   }
 }
-export default connect(null, {checkOnLoad})(App);
+export default connect(null, { checkOnLoad })(App);

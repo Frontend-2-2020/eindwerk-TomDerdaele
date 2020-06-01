@@ -16,7 +16,6 @@
 
 .changepost-container__form {
   width: 100%;
-  /* background-color: lightblue; */
   padding: 2rem;
 }
 
@@ -34,19 +33,13 @@
 .changepost-container__form__button:hover {
   color: red;
 }
-/* ///////////////// */
-/* MOBILE LANDSCAPE */
-/* /////////////// */
-
-@media screen and (min-width: 415px) {
-  .changepost-container__form {
-    padding: 0rem 10vw 0rem 10vw;
-  }
+.changepost-container__form__button:focus {
+  outline: none;
 }
 
-/* ///////////////// */
-/* TABLET PORTRAIT */
-/* /////////////// */
+/* ////////////////////// */
+/* TABLET PORTRAIT AND UP */
+/* ////////////////////// */
 
 @media screen and (min-width: 750px) {
   .changepost-container {
@@ -63,15 +56,3 @@
     font-size: 3rem;
   }
 }
-
-/* //////////////// */
-/* TABLET LANDSCAPE*/
-/* ////////////// */
-
-/* @media screen and (min-width: 992px) {} */
-
-/* //////////////// */
-/* LAP- and DESKTOP */
-/* //////////////// */
-
-/* @media screen and (min-width: 1300px) {} */

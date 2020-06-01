@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from "react";
 import { connect } from "react-redux";
 import { CLEAR_ERROR } from "../../../redux/actions/actionTypes";
+import { Link } from "react-router-dom";
 
 import "./ErrorPage.css";
 import OnboardingButton from "../../layout/buttons/onboardingButton/OnboardingButton";
@@ -20,9 +21,11 @@ class ErrorPage extends Component {
             {error ? error : "PAGE NOT FOUND"}
           </h1>
         </div>
-        <OnboardingButton path="/">
-          <p>retry!</p>
-        </OnboardingButton>
+        <Link to="/">
+          <OnboardingButton>
+            <p>retry!</p>
+          </OnboardingButton>
+        </Link>
       </Fragment>
     );
   }

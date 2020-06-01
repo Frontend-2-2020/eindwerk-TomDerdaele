@@ -1,19 +1,23 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Link } from "react-router-dom";
 import "./OnboardingButton.css";
 
-const OnboardingButton = ({ children, path }) => {
+const OnboardingButton = ({ children, type, onClick }) => {
   return (
-    <Link to={path} className="onboarding-button dinosaur">
+    <button
+      type={type ? type : "button"}
+      onClick={onClick}
+      className="onboarding-button dinosaur"
+    >
       <div className="dinosaur onboarding-button__text">{children}</div>
-    </Link>
+    </button>
   );
 };
 
 OnboardingButton.propTypes = {
   children: PropTypes.element.isRequired,
-  path: PropTypes.string.isRequired,
+  type: PropTypes.oneOf(["button", "submit", "reset"]),
+  onClick: PropTypes.func,
 };
 
 export default OnboardingButton;

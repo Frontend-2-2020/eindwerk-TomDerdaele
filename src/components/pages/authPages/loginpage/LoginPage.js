@@ -6,7 +6,6 @@ import { loginActie } from "../../../../redux/actions/authActions";
 
 import * as Yup from "yup";
 import "../Authpages.css";
-import "../AuthInputField.css";
 
 import LoginPageForm from "./LoginPageForm";
 
@@ -47,9 +46,16 @@ const LoginPage = (props) => {
       </div>
       <div className="authpage-container__link">
         {auth.signupSucces ? (
-          "Just confirm your password and Blab!"
+          <p className="authpage-container__link__tagline">Just confirm your password and Blab!</p>
         ) : (
-          <Link to="/register">No account yet? Please join.</Link>
+          <Link to="/register">
+            <p className="authpage-container__link__btn">
+              No account yet?{" "}
+              <span className="authpage-container__link__btn--uderline">
+                Please join here first...
+              </span>
+            </p>
+          </Link>
         )}
       </div>
     </div>

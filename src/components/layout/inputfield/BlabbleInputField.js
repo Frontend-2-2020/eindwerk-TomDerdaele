@@ -1,6 +1,7 @@
 import React from "react";
 import { Field, ErrorMessage } from "formik";
 import PropTypes from "prop-types";
+import "./BlabbleInputField.css"
 
 const BlabbleInputField = (props) => {
   const { type, name, placeHolder, values, className, borderColor } = props;

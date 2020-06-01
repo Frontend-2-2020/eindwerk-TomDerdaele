@@ -5,7 +5,6 @@ import RegisterPageForm from './RegisterPageForm';
 
 import { connect } from 'react-redux';
 import { registerActie } from '../../../../redux/actions/authActions';
-// import PropTypes from 'prop-types';
 
 const RegisterPage = props => {
   const registerSchema = Yup.object().shape({
@@ -44,9 +43,5 @@ const RegisterPage = props => {
     </div>
   );
 };
-
-// RegisterPage.propTypes = {
-  
-// };
 
 export default connect(null, {registerActie})(RegisterPage);

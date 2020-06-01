@@ -1,3 +1,7 @@
+/* //////////// */
+/* MOBILE FIRST */
+/* //////////// */
+
 input:-webkit-autofill::first-line,
 input:-webkit-autofill,
 input:-webkit-autofill:hover,
@@ -9,7 +13,7 @@ select:-webkit-autofill,
 select:-webkit-autofill:hover,
 select:-webkit-autofill:focus {
   border-bottom: 3px solid #0b2a45;
-  font-size: 2rem;
+  font-size: 1rem;
   font-family: raleway, sans-serif;
   font-style: normal;
   font-weight: 600;
@@ -20,18 +24,17 @@ select:-webkit-autofill:focus {
 .authfield__input-wrapper {
   position: relative;
   width: 100%;
-  margin: 2rem auto;
+  margin: 1.5rem auto;
   padding: 0;
-  background-color: yellow;
 }
 
 .authfield {
-  height: 4rem;
+  height: 2rem;
   width: 100%;
   font-family: raleway, sans-serif;
   font-style: normal;
   font-weight: 600;
-  font-size: 2rem;
+  font-size: 1rem;
   padding: 0;
   border-radius: 0;
   background-color: transparent;
@@ -49,8 +52,8 @@ select:-webkit-autofill:focus {
 }
 
 .authfield--error {
-  color: #EB4511;
-  border-bottom: 3px solid #EB4511;
+  color: #eb4511;
+  border-bottom: 3px solid #eb4511;
 }
 
 .authfield--error:focus + .input-highlight {
@@ -58,14 +61,14 @@ select:-webkit-autofill:focus {
 }
 
 .authfield--error::placeholder {
-  color: #EB4511;
+  color: #eb4511;
 }
 
 .authfield__input-highlight {
   font-family: raleway, sans-serif;
   font-style: normal;
   font-weight: 600;
-  font-size: 2rem;
+  font-size: 1rem;
   user-select: none;
   border-top: 3px solid white;
   position: absolute;
@@ -79,9 +82,52 @@ select:-webkit-autofill:focus {
 .authfield__feedback {
   position: absolute;
   left: 0;
-  top: 4rem;
-  font-size: 1rem;
-  color: #EB4511;
+  top: 2rem;
+  font-size: 0.8rem;
+  color: #eb4511;
   margin-top: 0.5rem;
   z-index: 100;
+}
+
+/* ////////////////////// */
+/* TABLET PORTRAIT AND UP */
+/* ////////////////////// */
+
+@media screen and (min-width: 750px) {
+  input:-webkit-autofill::first-line,
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus,
+  textarea:-webkit-autofill,
+  textarea:-webkit-autofill:hover,
+  textarea:-webkit-autofill:focus,
+  select:-webkit-autofill,
+  select:-webkit-autofill:hover,
+  select:-webkit-autofill:focus {
+    border-bottom: 3px solid #0b2a45;
+    font-size: 2rem;
+    font-family: raleway, sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    -webkit-text-fill-color: #0b2a45;
+    transition: background-color 5000s ease-in-out 0s;
+  }
+
+  .authfield__input-wrapper {
+    margin: 2rem auto;
+  }
+
+  .authfield {
+    height: 4rem;
+    font-size: 2rem;
+  }
+
+  .authfield__input-highlight {
+    font-size: 2rem;
+  }
+
+  .authfield__feedback {
+    top: 4rem;
+    font-size: 1rem;
+  }
 }

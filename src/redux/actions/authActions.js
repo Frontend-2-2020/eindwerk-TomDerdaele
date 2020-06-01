@@ -5,6 +5,7 @@ import {
   LOGIN_ERROR,
   SIGNUP_OK,
   SIGNUP_ERROR,
+  SIGNUP_CLEAR,
 } from "./actionTypes";
 
 // Check als er iemand is ingelogd bij het laden van de applicatie
@@ -57,6 +58,12 @@ export const registerActie = (
         doorverwijzen("/error");
       });
   };
+};
+
+// REGISTER NOT COMPLETED om signupsSucces te clearen
+// wanneer de login pagina verlaten wordt alvorens de signup af te ronden
+export const clearSignupSucces = () => {
+  return { type: SIGNUP_CLEAR };
 };
 
 // LOGIN ACTION om token te krijgen

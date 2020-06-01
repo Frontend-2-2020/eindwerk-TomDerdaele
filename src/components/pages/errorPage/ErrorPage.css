@@ -20,25 +20,15 @@
 }
 
 /* ///////////////// */
-/* MOBILE LANDSCAPE */
-/* /////////////// */
-
-@media screen and (min-width: 415px) {
-  .errorpage-container {
-    width: 75%;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 4rem;
-  }
-}
-
-/* ///////////////// */
 /* TABLET PORTRAIT */
 /* /////////////// */
 
 @media screen and (min-width: 750px) {
   .errorpage-container {
     width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 4rem;
   }
 
   .errorpage-container__title {

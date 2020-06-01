@@ -3,9 +3,9 @@ import React, { Fragment } from "react";
 import "./LandingPage.css";
 import OnboardingButton from "../../layout/buttons/onboardingButton/OnboardingButton";
 import { connect } from "react-redux";
+import { Link } from "react-router-dom";
 
-const LandingPage = ({auth:{loggedIn, currentUser}}) => {
-
+const LandingPage = ({ auth: { loggedIn, currentUser } }) => {
   return (
     <Fragment>
       <div className="landingpage-container">
@@ -14,12 +14,16 @@ const LandingPage = ({auth:{loggedIn, currentUser}}) => {
           Blab about anything!
         </h1>
         <p className="landingpage-container__tagline">
-        {loggedIn ? "Hi " + currentUser.first_name + ", blab along with us!" : "Join for free and blab along with us…"}
+          {loggedIn
+            ? "Hi " + currentUser.first_name + ", blab along with us!"
+            : "Join for free and blab along with us…"}
         </p>
       </div>
-      <OnboardingButton path="/login">
-        <p>{loggedIn ? "blab!" : "join!"}</p> 
-      </OnboardingButton>
+      <Link to="/login">
+        <OnboardingButton>
+          <p>{loggedIn ? "Blab!" : "Join!"}</p>
+        </OnboardingButton>
+      </Link>
     </Fragment>
   );
 };
@@ -29,6 +33,3 @@ const mapStateToProps = (state) => ({
 });
 
 export default connect(mapStateToProps)(LandingPage);
-
-
-

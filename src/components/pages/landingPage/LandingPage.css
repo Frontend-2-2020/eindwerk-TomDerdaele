@@ -7,16 +7,16 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 2rem;
 }
 
 .landingpage-container__title {
   width: 100%;
-  font-size: 3rem;
-  line-height: 3.5rem;
+  font-size: 17vw;
+  line-height: 18vw;
   font-weight: 700;
   color: #eb4511;
   text-align: center;
+  padding: 1rem;
 }
 
 .landingpage-container__tagline {
@@ -27,16 +27,6 @@
 }
 
 /* ///////////////// */
-/* MOBILE LANDSCAPE */
-/* /////////////// */
-
-@media screen and (min-width: 415px) {
-  .landingpage-container__tagline {
-    bottom: 2rem;
-  }
-}
-
-/* ///////////////// */
 /* TABLET PORTRAIT */
 /* /////////////// */
 
@@ -44,6 +34,7 @@
   .landingpage-container__title {
     font-size: 7rem;
     line-height: 7.5rem;
+    padding: 1 3rem;
   }
 
   .landingpage-container__tagline {

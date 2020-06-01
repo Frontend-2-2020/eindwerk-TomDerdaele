@@ -36,10 +36,6 @@
   border-bottom: 3px solid #EB4511;
 }
 
-/* .post-textarea--error:focus + .input-highlight {
-  border-top: 3px solid white;
-} */
-
 .post-textarea--error::placeholder {
   color: #EB4511;
 }
@@ -52,7 +48,6 @@
   left: 0;
   bottom: -20px;
 }
-
 
 /* BODY CSS */
 .post-textarea--body-input-wrapper {
@@ -91,10 +86,6 @@
   color: #EB4511;
   border-bottom: 3px solid #EB4511;
 }
-
-/* .post-textarea--body--error:focus + .input-highlight {
-  border-top: 3px solid white;
-} */
 
 .post-textarea--body--error::placeholder {
   color: #EB4511;

@@ -22,6 +22,7 @@ export const EDIT_COMMENT = "EDIT_COMMENT"
 export const LOGIN_OK = "LOGIN_OK"
 export const LOGOUT_OK = "LOGOUT_OK"
 export const SIGNUP_OK = "SIGNUP_OK"
+export const SIGNUP_CLEAR = "SIGNUP_CLEAR"
 
 // User constantes
 export const GET_USERDETAIL = "GET_USERDETAIL"
