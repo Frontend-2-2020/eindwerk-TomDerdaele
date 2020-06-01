@@ -1,18 +1,77 @@
-.changepost-container{
-  height: 100vh;
+/* //////////// */
+/* MOBILE FIRST */
+/* //////////// */
+
+.changepost-container {
+  position: relative;
+  min-height: 99vh;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
+  padding-top: 5rem;
+  background-color: white;
+  z-index: 60;
 }
 
-.changepost-container--register{
-  background-color: #C7E0F0;
+.changepost-container__form {
+  width: 100%;
+  /* background-color: lightblue; */
+  padding: 2rem;
 }
 
-
-.changepost-container__form{
-  width: 50vw;
-  height: 40vh;
-  /* background-color: pink; */
+.changepost-container__form__button {
+  margin-top: 2rem;
+  margin-left: auto;
+  margin-right: 0;
+  font-size: 2.5rem;
+  font-weight: 700;
+  font-style: italic;
+  transform: rotate(-8deg);
+  color: #eb4511;
 }
+
+.changepost-container__form__button:hover {
+  color: red;
+}
+/* ///////////////// */
+/* MOBILE LANDSCAPE */
+/* /////////////// */
+
+@media screen and (min-width: 415px) {
+  .changepost-container__form {
+    padding: 0rem 10vw 0rem 10vw;
+  }
+}
+
+/* ///////////////// */
+/* TABLET PORTRAIT */
+/* /////////////// */
+
+@media screen and (min-width: 750px) {
+  .changepost-container {
+    padding-top: 7rem;
+    z-index: 1;
+  }
+
+  .changepost-container__form {
+    width: 100%;
+    padding: 2rem 22vw 2rem 22vw;
+  }
+
+  .changepost-container__form__button {
+    font-size: 3rem;
+  }
+}
+
+/* //////////////// */
+/* TABLET LANDSCAPE*/
+/* ////////////// */
+
+/* @media screen and (min-width: 992px) {} */
+
+/* //////////////// */
+/* LAP- and DESKTOP */
+/* //////////////// */
+
+/* @media screen and (min-width: 1300px) {} */

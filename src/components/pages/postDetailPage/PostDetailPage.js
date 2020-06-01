@@ -12,6 +12,7 @@ import PostDetailCommentAdjust from "./postDetailComment/PostDetailCommentAdjust
 import PostDetailCommentItem from "./postDetailComment/PostDetailCommentItem";
 import DeleteChangeButton from "../../layout/buttons/deleteChangeButton/DeleteChangeButton";
 import { DELETE_POST, SET_EDIT_POST } from "../../../redux/actions/actionTypes";
+import LoadingBox from "../../layout/loadingBox/LoadingBox";
 
 class PostDetailPage extends Component {
   componentDidMount() {
@@ -28,9 +29,10 @@ class PostDetailPage extends Component {
     return (
       <div className="postdetail-page-container">
         {postDetail === null ? (
-          <div className="postdetail-page-container__loadingbox">
-            <h1>loading...</h1>
-          </div>
+          // <div className="postdetail-page-container__loadingbox">
+          //   <h1>loading...</h1>
+          // </div>
+          <LoadingBox />
         ) : (
           <div className="grid-container">
             <div className="grid-container__titel">
@@ -50,7 +52,6 @@ class PostDetailPage extends Component {
                   clickFunctie={DELETE_POST}
                   buttonText="Delete post"
                   doorverwijsPath="/posts"
-
                 />
                 <DeleteChangeButton
                   buttonData={postDetail}

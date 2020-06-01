@@ -1,22 +1,81 @@
-.currentuser-nav-container{
+/* //////////// */
+/* MOBILE FIRST */
+/* //////////// */
+.currentuser-nav-container {
   position: fixed;
   bottom: 2rem;
-  left: 2rem;
-  width: 150px;
-  height: 150px;
-  /* background-color: lightpink; */
+  left: 1rem;
+  width: 75px;
+  height: 75px;
   z-index: 50;
 }
 
-.currentuser-nav-container__avatar{
+.currentuser-nav-container__avatar {
   position: absolute;
   bottom: 0rem;
   left: 0rem;
-  width: 140px;
-  height: 140px;
-  background-color: #C7E0F0;
+  width: 70px;
+  height: 70px;
+  background-color: #c7e0f0;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   border-radius: 50%;
+}
+
+.currentuser-nav-container__kruisje{
+  width: 0.9rem;
+  height: 0.9rem;
+  transform: rotate(-45deg);
+}
+
+/* ///////////////// */
+/* MOBILE LANDSCAPE */
+/* /////////////// */
+
+/* @media screen and (min-width: 415px) {} */
+
+/* ///////////////// */
+/* TABLET PORTRAIT */
+/* /////////////// */
+
+@media screen and (min-width: 750px) {
+  .currentuser-nav-container {
+    bottom: 3rem;
+    left: 3rem;
+    width: 150px;
+    height: 150px;
+  }
+
+  .currentuser-nav-container__avatar {
+    width: 140px;
+    height: 140px;
+  }
+
+  .currentuser-nav-container__kruisje{
+    width: 1.1rem;
+    height: 1.1rem;
+  }
+}
+
+/* //////////////// */
+/* TABLET LANDSCAPE*/
+/* ////////////// */
+
+@media screen and (min-width: 992px) {
+  .currentuser-nav-container {
+    bottom: 3rem;
+    left: 4rem;
+  }
+}
+
+/* //////////////// */
+/* LAP- and DESKTOP */
+/* //////////////// */
+
+@media screen and (min-width: 1300px) {
+  .currentuser-nav-container {
+    bottom: 3rem;
+    left: 5rem;
+  }
 }

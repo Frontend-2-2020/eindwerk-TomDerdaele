@@ -8,6 +8,7 @@ import "./PostsPage.css";
 
 import SmallRoundButton from "../../layout/buttons/smallRoundButton/SmallRoundButton";
 import TextButton from "../../layout/buttons/textButton/TextButton";
+import LoadingBox from "../../layout/loadingBox/LoadingBox";
 
 class PostsPage extends Component {
   componentDidMount() {
@@ -33,23 +34,21 @@ class PostsPage extends Component {
   render() {
     const { allposts, nextPage, prevPage, currentPage } = this.props.posts;
 
+
     return (
       <div className="posts-page-container">
         {allposts.length ? (
           <PostsSlider allposts={allposts} />
         ) : (
-          <div className="posts-page-container__loadingbox">
-            <h1>loading...</h1>
-          </div>
+          <LoadingBox/>
         )}
 
-        {/* Paginatie bar onderaan */}
+        {/* Scroll info onderaan */}
         <div className="posts-page-container__bottomtext">
-          <div className="posts-page-container__bottomtext__item">
             <p>scroll for more</p>
-          </div>
         </div>
 
+        {/* Paginatie bar onderaan */}
         <div className="posts-page-container__pagineringbox">
           <div className="posts-page-container__pagineringbox__item">
             {currentPage > 1 ? (
@@ -81,8 +80,8 @@ class PostsPage extends Component {
         </div>
 
         {this.props.auth.loggedIn === true ? (
-          <SmallRoundButton click={this.pushHandler} soort="addpost">
-            <p>add</p>
+          <SmallRoundButton click={this.pushHandler} soort="set-addpost">
+            <p className="dinosaur">blab!</p>
           </SmallRoundButton>
         ) : null}
       </div>

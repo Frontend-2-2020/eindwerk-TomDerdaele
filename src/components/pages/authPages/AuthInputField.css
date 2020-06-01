@@ -22,11 +22,12 @@ select:-webkit-autofill:focus {
   width: 100%;
   margin: 2rem auto;
   padding: 0;
+  background-color: yellow;
 }
 
 .authfield {
   height: 4rem;
-  min-width: 100%;
+  width: 100%;
   font-family: raleway, sans-serif;
   font-style: normal;
   font-weight: 600;

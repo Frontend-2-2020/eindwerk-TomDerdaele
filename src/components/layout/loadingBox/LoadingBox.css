@@ -1,0 +1,10 @@
+.loadingbox-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.loadingbox-container__text {
+  font-size: 4rem;
+}

@@ -17,7 +17,7 @@ const SmallRoundButton = ({children, click, soort}) => {
 SmallRoundButton.propTypes = {
   children: PropTypes.element.isRequired,
   click: PropTypes.func.isRequired,
-  soort: PropTypes.oneOf(["logout", "addpost"]).isRequired,
+  soort: PropTypes.oneOf(["logout", "addpost", "set-addpost"]).isRequired,
 };
 
 export default SmallRoundButton;

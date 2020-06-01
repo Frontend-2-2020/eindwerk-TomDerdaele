@@ -28,8 +28,16 @@
   position: absolute;
   top: 0rem;
   right: 0rem;
+  width: 1.8rem;
+  height: 1.8rem;
+}
+.small-round-button--set-addpost {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
   width: 3rem;
   height: 3rem;
+  z-index: 200;
 }
 
 .small-round-button--addpost {
@@ -40,21 +48,22 @@
   height: 3rem;
   z-index: 200;
 }
+.small-round-button--set-addpost p,
+.small-round-button--addpost p {
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 700;
+  font-style: italic;
+  transform: rotate(-10deg);
+  color: white;
+  margin-bottom: 4px;
+}
 
 /* ///////////////// */
 /* MOBILE LANDSCAPE */
 /* /////////////// */
 
-@media screen and (min-width: 415px) {
-  /* VERSIES */
-  .small-round-button--logout {
-    position: absolute;
-    top: 0rem;
-    right: 0rem;
-    width: 3rem;
-    height: 3rem;
-  }
-}
+/* @media screen and (min-width: 415px) {} */
 
 /* ///////////////// */
 /* TABLET PORTRAIT */
@@ -70,7 +79,7 @@
     height: 3rem;
   }
 
-  .small-round-button--addpost {
+  .small-round-button--set-addpost {
     top: 3rem;
     right: 3rem;
   }
@@ -90,7 +99,7 @@
     height: 3rem;
   }
 
-  .small-round-button--addpost {
+  .small-round-button--set-addpost {
     top: 3rem;
     right: 4rem;
   }
@@ -110,7 +119,7 @@
     height: 3rem;
   }
 
-  .small-round-button--addpost {
+  .small-round-button--set-addpost {
     top: 3rem;
     right: 5rem;
   }

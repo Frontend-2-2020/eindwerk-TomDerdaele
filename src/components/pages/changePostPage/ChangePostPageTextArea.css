@@ -36,9 +36,9 @@
   border-bottom: 3px solid #EB4511;
 }
 
-.post-textarea--error:focus + .input-highlight {
+/* .post-textarea--error:focus + .input-highlight {
   border-top: 3px solid white;
-}
+} */
 
 .post-textarea--error::placeholder {
   color: #EB4511;
@@ -58,7 +58,7 @@
 .post-textarea--body-input-wrapper {
   position: relative;
   width: 100%;
-  margin: 0rem 0rem 2rem 0rem;
+  margin: 0rem;
   padding: 0;
 }
 
@@ -92,9 +92,9 @@
   border-bottom: 3px solid #EB4511;
 }
 
-.post-textarea--body--error:focus + .input-highlight {
+/* .post-textarea--body--error:focus + .input-highlight {
   border-top: 3px solid white;
-}
+} */
 
 .post-textarea--body--error::placeholder {
   color: #EB4511;

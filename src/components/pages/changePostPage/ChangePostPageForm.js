@@ -20,29 +20,31 @@ class ChangePostPageForm extends Component {
   render() {
     return (
       <Form noValidate>
-        <BlabbleTextArea
-          type="text"
-          name="title"
-          placeHolder="NAME YOUR BLAB!"
-          className="post-textarea"
-          height="60px" // check CSS file voor juist getal
-          {...this.props}
-        />
-        <BlabbleTextArea
-          type="text"
-          name="body"
-          placeHolder="WRITE YOUR BLAB!"
-          className="post-textarea--body"
-          height="2rem" // check CSS file voor juist getal
-          {...this.props}
-        />
-
+        {/* <div className="changepost-container__form"> */}
+          <BlabbleTextArea
+            type="text"
+            name="title"
+            placeHolder="name your blab!"
+            className="post-textarea"
+            height="60px" // check CSS file voor juist getal
+            {...this.props}
+          />
+          <BlabbleTextArea
+            type="text"
+            name="body"
+            placeHolder="write your blab!"
+            className="post-textarea--body"
+            height="2rem" // check CSS file voor juist getal
+            {...this.props}
+          />
+        {/* </div> */}
         <button
+          className="dinosaur changepost-container__form__button"
           type="submit"
           style={{ display: "block" }}
           disabled={this.props.isSubmitting}
         >
-          {this.props.posts.setPostForEdit ? "Edit" : "Submit"}
+          {this.props.posts.setPostForEdit ? "edit blab!" : "add blab!"}
         </button>
       </Form>
     );

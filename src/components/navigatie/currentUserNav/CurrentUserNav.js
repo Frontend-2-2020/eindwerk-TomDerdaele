@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import "./CurrentUserNav.css";
 import SmallRoundButton from "../../layout/buttons/smallRoundButton/SmallRoundButton";
+import Kruisje from "../../layout/logo/Kruisje";
 
 const CurrentUserNav = ({ auth: { currentUser, loggedIn }, logoutActie }) => {
   const logout = () => {
@@ -21,7 +22,10 @@ const CurrentUserNav = ({ auth: { currentUser, loggedIn }, logoutActie }) => {
             ></div>
           </Link>
           <SmallRoundButton click={logout} soort="logout">
-            <p>X</p>
+            <Kruisje
+              className="currentuser-nav-container__kruisje"
+              color="white"
+            />
           </SmallRoundButton>
         </div>
       ) : null}

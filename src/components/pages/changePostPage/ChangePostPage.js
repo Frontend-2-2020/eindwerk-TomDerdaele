@@ -47,7 +47,7 @@ const ChangePostPage = (props) => {
 
   return (
     <div className="changepost-container">
-      <div className="authpage-container__form">
+      <div className="changepost-container__form">
         <Formik
           initialValues={{ title: "", body: "" }}
           onSubmit={onSubmitHandler}
