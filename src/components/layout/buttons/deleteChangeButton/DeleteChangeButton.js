@@ -39,7 +39,7 @@ const DeleteChangeButton = (props) => {
   return (
     <Fragment>
       {buttonData.user_id === auth.id ? (
-        <button onClick={functionHandler} className="delete-change-button">
+        <button onClick={functionHandler} className="dinosaur delete-change-button">
           {buttonText}
         </button>
       ) : null}

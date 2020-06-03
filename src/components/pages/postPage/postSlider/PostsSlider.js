@@ -52,6 +52,8 @@ class PostsSlider extends Component {
         {
           breakpoint: 500,
           settings: {
+            infinite: true,
+            speed: 500,
             vertical: true,
             verticalSwiping: true,
             swipeToSlide: true,

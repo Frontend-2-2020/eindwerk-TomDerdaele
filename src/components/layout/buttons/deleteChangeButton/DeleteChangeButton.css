@@ -1,6 +1,16 @@
 .delete-change-button{
   display: block;
-  margin: 0 1rem 0 0;
-  font-weight: 600;
-  color: blue;
+  margin: 0;
+  font-size: 0.8rem;
+  font-weight: 700;
+  font-style: italic;
+  color: #eb4511;
+}
+
+.delete-change-button:hover{
+  color: #00A7FF;
+}
+
+.delete-change-button:focus{
+  outline: none;
 }

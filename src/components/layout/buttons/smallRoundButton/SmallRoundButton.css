@@ -40,6 +40,25 @@
   z-index: 200;
 }
 
+.small-round-button--addcomment{
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 2.5rem;
+  height: 2.5rem;
+  z-index: 200;
+}
+
+.small-round-button--addcomment p{
+  text-align: center;
+  font-size: 0.9rem;
+  font-weight: 700;
+  font-style: italic;
+  transform: rotate(-10deg);
+  color: white;
+  margin-bottom: 4px;
+}
+
 .small-round-button--addpost {
   position: fixed;
   top: 1rem;
@@ -48,6 +67,7 @@
   height: 3rem;
   z-index: 200;
 }
+
 .small-round-button--set-addpost p,
 .small-round-button--addpost p {
   text-align: center;

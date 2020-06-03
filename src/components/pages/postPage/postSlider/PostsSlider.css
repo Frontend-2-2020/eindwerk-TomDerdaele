@@ -33,4 +33,7 @@
   /* top: 40%; */
   text-align: center;
   /* background-color: red; */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }

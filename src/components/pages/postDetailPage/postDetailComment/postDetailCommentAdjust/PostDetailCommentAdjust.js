@@ -3,7 +3,7 @@ import { Formik } from "formik";
 import * as Yup from "yup";
 import PostDetailCommentAdjustForm from "./PostDetailCommentAdjustForm";
 import { connect } from "react-redux";
-import { addComment, editComment } from "../../../../redux/actions/postActions";
+import { addComment, editComment } from "../../../../../redux/actions/postActions";
 
 const PostDetailCommentAdjust = (props) => {
 

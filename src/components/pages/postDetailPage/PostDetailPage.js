@@ -8,8 +8,8 @@ import {
 
 import "./PostDetailPage.css";
 import { Link } from "react-router-dom";
-import PostDetailCommentAdjust from "./postDetailComment/PostDetailCommentAdjust";
-import PostDetailCommentItem from "./postDetailComment/PostDetailCommentItem";
+import PostDetailCommentAdjust from "./postDetailComment/postDetailCommentAdjust/PostDetailCommentAdjust";
+import PostDetailCommentItem from "./postDetailComment/postDetailCommentItem/PostDetailCommentItem";
 import DeleteChangeButton from "../../layout/buttons/deleteChangeButton/DeleteChangeButton";
 import { DELETE_POST, SET_EDIT_POST } from "../../../redux/actions/actionTypes";
 import LoadingBox from "../../layout/loadingBox/LoadingBox";
@@ -36,15 +36,19 @@ class PostDetailPage extends Component {
         ) : (
           <div className="grid-container">
             <div className="grid-container__titel">
-              <h1>{postDetail.title}</h1>
+              <h1 className="grid-container__titel__headline">
+                {postDetail.title}
+              </h1>
             </div>
-            <div className="grid-container__name">
-              <Link to={`/users/${postDetail.user_id}`}>
-                <p>
-                  {postDetail.user.first_name} {postDetail.user.last_name}
-                </p>
-              </Link>
-              <p>{postDetail.user.created_at}</p>
+            <div className="grid-container__user">
+              <div className="grid-container__user__text">
+                <Link to={`/users/${postDetail.user_id}`}>
+                  <p>
+                    by: <span className="grid-container__user__text__name">{postDetail.user.first_name} {postDetail.user.last_name}</span>
+                  </p>
+                </Link>
+                <p>{postDetail.user.created_at}</p>
+              </div>
 
               <div className="deletechangebutton-container">
                 <DeleteChangeButton
@@ -61,19 +65,25 @@ class PostDetailPage extends Component {
               </div>
             </div>
             <div className="grid-container__body">
-              <p>{postDetail.body}</p>
-            </div>
-            <div className="grid-container__commenttitel">
-              <h2>COMMENTS</h2>
+              <p className="grid-container__body__text">{postDetail.body}</p>
             </div>
             <div className="grid-container__comment">
-              {/* Comment form */}
-              {this.props.auth.loggedIn === true ? (
-                <PostDetailCommentAdjust id={postDetail.id} />
-              ) : (
-                ""
-              )}
-              {/* <input type="text" /> */}
+              <div className="grid-container__comment__topbox">
+                <div className="grid-container__comment__aantal">
+                  {postDetailComments.length}
+                </div>
+
+                <div className="grid-container__comment__topbox__title-add-box">
+                  <h2 className="grid-container__comment__headline">
+                    COMMENTS
+                  </h2>
+
+                  {/* Comment form */}
+                  {this.props.auth.loggedIn === true ? (
+                    <PostDetailCommentAdjust id={postDetail.id} />
+                  ) : null}
+                </div>
+              </div>
 
               <ul className="postdetail-page-container__commentlist">
                 {postDetailComments.map((comment) => (

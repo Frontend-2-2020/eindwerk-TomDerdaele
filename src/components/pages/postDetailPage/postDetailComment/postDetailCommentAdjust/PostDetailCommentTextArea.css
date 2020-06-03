@@ -1,7 +1,7 @@
 .comment-textArea-input-wrapper {
   position: relative;
   width: 100%;
-  margin: 0rem 0rem 2rem 0rem;
+  margin: 0rem;
   padding: 0;
 }
 
@@ -30,10 +30,6 @@
 .comment-textArea::placeholder {
   color: blue;
 }
-
-/* .comment-textArea:focus + .input-highlight {
-  border-top: 3px solid white;
-} */
 
 .comment-textArea--error {
   color: #EB4511;

@@ -1,0 +1,24 @@
+.postdetail-page-container__commentlist__item{
+  position: relative;
+  margin: 0;
+  /* background-color: blue; */
+  margin-bottom: 1.5rem;
+  padding-left: 2rem;
+}
+
+.postdetail-page-container__commentlist__item__userdata{
+  font-size: 0.8rem;
+}
+
+.postdetail-page-container__commentlist__item__body{
+  font-size: 1rem;
+  margin-top: 0.3rem;
+}
+
+.postdetail-page-container__commentlist__item__streep{
+  position: absolute;
+  left: 0;
+  width: 5px;
+  background-color: #C7E0F0;
+  height: 100%;
+}

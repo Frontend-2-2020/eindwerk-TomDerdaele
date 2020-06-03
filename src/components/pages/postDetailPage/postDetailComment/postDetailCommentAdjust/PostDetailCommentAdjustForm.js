@@ -2,12 +2,14 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Form } from "formik";
 import "./PostDetailCommentTextArea.css";
-import BlabbleTextArea from "../../../layout/inputfield/BlabbleTextArea";
+import BlabbleTextArea from "../../../../layout/inputfield/BlabbleTextArea";
+import SmallRoundButton from "../../../../layout/buttons/smallRoundButton/SmallRoundButton";
 
 class PostDetailCommentAdjustForm extends Component {
   componentDidUpdate(prevProps) {
     if (
-      prevProps.posts.setCommentForEdit !== this.props.posts.setCommentForEdit &&
+      prevProps.posts.setCommentForEdit !==
+        this.props.posts.setCommentForEdit &&
       this.props.posts.setCommentForEdit
     ) {
       this.props.setValues(this.props.posts.setCommentForEdit);
@@ -25,13 +27,19 @@ class PostDetailCommentAdjustForm extends Component {
           height="2rem" // check CSS file voor juist getal
           {...this.props}
         />
-        <button
+
+        {this.props.isSubmitting ? null : (
+          <SmallRoundButton soort="addcomment" type="submit">
+            <p className="dinosaur"> {this.props.posts.setCommentForEdit ? "Edit" : "Add"}</p>
+          </SmallRoundButton>
+        )}
+
+        {/* <button
           type="submit"
           style={{ display: "block", backgroundColor: "pink", marginTop: "1rem" }}
           disabled={this.props.isSubmitting}
         >
-          {this.props.posts.setCommentForEdit ? "Save changes" : "Add Comment"}
-        </button>
+        </button> */}
       </Form>
     );
   }
