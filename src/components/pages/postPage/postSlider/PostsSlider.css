@@ -1,39 +1,44 @@
-.post-slider {
-  /* display: flex;
-  flex-direction: column;
-  flex-wrap: nowrap;
-  justify-content: center; */
-  height: 90vh;
-  /* background-color: blue; */
-}
+/* //////////// */
+/* MOBILE FIRST */
+/* //////////// */
 
-.Main-post-container {
+.post-slider {
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  position: relative;
-  height: 45vh;
-  margin: 45vh 0 0 0;
+  height: 90vh; /* vooral voor iphone */
   /* background-color: pink; */
 }
 
-/* .Main-post-container:hover {
-  cursor: pointer;
+.main-post-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
+  margin: 0;
+  /* background-color: lightblue; */
 }
-.Main-post-container:focus {
-  outline: none;
-} */
 
-.Main-post-container--inner {
+.main-post-container--inner {
   font-size: 2.5rem;
   text-decoration: none;
   color: rgb(14, 14, 179);
-  /* position: absolute; */
-  /* height: 100%; */
-  width: 60%;
-  /* top: 40%; */
+  width: 80%;
   text-align: center;
-  /* background-color: red; */
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+}
+
+/* ////////////////////// */
+/* TABLET PORTRAIT AND UP */
+/* ////////////////////// */
+
+@media screen and (min-width: 750px) {
+  .post-slider {
+    height: 100vh;
+  }
+  
+  .main-post-container {
+    height: 100vh;
+  }
 }

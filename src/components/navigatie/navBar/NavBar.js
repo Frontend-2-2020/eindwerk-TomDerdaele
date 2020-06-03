@@ -27,7 +27,7 @@ const NavBar = (props) => {
 
         {soort === "auth" ? (
           // VERSIE 1 voor AUTH PAGINAS
-          <div className="nav-container__links nav-container__links--auth">
+          <div className="nav-container__links--auth">
             {auth.loggedIn ? (
               <TextButton
                 className="nav-container__links__link"

@@ -3,9 +3,10 @@
 /* //////////// */
 
 .posts-page-container {
-  position: absolute;
+  position: fixed;
   height: 100vh;
   width: 100vw;
+  /* background-color: rgb(149, 247, 198); */
 }
 
 .posts-page-container__bottomtext {
@@ -56,6 +57,7 @@
 /* /////////////// */
 
 @media screen and (min-width: 750px) {
+
   .posts-page-container__bottomtext {
     padding: 0 0 3rem 0;
   }
