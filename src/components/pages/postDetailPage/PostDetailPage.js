@@ -44,7 +44,10 @@ class PostDetailPage extends Component {
               <div className="grid-container__user__text">
                 <Link to={`/users/${postDetail.user_id}`}>
                   <p>
-                    by: <span className="grid-container__user__text__name">{postDetail.user.first_name} {postDetail.user.last_name}</span>
+                    by:{" "}
+                    <span className="grid-container__user__text__name">
+                      {postDetail.user.first_name} {postDetail.user.last_name}
+                    </span>
                   </p>
                 </Link>
                 <p>{postDetail.user.created_at}</p>

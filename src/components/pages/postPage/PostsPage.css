@@ -47,17 +47,10 @@
 }
 
 /* ///////////////// */
-/* MOBILE LANDSCAPE */
-/* /////////////// */
-
-/* @media screen and (min-width: 415px) {} */
-
-/* ///////////////// */
 /* TABLET PORTRAIT */
 /* /////////////// */
 
 @media screen and (min-width: 750px) {
-
   .posts-page-container__bottomtext {
     padding: 0 0 3rem 0;
   }

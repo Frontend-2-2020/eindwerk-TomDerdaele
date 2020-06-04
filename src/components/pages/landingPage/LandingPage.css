@@ -8,7 +8,7 @@
   height: 100vh;
   overflow-x: hidden;
   overflow-y: hidden;
-  padding: 25vh 0rem 2rem 0rem
+  padding: 25vh 0rem 0rem 0rem;
 }
 
 .landingpage-container__title {
@@ -22,12 +22,13 @@
 }
 
 .landingpage-container__tagline {
-  position: absolute;
+  position: fixed;
   width: 100%;
   left: 0;
+  bottom: 0;
+  padding: 0 0 2rem 0;
   text-align: center;
   font-size: 1rem;
-  bottom: 8rem;
 }
 
 /* ///////////////// */
@@ -43,7 +44,7 @@
 
   .landingpage-container__tagline {
     font-size: 1.5rem;
-    bottom: 3rem;
+    padding: 0 0 3rem 0;
   }
 }
 
@@ -52,9 +53,8 @@
 /* ////////////// */
 
 @media screen and (min-width: 992px) {
-
   .landingpage-container {
-   padding: 15vh 0rem 2rem 0rem
+    padding: 15vh 0rem 2rem 0rem;
   }
 
   .landingpage-container__title {
@@ -77,6 +77,6 @@
   }
 
   .landingpage-container__tagline {
-    bottom: 3rem;
+    padding: 0 0 3rem 0;
   }
 }
