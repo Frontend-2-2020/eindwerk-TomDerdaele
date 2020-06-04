@@ -1,0 +1,31 @@
+.userpage-container__commentlist__item {
+  position: relative;
+  margin: 0;
+  margin-bottom: 1.5rem;
+  padding-left: 2rem;
+}
+
+.userpage-container__commentlist__item__title {
+  font-size: 0.8rem;
+}
+
+.userpage-container__commentlist__item__title:hover {
+  color: #eb4511;
+}
+
+.userpage-container__commentlist__item__date {
+  font-size: 0.8rem;
+}
+
+.userpage-container__commentlist__item__body {
+  font-size: 1rem;
+  margin-top: 0.3rem;
+}
+
+.userpage-container__commentlist__item__streep {
+  position: absolute;
+  left: 0;
+  width: 5px;
+  background-color: #c7e0f0;
+  height: 100%;
+}

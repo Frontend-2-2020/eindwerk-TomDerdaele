@@ -7,11 +7,8 @@
   width: 100vw;
   height: 100%;
   padding: 1rem 1rem 2rem 1rem;
-  background-color: pink;
-  /* overflow: scroll; */
-  overflow-x: scroll;
+  overflow-x: hidden;
   overflow-y: scroll;
-  -webkit-overflow-scrolling: touch; 
   z-index: 51;
 }
 
@@ -40,7 +37,7 @@
 }
 
 .grid-container__titel__headline {
-  font-size: 2rem;
+  font-size: 3rem;
 }
 
 .grid-container__user {
@@ -48,17 +45,16 @@
   padding: 8rem 0 1rem 0;
 }
 
-.grid-container__user__text{
+.grid-container__user__text {
   font-size: 1rem;
 }
 
-.grid-container__user__text__name:hover{
-  color: #EB4511
+.grid-container__user__text__name:hover {
+  color: #eb4511;
 }
 
 .grid-container__body {
   overflow: wrap;
-  /* overflow-x: hidden; */
   grid-area: body;
   padding-top: 3rem;
   padding-right: 0rem;
@@ -75,17 +71,17 @@
   grid-area: comment;
 }
 
-.grid-container__comment__topbox{
+.grid-container__comment__topbox {
   position: relative;
   display: flex;
-	flex-direction: column;
-	justify-content: flex-end;
+  flex-direction: column;
+  justify-content: flex-end;
   height: auto;
   width: 100%;
   margin: 5rem 0 3.5rem 0;
 }
 
-.grid-container__comment__topbox__title-add-box{
+.grid-container__comment__topbox__title-add-box {
   position: relative;
 }
 
@@ -96,7 +92,7 @@
   position: absolute;
   left: 0;
   bottom: 0;
-  color: #C7E0F0
+  color: #c7e0f0;
 }
 
 .grid-container__comment__headline {
@@ -115,7 +111,7 @@
   .postdetail-page-container {
     padding: 0 3rem;
   }
-   
+
   .grid-container {
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: 35vh auto;
@@ -124,17 +120,17 @@
       "titel titel user"
       "body body comment";
   }
-  
+
   .grid-container__titel__headline {
     font-size: 3rem;
   }
-  
+
   .grid-container__user {
     align-self: end;
     padding: 0 0 0.5rem 0;
   }
-  
-  .grid-container__comment__topbox{
+
+  .grid-container__comment__topbox {
     margin: 3rem 0 0 0;
   }
 }
@@ -148,7 +144,7 @@
     padding: 0 4rem;
     z-index: 49;
   }
-   
+
   .grid-container {
     display: grid;
     grid-template-columns: repeat(8, 1fr);
@@ -158,7 +154,7 @@
       "titel titel titel titel titel titel comment comment"
       "user user body body body body comment comment";
   }
-  
+
   .grid-container__user {
     grid-area: user;
     align-self: stretch;
@@ -171,7 +167,7 @@
     line-height: 2.3rem;
   }
 
-  .grid-container__comment__topbox{
+  .grid-container__comment__topbox {
     height: 35vh;
     margin: 0 0 3.5rem 0;
   }
@@ -185,16 +181,12 @@
   .postdetail-page-container {
     padding: 0 5rem;
   }
-  
+
   .grid-container {
     grid-column-gap: 2rem;
   }
-  
+
   .grid-container__body {
     padding-right: 6rem;
   }
 }
-
-
-
-

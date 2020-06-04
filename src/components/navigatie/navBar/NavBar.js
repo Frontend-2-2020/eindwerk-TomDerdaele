@@ -45,7 +45,7 @@ const NavBar = (props) => {
           </div>
         ) : (
           // VERSIE 2 voor ANDERE PAGINAS
-          <div className="nav-container__links">
+          <div className="nav-container__links" style={soort === "users" ? {color: "white"} : null}>
             {auth.loggedIn ? (
               <TextButton
                 className="nav-container__links__link"

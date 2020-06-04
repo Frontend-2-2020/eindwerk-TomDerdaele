@@ -2,30 +2,30 @@
 /* MOBILE FIRST */
 /* //////////// */
 
-.onboarding-button{
+.onboarding-button {
   position: absolute;
   display: flex;
   justify-content: center;
-	align-items: center;
+  align-items: center;
   top: 65vh;
   left: 0;
   right: 0;
   margin: 0 auto;
   height: 100px;
   width: 100px;
-  background-color: #83C0E6;
+  background-color: #83c0e6;
   border-radius: 50%;
 }
 
-.onboarding-button:hover{
+.onboarding-button:hover {
   cursor: pointer;
 }
 
-.onboarding-button:focus{
+.onboarding-button:focus {
   outline: none;
 }
 
-.onboarding-button__text{
+.onboarding-button__text {
   text-align: center;
   font-size: 2rem;
   font-weight: 700;
@@ -39,15 +39,14 @@
 /* TABLET PORTRAIT AND UP */
 /* ////////////////////// */
 
-@media screen and (min-width: 750px){
-  
-  .onboarding-button{
+@media screen and (min-width: 750px) {
+  .onboarding-button {
     top: 65vh;
     height: 140px;
     width: 140px;
   }
- 
-  .onboarding-button__text{
+
+  .onboarding-button__text {
     font-size: 2.5rem;
     margin-bottom: 10px;
   }

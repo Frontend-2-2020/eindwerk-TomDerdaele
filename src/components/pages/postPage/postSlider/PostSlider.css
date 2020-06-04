@@ -2,23 +2,13 @@
 /* MOBILE FIRST */
 /* //////////// */
 
-.post-slider {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  height: 90vh; /* vooral voor iphone */
-  /* background-color: pink; */
-}
-
 .main-post-container {
   position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 90vh;
-  margin: 0;
-  /* background-color: lightblue; */
+  height: 45vh;
 }
 
 .main-post-container--inner {
@@ -34,11 +24,8 @@
 /* ////////////////////// */
 
 @media screen and (min-width: 750px) {
-  .post-slider {
-    height: 100vh;
-  }
-  
-  .main-post-container {
-    height: 100vh;
+
+  .main-post-container--inner {
+    font-size: 5rem;
   }
 }

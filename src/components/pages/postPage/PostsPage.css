@@ -3,10 +3,9 @@
 /* //////////// */
 
 .posts-page-container {
-  position: fixed;
-  height: 100vh;
-  width: 100vw;
-  /* background-color: rgb(149, 247, 198); */
+  position: absolute;
+  width: 100%;
+  padding-top: 22vh;
 }
 
 .posts-page-container__bottomtext {

@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 
-const PostsSliderPost = ({ post }) => {
+const PostSlider = ({ post }) => {
   return (
     <div key={post.id} className="main-post-container">
       <div className="main-post-container--inner">
@@ -12,8 +12,8 @@ const PostsSliderPost = ({ post }) => {
   );
 };
 
-PostsSliderPost.propTypes = {
+PostSlider.propTypes = {
   post: PropTypes.object.isRequired,
 };
 
-export default PostsSliderPost;
+export default PostSlider;

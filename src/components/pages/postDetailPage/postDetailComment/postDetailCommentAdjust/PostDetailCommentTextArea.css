@@ -23,8 +23,7 @@
   border-bottom: 3px solid blue;
   overflow: hidden;
   resize: none;
-  margin-top: 3px
-
+  margin-top: 3px;
 }
 
 .comment-textArea::placeholder {
@@ -32,8 +31,8 @@
 }
 
 .comment-textArea--error {
-  color: #EB4511;
-  border-bottom: 3px solid #EB4511;
+  color: #eb4511;
+  border-bottom: 3px solid #eb4511;
 }
 
 .comment-textArea--error:focus + .input-highlight {
@@ -41,11 +40,11 @@
 }
 
 .comment-textArea--error::placeholder {
-  color: #EB4511;
+  color: #eb4511;
 }
 
 .comment-textArea__feedback {
-  color: #EB4511;
+  color: #eb4511;
   font-size: 0.8rem;
   margin-top: 0.5rem;
   position: absolute;

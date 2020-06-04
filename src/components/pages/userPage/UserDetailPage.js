@@ -8,14 +8,16 @@ import {
 } from "../../../redux/actions/userActions";
 
 import "./UserDetailPage.css";
-import { DELETE_POST } from "../../../redux/actions/actionTypes";
-import DeleteChangeButton from "../../layout/buttons/deleteChangeButton/DeleteChangeButton";
-
+// import { DELETE_POST } from "../../../redux/actions/actionTypes";
+// import DeleteChangeButton from "../../layout/buttons/deleteChangeButton/DeleteChangeButton";
+import LoadingBox from "../../layout/loadingBox/LoadingBox";
+import UserPageCommentItem from "./userPageComment/UserPageCommentItem";
 
 class UserDetailPage extends Component {
   componentDidMount() {
-    this.props.getUserDetail(this.props.match.params.id,(path) => {
-      this.props.history.push(path)} );
+    this.props.getUserDetail(this.props.match.params.id, (path) => {
+      this.props.history.push(path);
+    });
   }
 
   componentDidUpdate(prevProps) {
@@ -35,52 +37,67 @@ class UserDetailPage extends Component {
     return (
       <div className="userdetail-page-container">
         {userData === null ? (
-          <div className="userdetail-page-container__loadingbox">
-            <h1>loading...</h1>
-          </div>
+          <LoadingBox />
         ) : (
           <div className="grid-container-user">
             <div className="grid-container-user__titel">
-              <h1>Blogposts posted</h1>
+              <div className="grid-container-user__length-aantal">
+                {userData.blog_posts.length}
+              </div>
+              <h2 className="grid-container-user__item__headline">
+                BLABS MADE
+              </h2>
             </div>
-            <div className="grid-container-user__name">
-              {/* <p>avatar: {userData.avatar}</p> */}
-              <p>
+            <div className="grid-container-user__blabber">
+              <p className="grid-container-user__item__headline">
                 {userData.first_name} {userData.last_name}
               </p>
-              <p>{userData.email}</p>
-              <p>{userData.created_at}</p>
-              <p>{userData.updated_at}</p>
             </div>
+            <div className="grid-container-user__name">
+              <div className="grid-container-user__name__text">
+                <a
+                  href={`mailto:${userData.email}`}
+                  className="grid-container-user__name__text--mail"
+                >
+                  <p>{userData.email}</p>
+                </a>
+                <p>{userData.created_at}</p>
+                <p>{userData.updated_at}</p>
+                <div
+                  className="grid-container-user__name__avatar"
+                  style={{ backgroundImage: `url(${userData.avatar})` }}
+                ></div>
+              </div>
+            </div>
+
             <div className="grid-container-user__body">
               <ul>
                 {userData.blog_posts.map((blog_post) => (
                   <li key={blog_post.id}>
                     <Link to={`/posts/${blog_post.id}`}>
-                      <p>{blog_post.title}</p>
+                      <p className="grid-container-user__body__text">
+                        {blog_post.title}
+                      </p>
                     </Link>
-                    <DeleteChangeButton
-                  buttonData={blog_post}
-                  clickFunctie={DELETE_POST}
-                  buttonText="Delete post"
-                  doorverwijsPath={`/users/${userData.id}`}
-                />
                   </li>
                 ))}
               </ul>
             </div>
-            <div className="grid-container-user__commenttitel">
-              <h2>COMMENTS</h2>
-            </div>
+
             <div className="grid-container-user__comment">
+              <div className="grid-container-user__comment__topbox">
+                <div className="grid-container-user__length-aantal">
+                  {userData.comments.length}
+                </div>
+
+                <h2 className="grid-container-user__item__headline">
+                  COMMENTS
+                </h2>
+              </div>
+
               <ul>
                 {userData.comments.map((comment) => (
-                  <li key={comment.id}>
-                    <p>{comment.body}</p>
-                    <Link to={`/posts/${comment.blog_post.id}`}>
-                      <p>at {comment.blog_post.title}</p>
-                    </Link>
-                  </li>
+                  <UserPageCommentItem commentData={comment} key={comment.id} />
                 ))}
               </ul>
             </div>

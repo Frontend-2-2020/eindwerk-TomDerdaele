@@ -24,7 +24,7 @@
   border-bottom: 3px solid blue;
   overflow: hidden;
   resize: none;
-  margin-top: 3px
+  margin-top: 3px;
 }
 
 .post-textarea::placeholder {
@@ -32,16 +32,16 @@
 }
 
 .post-textarea--error {
-  color: #EB4511;
-  border-bottom: 3px solid #EB4511;
+  color: #eb4511;
+  border-bottom: 3px solid #eb4511;
 }
 
 .post-textarea--error::placeholder {
-  color: #EB4511;
+  color: #eb4511;
 }
 
 .post-textarea__feedback {
-  color: #EB4511;
+  color: #eb4511;
   font-size: 0.8rem;
   margin-top: 0.5rem;
   position: absolute;
@@ -75,7 +75,7 @@
   border-bottom: 3px solid blue;
   overflow: hidden;
   resize: none;
-  margin-top: 3px
+  margin-top: 3px;
 }
 
 .post-textarea--body::placeholder {
@@ -83,20 +83,19 @@
 }
 
 .post-textarea--body--error {
-  color: #EB4511;
-  border-bottom: 3px solid #EB4511;
+  color: #eb4511;
+  border-bottom: 3px solid #eb4511;
 }
 
 .post-textarea--body--error::placeholder {
-  color: #EB4511;
+  color: #eb4511;
 }
 
 .post-textarea--body__feedback {
-  color: #EB4511;
+  color: #eb4511;
   font-size: 0.8rem;
   margin-top: 0.5rem;
   position: absolute;
   left: 0;
   bottom: -20px;
 }
-

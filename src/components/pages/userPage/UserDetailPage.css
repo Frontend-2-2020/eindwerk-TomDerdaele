@@ -1,65 +1,212 @@
-.userdetail-page-container{
-  min-height: 100vh;
-  padding: 0 2rem;
+/* //////////// */
+/* MOBILE FIRST */
+/* //////////// */
+
+.userdetail-page-container {
+  position: fixed;
+  width: 100vw;
+  height: 100%;
+  padding: 1rem 1rem 2rem 1rem;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  background-color: rgb(26, 25, 32);
   color: white;
-  background-color: #EB4511;
-}
-
-.userdetail-page-container__loadingbox{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh;
-  /* background-color: pink; */
-}
-
-.userdetail-page-container__loadingbox h1{
-  font-size: 4rem;
 }
 
 .grid-container-user {
-  /* background-color: lightPink; */
-  height: 100%;
+  position: relative;
   display: grid;
-  grid-template-columns: repeat(5, 20%);
-  grid-template-rows: 43vh auto;
+  height: 100%;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: auto;
   grid-template-areas:
-    "titel titel titel . commenttitel"
-    "name body body . comment";
+    "blabber blabber"
+    "name name"
+    "titel titel"
+    "body body"
+    "comment comment";
+}
+
+/* GRID CONTAINERS */
+.grid-container-user__blabber {
+  grid-area: blabber;
+  align-self: end;
+  padding: 8rem 0 0 0;
 }
 
 .grid-container-user__titel {
+  position: relative;
   grid-area: titel;
   align-self: end;
-  padding: 0;
-}
-
-.grid-container-user__titel h1 {
-  font-size: 3rem;
-  margin: 0;
+  padding: 5rem 0 0 0;
 }
 
 .grid-container-user__name {
   grid-area: name;
-  padding-top: 3rem;
+  padding: 2rem 0 1rem 0;
 }
 
 .grid-container-user__body {
+  overflow: wrap;
   grid-area: body;
   padding-top: 3rem;
-}
-
-.grid-container-user__commenttitel {
-  grid-area: commenttitel;
-  align-self: end;
-}
-
-.grid-container-user__commenttitel h2 {
-  margin: 0;
-  font-size: 1.5rem;
+  padding-right: 0rem;
 }
 
 .grid-container-user__comment {
+  position: relative;
   grid-area: comment;
-  padding-top: 3rem;
+}
+
+/* GRID CONTAINER ITEMS */
+.grid-container-user__body__text {
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5rem;
+}
+
+.grid-container-user__body__text:hover {
+  color: #eb4511;
+}
+
+.grid-container-user__name__text {
+  font-size: 1rem;
+}
+
+.grid-container-user__name__text--mail:hover {
+  color: #eb4511;
+}
+
+.grid-container-user__name__avatar {
+  width: 200px;
+  height: 200px;
+  background-color: #c7e0f0;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 50%;
+  margin-top: 1rem;
+}
+
+.grid-container-user__comment__topbox {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  height: auto;
+  width: 100%;
+  margin: 8rem 0 3.5rem 0;
+}
+
+.grid-container-user__length-aantal {
+  font-size: 6rem;
+  font-family: dinosaur, sans-serif;
+  font-style: normal;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  color: rgb(46, 43, 65);
+}
+
+.grid-container-user__item__headline {
+  position: relative;
+  font-size: 1.5rem;
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+  z-index: 2;
+  text-transform: uppercase;
+}
+
+/* ///////////////// */
+/* TABLET PORTRAIT */
+/* /////////////// */
+
+@media screen and (min-width: 750px) {
+  .userdetail-page-container {
+    padding: 0 3rem;
+  }
+
+  .grid-container-user {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 35vh auto;
+    grid-column-gap: 2rem;
+    grid-template-areas:
+      "blabber titel"
+      "name body"
+      ". comment"
+      ". comment";
+  }
+
+  .grid-container-user__body {
+    padding-top: 0rem;
+  }
+
+  .grid-container-user__name {
+    align-self: end;
+    padding: 0 0 0.5rem 0;
+  }
+
+  .grid-container-user__comment__topbox {
+    margin: 3rem 0 0 0;
+  }
+}
+
+/* //////////////// */
+/* TABLET LANDSCAPE*/
+/* ////////////// */
+
+@media screen and (min-width: 992px) {
+  .userdetail-page-container {
+    padding: 0 4rem;
+    z-index: 49;
+  }
+
+  .grid-container-user {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: 35vh auto;
+    grid-column-gap: 1rem;
+    grid-template-areas:
+      "blabber blabber blabber titel titel titel comment comment"
+      "name name name body body body comment comment";
+  }
+
+  .grid-container-user__name {
+    grid-area: name;
+    align-self: stretch;
+    padding: 3rem 0 0 0;
+  }
+
+  .grid-container-user__body {
+    padding-top: 2.5rem;
+  }
+
+  .grid-container-user__body__text {
+    font-size: 1.5rem;
+    font-weight: 500;
+    line-height: 2.3rem;
+  }
+
+  .grid-container-user__comment__topbox {
+    height: 35vh;
+    margin: 0 0 3rem 0;
+  }
+}
+
+/* //////////////// */
+/* LAP- and DESKTOP */
+/* //////////////// */
+
+@media screen and (min-width: 1300px) {
+  .userdetail-page-container {
+    padding: 0 5rem;
+  }
+
+  .grid-container-user {
+    grid-column-gap: 2rem;
+  }
+
+  .grid-container-user__body {
+    padding-right: 6rem;
+  }
 }

@@ -1,14 +1,17 @@
 import React, { Component } from "react";
-import PostsSlider from "./postSlider/PostsSlider";
+// import PostsSlider from "./postSlider/PostsSlider";
 
 import { connect } from "react-redux";
 import { getPosts } from "../../../redux/actions/postActions";
 
 import "./PostsPage.css";
+import "./postSlider/PostSlider.css"
+
 
 import SmallRoundButton from "../../layout/buttons/smallRoundButton/SmallRoundButton";
 import TextButton from "../../layout/buttons/textButton/TextButton";
 import LoadingBox from "../../layout/loadingBox/LoadingBox";
+import PostSlider from "./postSlider/PostSlider";
 
 class PostsPage extends Component {
   componentDidMount() {
@@ -38,8 +41,8 @@ class PostsPage extends Component {
     return (
       <div className="posts-page-container">
         {allposts.length ? (
-          <PostsSlider allposts={allposts} />
-        ) : (
+          allposts.map((post) => <PostSlider key={post.id} post={post} />)
+          ) : (
           <LoadingBox/>
         )}
 

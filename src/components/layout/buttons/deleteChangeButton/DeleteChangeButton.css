@@ -1,4 +1,4 @@
-.delete-change-button{
+.delete-change-button {
   display: block;
   margin: 0;
   font-size: 0.8rem;
@@ -7,10 +7,10 @@
   color: #eb4511;
 }
 
-.delete-change-button:hover{
-  color: #00A7FF;
+.delete-change-button:hover {
+  color: #00a7ff;
 }
 
-.delete-change-button:focus{
+.delete-change-button:focus {
   outline: none;
 }
