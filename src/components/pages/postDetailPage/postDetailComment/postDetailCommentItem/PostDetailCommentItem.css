@@ -10,7 +10,7 @@
 }
 
 .postdetail-page-container__commentlist__item__userdata:hover {
-  color:#EB4511;
+  color: #eb4511;
 }
 
 .postdetail-page-container__commentlist__item__date {
@@ -20,6 +20,10 @@
 .postdetail-page-container__commentlist__item__body {
   font-size: 1rem;
   margin-top: 0.3rem;
+}
+
+.postdetail-page-container__commentlist__item__body img {
+  width: 100%;
 }
 
 .postdetail-page-container__commentlist__item__streep {

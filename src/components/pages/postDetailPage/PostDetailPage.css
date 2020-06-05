@@ -76,6 +76,7 @@
 .grid-container__comment {
   position: relative;
   grid-area: comment;
+  padding-bottom: 3rem;
 }
 
 .grid-container__comment__topbox {
