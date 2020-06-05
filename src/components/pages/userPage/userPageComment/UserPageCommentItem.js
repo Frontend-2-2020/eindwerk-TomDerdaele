@@ -13,9 +13,11 @@ const UserPageCommentItem = ({ commentData }) => {
         }}
       ></div>
 
-      <p className="userpage-container__commentlist__item__body">
+      {/* <p className="userpage-container__commentlist__item__body">
         {commentData.body}
-      </p>
+      </p> */}
+      <div className="userpage-container__commentlist__item__body" dangerouslySetInnerHTML={{__html: commentData.body}}/>
+
       <Link to={`/posts/${commentData.blog_post.id}`}>
         <p className="userpage-container__commentlist__item__title">
           at {commentData.blog_post.title}

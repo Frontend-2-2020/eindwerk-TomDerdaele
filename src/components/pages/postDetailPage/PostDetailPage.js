@@ -68,7 +68,9 @@ class PostDetailPage extends Component {
               </div>
             </div>
             <div className="grid-container__body">
-              <p className="grid-container__body__text">{postDetail.body}</p>
+              {/* <p className="grid-container__body__text">{postDetail.body}</p> */}
+              <div className="grid-container__body__text" dangerouslySetInnerHTML={{__html: postDetail.body}}/>
+
             </div>
             <div className="grid-container__comment">
               <div className="grid-container__comment__topbox">

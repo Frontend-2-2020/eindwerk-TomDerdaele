@@ -30,16 +30,10 @@ class PostDetailCommentAdjustForm extends Component {
 
         {this.props.isSubmitting ? null : (
           <SmallRoundButton soort="addcomment" type="submit">
-            <p className="dinosaur"> {this.props.posts.setCommentForEdit ? "Edit" : "Add"}</p>
+            <p className="dinosaur"> {this.props.posts.setCommentForEdit ? "Edit!" : "Add!"}</p>
           </SmallRoundButton>
         )}
 
-        {/* <button
-          type="submit"
-          style={{ display: "block", backgroundColor: "pink", marginTop: "1rem" }}
-          disabled={this.props.isSubmitting}
-        >
-        </button> */}
       </Form>
     );
   }
