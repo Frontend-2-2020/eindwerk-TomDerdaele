@@ -17,7 +17,6 @@ import { BASE_POSTSPAGE_URL } from "../../API";
 const initialState = {
   allposts: [],
   postDetail: null,
-  postDetailComments: null,
   setPostForEdit: null,
   setCommentForEdit: null,
   prevPage: null,
@@ -49,8 +48,8 @@ const postReducer = (state = initialState, { type, payload }) => {
     case ADD_POST:
       return {
         ...state,
-        // allposts: [payload, ...state.allposts],
-        allposts: [],
+        allposts: [payload, ...state.allposts],
+        // allposts: [],
         currentPage: null,
       };
     case SET_EDIT_POST:
@@ -77,28 +76,26 @@ const postReducer = (state = initialState, { type, payload }) => {
       return {
         ...state,
         postDetail: payload,
-        postDetailComments: payload.comments,
       };
     case WEG_POSTDETAIL:
       return {
         ...state,
         // allposts: [],
         postDetail: null,
-        postDetailComments: null,
       };
 
     // COMMENTS
     case ADD_COMMENT:
       return {
         ...state,
-        postDetailComments: [payload, ...state.postDetailComments],
+        postDetail: {...state.postDetail, comments: [payload, ...state.postDetail.comments]},
       };
     case DELETE_COMMENT:
       return {
         ...state,
-        postDetailComments: state.postDetailComments.filter(
+        postDetail: {...state.postDetail, comments: state.postDetail.comments.filter(
           (comment) => comment.id !== payload
-        ),
+          )}
       };
     case SET_EDIT_COMMENT:
       return {
@@ -108,9 +105,9 @@ const postReducer = (state = initialState, { type, payload }) => {
     case EDIT_COMMENT:
       return {
         ...state,
-        postDetailComments: state.postDetailComments.map((comment) =>
-          comment.id === payload.id ? payload : comment
-        ),
+        postDetail: {...state.postDetail, comments: state.postDetail.comments.map((comment) =>
+            comment.id === payload.id ? payload : comment
+          )},
         setCommentForEdit: null,
       };
 

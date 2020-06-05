@@ -22,7 +22,7 @@ class PostDetailPage extends Component {
   }
 
   render() {
-    const { postDetail, postDetailComments } = this.props.posts;
+    const { postDetail } = this.props.posts;
 
     return (
       <div className="postdetail-page-container">
@@ -69,7 +69,7 @@ class PostDetailPage extends Component {
             <div className="grid-container__comment">
               <div className="grid-container__comment__topbox">
                 <div className="grid-container__comment__aantal">
-                  {postDetailComments.length}
+                  {postDetail.comments.length}
                 </div>
 
                 <div className="grid-container__comment__topbox__title-add-box">
@@ -85,7 +85,7 @@ class PostDetailPage extends Component {
               </div>
 
               <ul className="postdetail-page-container__commentlist">
-                {postDetailComments.map((comment) => (
+                {postDetail.comments.map((comment) => (
                   <PostDetailCommentItem
                     key={comment.id}
                     commentData={comment}
