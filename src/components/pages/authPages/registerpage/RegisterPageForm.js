@@ -44,7 +44,6 @@ const RegisterPageForm = (props) => {
           <p>Join!</p>
         </OnboardingButton>
 
-        {/* <button type="submit">Join!</button> */}
       </Form>
   );
 };

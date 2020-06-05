@@ -12,6 +12,7 @@
 }
 
 .main-post-container--inner {
+  overflow-x: hidden;
   font-size: 2.5rem;
   text-decoration: none;
   color: rgb(14, 14, 179);

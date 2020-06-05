@@ -15,13 +15,13 @@ const LandingPage = ({ auth: { loggedIn, currentUser } }) => {
         </h1>
         <p className="landingpage-container__tagline">
           {loggedIn
-            ? "Hi " + currentUser.first_name + ", blab along with us!"
-            : "Join for free and blab along with us…"}
+            ? "Hi " + currentUser.first_name + ", blable along with us!"
+            : "Join for free and blable along with us…"}
         </p>
       </div>
       <Link to="/login">
         <OnboardingButton>
-          <p>{loggedIn ? "Blab!" : "Join!"}</p>
+          <p>{loggedIn ? "Blable!" : "Join!"}</p>
         </OnboardingButton>
       </Link>
     </Fragment>

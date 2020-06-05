@@ -18,6 +18,7 @@
   height: 10vh;
   padding: 0 0 2rem 0;
   width: 100vw;
+  margin-bottom: 0.1rem;
 }
 
 .posts-page-container__bottomtext p {
@@ -37,7 +38,7 @@
 }
 
 .posts-page-container__pagineringbox__item__link {
-  font-size: 0.9rem;
+  font-size: 1.3rem;
 }
 
 .posts-page-container__pagineringbox__item__link:hover {

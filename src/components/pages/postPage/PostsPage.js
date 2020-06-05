@@ -84,7 +84,7 @@ class PostsPage extends Component {
 
         {this.props.auth.loggedIn === true ? (
           <SmallRoundButton click={this.pushHandler} soort="set-addpost">
-            <p className="dinosaur">blab!</p>
+            <p className="dinosaur">New!</p>
           </SmallRoundButton>
         ) : null}
       </div>

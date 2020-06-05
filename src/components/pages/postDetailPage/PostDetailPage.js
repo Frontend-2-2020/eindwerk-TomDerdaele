@@ -57,13 +57,13 @@ class PostDetailPage extends Component {
                 <DeleteChangeButton
                   buttonData={postDetail}
                   clickFunctie={DELETE_POST}
-                  buttonText="Delete post"
+                  buttonText="Delete blable"
                   doorverwijsPath="/posts"
                 />
                 <DeleteChangeButton
                   buttonData={postDetail}
                   clickFunctie={SET_EDIT_POST}
-                  buttonText="Edit post"
+                  buttonText="Edit blable"
                 />
               </div>
             </div>

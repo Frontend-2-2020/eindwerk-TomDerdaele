@@ -27,7 +27,7 @@
 
 .onboarding-button__text {
   text-align: center;
-  font-size: 2rem;
+  font-size: 1.6rem;
   font-weight: 700;
   font-style: italic;
   transform: rotate(-10deg);
@@ -47,7 +47,7 @@
   }
 
   .onboarding-button__text {
-    font-size: 2.5rem;
+    font-size: 2.2rem;
     margin-bottom: 10px;
   }
 }

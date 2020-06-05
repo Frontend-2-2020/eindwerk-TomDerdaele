@@ -45,7 +45,7 @@ class UserDetailPage extends Component {
                 {userData.blog_posts.length}
               </div>
               <h2 className="grid-container-user__item__headline">
-                BLABS MADE
+                BLABLES MADE
               </h2>
             </div>
             <div className="grid-container-user__blabber">

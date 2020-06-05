@@ -65,7 +65,7 @@ const NavBar = (props) => {
               <TextButton
                 className="nav-container__links__link"
                 // click={latestResetHandler}
-                buttonText="blabs"
+                buttonText="blables"
               />
             </Link>
           </div>

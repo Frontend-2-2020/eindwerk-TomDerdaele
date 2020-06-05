@@ -45,7 +45,7 @@ class LoginPageForm extends Component {
         {/* {this.props.isValid ? <button type="submit">Blab!</button> : null}  VOOR ANIMATIE*/}
 
         <OnboardingButton type="submit">
-          <p>Blab!</p>
+          <p>Blable!</p>
         </OnboardingButton>
 
       </Form>
