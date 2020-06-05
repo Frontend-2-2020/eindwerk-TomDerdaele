@@ -8,7 +8,7 @@ const userReducer = (state = initialState, { type, payload }) => {
       return payload;
 
     case WEG_USERDETAIL:
-      return null;
+      return payload;
 
     default:
       return state;

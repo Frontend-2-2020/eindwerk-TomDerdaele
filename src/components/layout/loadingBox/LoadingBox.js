@@ -1,15 +1,28 @@
-import React from "react";
-import "./LoadingBox.css"
+import React, { Component } from "react";
+import "./LoadingBox.css";
+import { connect } from "react-redux";
+import { clearError } from "../../../redux/actions/errorActions";
 
-const LoadingBox = () => {
-
+class LoadingBox extends Component {
   // Simpel maar herbruikbaar Loading component terwijl data wordt opgehaald
 
-  return (
-    <div className="loadingbox-container">
-      <div className="loadingbox-container__text">loading...</div>
-    </div>
-  );
-};
+  componentWillUnmount() {
+    this.props.clearError();
+  }
 
-export default LoadingBox;
+  render() {
+    return (
+      <div className="loadingbox-container">
+        <div className="loadingbox-container__text">
+          {this.props.error ? this.props.error : "loading..."}
+        </div>
+      </div>
+    );
+  }
+}
+
+const mapStateToProps = (state) => ({
+  error: state.error,
+});
+
+export default connect(mapStateToProps, { clearError })(LoadingBox);

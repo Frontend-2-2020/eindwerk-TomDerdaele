@@ -2,10 +2,9 @@ import { API, LOCALSTORAGE_KEY, TOKEN } from "../../API";
 import {
   LOGIN_OK,
   LOGOUT_OK,
-  LOGIN_ERROR,
   SIGNUP_OK,
-  SIGNUP_ERROR,
   SIGNUP_CLEAR,
+  ERROR,
 } from "./actionTypes";
 
 // Check als er iemand is ingelogd bij het laden van de applicatie.
@@ -48,7 +47,7 @@ export const registerActie = (
       })
       .catch(() => {
         dispatch({
-          type: SIGNUP_ERROR,
+          type: ERROR,
           payload: "Signup ERROR, email in already in use",
         });
         doorverwijzen("/error");
@@ -90,7 +89,7 @@ export const loginActie = ({ email, password }, doorverwijzen) => {
       .catch(() => {
         API.defaults.headers.common["Authorization"] = undefined;
         dispatch({
-          type: LOGIN_ERROR,
+          type: ERROR,
           payload: "Login ERROR, please check login and password",
         });
         doorverwijzen("/error");

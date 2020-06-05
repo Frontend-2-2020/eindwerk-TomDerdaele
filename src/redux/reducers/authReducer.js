@@ -1,4 +1,9 @@
-import { LOGIN_OK, LOGOUT_OK, SIGNUP_OK, SIGNUP_CLEAR} from "../actions/actionTypes";
+import {
+  LOGIN_OK,
+  LOGOUT_OK,
+  SIGNUP_OK,
+  SIGNUP_CLEAR,
+} from "../actions/actionTypes";
 
 const initialState = {
   loggedIn: false,

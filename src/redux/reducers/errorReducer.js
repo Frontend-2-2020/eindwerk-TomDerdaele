@@ -1,23 +1,19 @@
 import {
-  SIGNUP_ERROR,
-  LOGIN_ERROR,
-  GET_USER_ERROR,
   CLEAR_ERROR,
-  LOGIN_OK,
+  // LOGIN_OK,
+  ERROR,
 } from "../actions/actionTypes";
 
 const initialState = null;
 
 const errorReducer = (state = initialState, { type, payload }) => {
   switch (type) {
-    case LOGIN_ERROR:
-    case SIGNUP_ERROR:
-    case GET_USER_ERROR:
+    case ERROR:
       return payload;
 
-    case LOGIN_OK:
+    // case LOGIN_OK:
     case CLEAR_ERROR:
-      return null;
+      return payload;
 
     default:
       return state;

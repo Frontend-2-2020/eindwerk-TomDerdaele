@@ -12,6 +12,7 @@ import {
   DELETE_COMMENT,
   SET_EDIT_COMMENT,
   EDIT_COMMENT,
+  ERROR,
 } from "./actionTypes";
 
 // ALLE POSTS OPHALEN
@@ -25,6 +26,12 @@ export const getPosts = (page) => {
       dispatch({
         type: GET_POSTS,
         payload: response.data,
+      });
+    })
+    .catch(() => {
+      dispatch({
+        type: ERROR,
+        payload: "Sorry mate, something went wrong!",
       });
     });
   };
@@ -88,6 +95,12 @@ export const getPostDetail = (id) => {
       dispatch({
         type: GET_POSTDETAIL,
         payload: response.data,
+      });
+    })
+    .catch(() => {
+      dispatch({
+        type: ERROR,
+        payload: "This blable does not exist",
       });
     });
   };

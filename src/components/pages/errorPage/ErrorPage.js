@@ -1,10 +1,9 @@
 import React, { Component, Fragment } from "react";
 import { connect } from "react-redux";
-import { CLEAR_ERROR } from "../../../redux/actions/actionTypes";
 import { Link } from "react-router-dom";
-
 import "./ErrorPage.css";
 import OnboardingButton from "../../layout/buttons/onboardingButton/OnboardingButton";
+import { clearError } from "../../../redux/actions/errorActions";
 
 class ErrorPage extends Component {
 
@@ -38,10 +37,10 @@ const mapStateToProps = (state) => ({
   error: state.error,
 });
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    clearError: () => dispatch({ type: CLEAR_ERROR }),
-  };
-};
+// const mapDispatchToProps = (dispatch) => {
+//   return {
+//     clearError: () => dispatch({ type: CLEAR_ERROR }),
+//   };
+// };
 
-export default connect(mapStateToProps, mapDispatchToProps)(ErrorPage);
+export default connect(mapStateToProps, {clearError})(ErrorPage);

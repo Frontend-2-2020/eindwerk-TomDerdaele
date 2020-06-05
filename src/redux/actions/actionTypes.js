@@ -29,9 +29,7 @@ export const GET_USERDETAIL = "GET_USERDETAIL"
 export const WEG_USERDETAIL = "WEG_USERDETAIL"
 
 // Error constantes
-export const SIGNUP_ERROR = "SIGNUP_ERROR"
-export const LOGIN_ERROR = "LOGIN_ERROR"
-export const GET_USER_ERROR = "GET_USER_ERROR"
+export const ERROR = "ERROR"
 export const CLEAR_ERROR = "CLEAR_ERROR"
 
 
