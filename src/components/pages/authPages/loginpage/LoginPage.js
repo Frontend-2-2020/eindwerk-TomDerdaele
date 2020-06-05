@@ -12,6 +12,7 @@ import LoginPageForm from "./LoginPageForm";
 const LoginPage = (props) => {
   const { auth, loginActie } = props;
 
+  // Validatie van de inputvelden met Yup.
   const loginSchema = Yup.object().shape({
     email: Yup.string().email("Invalid email").required("Required"),
     password: Yup.string()
@@ -24,7 +25,8 @@ const LoginPage = (props) => {
     loginActie(values, (path) => {
       props.history.push(path);
     }); // Fuctie uit Redux om Login token op te halen en doorverwijzen
-    actions.resetForm(); // Fuctie uit Formik om Form te resetten
+    // Fuctie uit Formik om Form te resetten 
+    actions.resetForm(); 
   };
 
   // LoginPage niet meer bereikbaar na inloggen

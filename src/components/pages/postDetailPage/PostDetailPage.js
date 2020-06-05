@@ -1,11 +1,6 @@
 import React, { Component } from "react";
-
 import { connect } from "react-redux";
-import {
-  getPostDetail,
-  clearPostDetail,
-} from "../../../redux/actions/postActions";
-
+import { getPostDetail, clearPostDetail } from "../../../redux/actions/postActions";
 import "./PostDetailPage.css";
 import { Link } from "react-router-dom";
 import PostDetailCommentAdjust from "./postDetailComment/postDetailCommentAdjust/PostDetailCommentAdjust";
@@ -15,10 +10,13 @@ import { DELETE_POST, SET_EDIT_POST } from "../../../redux/actions/actionTypes";
 import LoadingBox from "../../layout/loadingBox/LoadingBox";
 
 class PostDetailPage extends Component {
+
+  // Ophalen van de Post d.m.v het id.
   componentDidMount() {
     this.props.getPostDetail(this.props.match.params.id);
   }
 
+  // Legen van postDetail in Redux, om proper de volgende op te kunnen halen.
   componentWillUnmount() {
     this.props.clearPostDetail();
   }
@@ -29,9 +27,6 @@ class PostDetailPage extends Component {
     return (
       <div className="postdetail-page-container">
         {postDetail === null ? (
-          // <div className="postdetail-page-container__loadingbox">
-          //   <h1>loading...</h1>
-          // </div>
           <LoadingBox />
         ) : (
           <div className="grid-container">
@@ -68,7 +63,6 @@ class PostDetailPage extends Component {
               </div>
             </div>
             <div className="grid-container__body">
-              {/* <p className="grid-container__body__text">{postDetail.body}</p> */}
               <div className="grid-container__body__text" dangerouslySetInnerHTML={{__html: postDetail.body}}/>
 
             </div>
@@ -83,7 +77,7 @@ class PostDetailPage extends Component {
                     COMMENTS
                   </h2>
 
-                  {/* Comment form */}
+                  {/* COMMENT form */}
                   {this.props.auth.loggedIn === true ? (
                     <PostDetailCommentAdjust id={postDetail.id} />
                   ) : null}

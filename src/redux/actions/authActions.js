@@ -8,7 +8,7 @@ import {
   SIGNUP_CLEAR,
 } from "./actionTypes";
 
-// Check als er iemand is ingelogd bij het laden van de applicatie
+// Check als er iemand is ingelogd bij het laden van de applicatie.
 export const checkOnLoad = () => {
   return function (dispatch) {
     if (TOKEN) {
@@ -21,15 +21,11 @@ export const checkOnLoad = () => {
       });
     } else {
       API.defaults.headers.common["Authorization"] = undefined;
-      // dispatch({
-      //   type: LOGIN_ERROR,
-      //   payload: "No user signed in yet",
-      // });
     }
   };
 };
 
-// REGISTER ACTION om user te creeeren
+// REGISTER ACTION om user te creeeren.
 export const registerActie = (
   { first_name, last_name, email, password },
   doorverwijzen
@@ -60,13 +56,13 @@ export const registerActie = (
   };
 };
 
-// REGISTER NOT COMPLETED om signupsSucces te clearen
-// wanneer de login pagina verlaten wordt alvorens de signup af te ronden
+// REGISTER NOT COMPLETED om signupsSucces te clearen.
+// wanneer de login pagina verlaten wordt alvorens de signup af te ronden.
 export const clearSignupSucces = () => {
   return { type: SIGNUP_CLEAR };
 };
 
-// LOGIN ACTION om token te krijgen
+// LOGIN ACTION om token te krijgen en gebruiken.
 export const loginActie = ({ email, password }, doorverwijzen) => {
   return function (dispatch) {
     API.post("oauth/token", {

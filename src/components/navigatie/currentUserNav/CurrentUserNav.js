@@ -7,6 +7,8 @@ import SmallRoundButton from "../../layout/buttons/smallRoundButton/SmallRoundBu
 import Kruisje from "../../layout/logo/Kruisje";
 
 const CurrentUserNav = ({ auth: { currentUser, loggedIn }, logoutActie }) => {
+
+  // Actie naar Redux om uit te loggen.
   const logout = () => {
     logoutActie();
   };

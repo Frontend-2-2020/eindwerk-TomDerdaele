@@ -1,31 +1,25 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-
 import { connect } from "react-redux";
-import {
-  getUserDetail,
-  clearUserDetail,
-} from "../../../redux/actions/userActions";
-
+import { getUserDetail, clearUserDetail } from "../../../redux/actions/userActions";
 import "./UserDetailPage.css";
-// import { DELETE_POST } from "../../../redux/actions/actionTypes";
-// import DeleteChangeButton from "../../layout/buttons/deleteChangeButton/DeleteChangeButton";
 import LoadingBox from "../../layout/loadingBox/LoadingBox";
 import UserPageCommentItem from "./userPageComment/UserPageCommentItem";
 
 class UserDetailPage extends Component {
+
+  // ophalen van userDetail met functie om door te verwijzen in case van error.
   componentDidMount() {
     this.props.getUserDetail(this.props.match.params.id, (path) => {
       this.props.history.push(path);
     });
   }
 
-  componentDidUpdate(prevProps) {
-    // console.log(this.props.location.key);
-    if (prevProps.location.key !== this.props.location.key) {
-      this.props.getUserDetail(this.props.match.params.id);
-    }
-  }
+  // componentDidUpdate(prevProps) {
+  //   if (prevProps.location.key !== this.props.location.key) {
+  //     this.props.getUserDetail(this.props.match.params.id);
+  //   }
+  // }
 
   componentWillUnmount() {
     this.props.clearUserDetail();
@@ -112,6 +106,4 @@ const mapStateToProps = (state) => ({
   userData: state.user,
 });
 
-export default connect(mapStateToProps, { getUserDetail, clearUserDetail })(
-  UserDetailPage
-);
+export default connect(mapStateToProps, { getUserDetail, clearUserDetail })(UserDetailPage);

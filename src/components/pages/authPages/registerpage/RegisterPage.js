@@ -2,11 +2,13 @@ import React from 'react';
 import { Formik } from "formik";
 import * as Yup from "yup";
 import RegisterPageForm from './RegisterPageForm';
-
 import { connect } from 'react-redux';
 import { registerActie } from '../../../../redux/actions/authActions';
 
+
 const RegisterPage = props => {
+
+  // Validatie van de inputvelden met Yup.
   const registerSchema = Yup.object().shape({
     first_name: Yup.string()
     .min(2, "Use at least 2 characters")

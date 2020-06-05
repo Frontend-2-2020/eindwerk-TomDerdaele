@@ -27,7 +27,8 @@ const initialState = {
 
 const postReducer = (state = initialState, { type, payload }) => {
   switch (type) {
-    //POSTS
+
+    //POSTS OPHALEN in functie van de gegeven Post pagina
     case GET_POSTS:
       return {
         ...state,
@@ -71,7 +72,7 @@ const postReducer = (state = initialState, { type, payload }) => {
         setPostForEdit: null,
       };
 
-    //POSTDETAIL
+    //POSTDETAIL OPHALEN
     case GET_POSTDETAIL:
       return {
         ...state,

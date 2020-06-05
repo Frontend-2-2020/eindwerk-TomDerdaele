@@ -2,12 +2,14 @@ import React from "react";
 import PropTypes from "prop-types";
 
 const TextButton = ({ className, click, buttonText }) => {
-    return (
-      <div className={className} onClick={click}>
-        <p>{buttonText}</p>
-      </div>
-    );
+  
+  // Herbruikbare button, met enkel tekst
 
+  return (
+    <div className={className} onClick={click}>
+      <p>{buttonText}</p>
+    </div>
+  );
 };
 
 TextButton.propTypes = {

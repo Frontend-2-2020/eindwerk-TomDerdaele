@@ -5,12 +5,15 @@ import { clearSetEdit } from "../../../redux/actions/postActions";
 import BlabbleTextArea from "../../layout/inputfield/BlabbleTextArea";
 
 class ChangePostPageForm extends Component {
+  
+  // Om bestaande blable in de textvalues te steken bij edit.
   componentDidMount() {
     if (this.props.posts.setPostForEdit) {
       this.props.setValues(this.props.posts.setPostForEdit);
     }
   }
 
+  // Om clearSetEdit te legen als de edit vroegtijdig zou worden afgebroken.
   componentWillUnmount() {
     if (this.props.posts.setPostForEdit) {
       this.props.clearSetEdit();
@@ -20,7 +23,6 @@ class ChangePostPageForm extends Component {
   render() {
     return (
       <Form noValidate>
-        {/* <div className="changepost-container__form"> */}
           <BlabbleTextArea
             type="text"
             name="title"
@@ -37,7 +39,7 @@ class ChangePostPageForm extends Component {
             height="2rem" // check CSS file voor juist getal
             {...this.props}
           />
-        {/* </div> */}
+
         <button
           className="dinosaur changepost-container__form__button"
           type="submit"

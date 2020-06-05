@@ -1,5 +1,4 @@
 import React, { Fragment } from "react";
-
 import "./LandingPage.css";
 import OnboardingButton from "../../layout/buttons/onboardingButton/OnboardingButton";
 import { connect } from "react-redux";
@@ -10,7 +9,6 @@ const LandingPage = ({ auth: { loggedIn, currentUser } }) => {
     <Fragment>
       <div className="landingpage-container">
         <h1 className="landingpage-container__title">
-          {/* Blab about <br /> anything! */}
           Blab about anything!
         </h1>
         <p className="landingpage-container__tagline">

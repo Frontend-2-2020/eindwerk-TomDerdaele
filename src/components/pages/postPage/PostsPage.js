@@ -14,10 +14,13 @@ import LoadingBox from "../../layout/loadingBox/LoadingBox";
 import PostSlider from "./postSlider/PostSlider";
 
 class PostsPage extends Component {
+
+  // Ophalen van posts met post-pagina als argument
   componentDidMount() {
     this.props.getPosts(this.props.posts.currentPage);
   }
 
+  // Paginering functies
   latestHandler = () => {
     this.props.getPosts();
   };
@@ -30,16 +33,18 @@ class PostsPage extends Component {
     this.props.getPosts(this.props.posts.prevPage);
   };
 
-  pushHandler = () => {
+  // Automatische link om de button te gebruiken.
+    pushHandler = () => {
     this.props.history.push("/posts/add");
   };
 
   render() {
     const { allposts, nextPage, prevPage, currentPage } = this.props.posts;
 
-
     return (
       <div className="posts-page-container">
+
+        {/* Alle posts */}
         {allposts.length ? (
           allposts.map((post) => <PostSlider key={post.id} post={post} />)
           ) : (

@@ -1,7 +1,6 @@
 import React, { Fragment } from "react";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
-
 import "./NavBar.css";
 import BlabbleLogo from "../../layout/logo/BlabbleLogo";
 import { connect } from "react-redux";
@@ -11,6 +10,7 @@ import TextButton from "../../layout/buttons/textButton/TextButton";
 const NavBar = (props) => {
   const { soort, auth, logoutActie } = props;
 
+  // Actie naar Redux om uit te loggen.
   const logout = () => {
     logoutActie();
   };
@@ -27,6 +27,7 @@ const NavBar = (props) => {
 
         {soort === "auth" ? (
           // VERSIE 1 voor AUTH PAGINAS
+          // Soort moet worden meegegeven als prop.
           <div className="nav-container__links--auth">
             {auth.loggedIn ? (
               <TextButton
@@ -45,6 +46,7 @@ const NavBar = (props) => {
           </div>
         ) : (
           // VERSIE 2 voor ANDERE PAGINAS
+          // Soort moet worden meegegeven als prop.
           <div className="nav-container__links" style={soort === "users" ? {color: "white"} : null}>
             {auth.loggedIn ? (
               <TextButton
@@ -64,7 +66,6 @@ const NavBar = (props) => {
             <Link to="/posts">
               <TextButton
                 className="nav-container__links__link"
-                // click={latestResetHandler}
                 buttonText="blables"
               />
             </Link>

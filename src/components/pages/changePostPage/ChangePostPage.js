@@ -27,6 +27,7 @@ const ChangePostPage = (props) => {
     }
   };
 
+  // Validate met Yup.
   const addPostSchema = Yup.object().shape({
     title: Yup.string()
       .min(5, "Use at least 5 characters")
@@ -37,7 +38,7 @@ const ChangePostPage = (props) => {
       .required("Required"),
   });
 
-  // redirect bij refresch op add page of logout op deze pagina
+  // redirect bij refresch op add page of logout op deze pagina.
   if (
     !(props.posts.allposts.length || props.posts.setPostForEdit) ||
     !props.auth.loggedIn

@@ -2,7 +2,7 @@ import { API } from "../../API";
 import { GET_USERDETAIL, WEG_USERDETAIL, GET_USER_ERROR } from "../actions/actionTypes";
 
 
-// USERDETAIL OPHALEN
+// USERDETAIL OPHALEN of ERROR als de id niet bestaat
 export const getUserDetail = (id, doorverwijzen) => {
   return function (dispatch) {
     API.get(`api/users/${id}`)

@@ -15,7 +15,7 @@ class LoginPageForm extends Component {
   }
 
   componentWillUnmount(){
-    // Opkuis bij na inloggen na registreren of veranderen van pagina zonder in te loggen
+    // Opkuis bij na inloggen na registreren of veranderen van pagina zonder in te loggen na registratie.
     if (this.props.auth.signupSucces !== null) {
       this.props.clearSignupSucces();
     }
@@ -42,12 +42,9 @@ class LoginPageForm extends Component {
           {...this.props}
         />
 
-        {/* {this.props.isValid ? <button type="submit">Blab!</button> : null}  VOOR ANIMATIE*/}
-
         <OnboardingButton type="submit">
           <p>Blable!</p>
         </OnboardingButton>
-
       </Form>
     );
   }

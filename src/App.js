@@ -16,6 +16,7 @@ import LockMobileLandscape from "./components/layout/lockMobileLandscape/LockMob
 class App extends Component {
   componentDidMount() {
     this.props.checkOnLoad();
+    // Kijken of er token is in localStorage
   }
 
   render() {

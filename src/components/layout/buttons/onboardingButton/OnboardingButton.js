@@ -3,6 +3,9 @@ import PropTypes from "prop-types";
 import "./OnboardingButton.css";
 
 const OnboardingButton = ({ children, type, onClick }) => {
+
+  // Herbruikbare button voor de Landingpagina CTA en Auth pages.
+  
   return (
     <button
       type={type ? type : "button"}

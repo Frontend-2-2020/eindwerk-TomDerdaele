@@ -14,7 +14,7 @@ import {
   EDIT_COMMENT,
 } from "./actionTypes";
 
-//ALLE POSTS OPHALEN
+// ALLE POSTS OPHALEN
 export const getPosts = (page) => {
   return function (dispatch) {
     API.get(
@@ -30,7 +30,7 @@ export const getPosts = (page) => {
   };
 };
 
-//DELETE EIGEN POST
+// DELETE EIGEN POST
 export const deletePost = (id, doorverwijzen, doorverwijsPath) => {
   return function (dispatch) {
     API.delete(`api/posts/${id}`).then((response) => {
@@ -56,14 +56,14 @@ export const addPost = (values, user, doorverwijzen) => {
   };
 };
 
-// SET EDIT HANDLER
+// SET EDIT HANDLER om post in de values van formik te duwen.
 export const setEditPost = (postDetailInfo) => {
   return {
     type: SET_EDIT_POST,
     payload: postDetailInfo
   }
 }
-// SET EDIT OPKUISEN
+// SET EDIT OPKUISEN opkuis na edit of cancel van edit.
 export const clearSetEdit = () => {
   return { type: CLEAR_SET_EDIT_POST };
 };
@@ -93,7 +93,7 @@ export const getPostDetail = (id) => {
   };
 };
 
-// POSTDETAIL OPKUISEN
+// POSTDETAIL OPKUISEN om geen data verspringing te hebben.
 export const clearPostDetail = () => {
   return { type: WEG_POSTDETAIL };
 };
@@ -125,7 +125,7 @@ export const deleteComment = (id) => {
   };
 };
 
-// SET EDIT COMMENT HANDLER
+// SET EDIT COMMENT HANDLER om comment in de values van formik te duwen
 export const setEditComment = (comment) => {
   return {
     type: SET_EDIT_COMMENT,

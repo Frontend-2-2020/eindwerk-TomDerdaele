@@ -21,6 +21,7 @@ const DeleteChangeButton = (props) => {
 
   const history = useHistory();
 
+  // Gebundelde functies. Soort wordt meegeven als prop.
   const functionHandler = () => {
     if (clickFunctie === DELETE_POST) {
       props.deletePost(buttonData.id, (path) => {

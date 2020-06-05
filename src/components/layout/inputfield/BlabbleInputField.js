@@ -5,6 +5,9 @@ import "./BlabbleInputField.css"
 
 const BlabbleInputField = (props) => {
   const { type, name, placeHolder, values, className, borderColor } = props;
+
+  // Custom inputField met weg-ebbende underline.
+
   return (
     <div className={className + "__input-wrapper"}>
       <Field id={name} {...props}>

@@ -4,6 +4,9 @@ import PropTypes from 'prop-types';
 import "./SmallRoundButton.css"
 
 const SmallRoundButton = ({children, click, soort, type}) => {
+
+  // Herbruikbare button voor meerdere doeleinden op alle paginas, uitgezonderd authpages.
+
   return (
     <button
       type={type ? type : "button"}

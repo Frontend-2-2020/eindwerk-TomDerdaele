@@ -1,15 +1,10 @@
+/* CSS file voor gebruikte fonten*/
+
 html {
-  /* height: 100%; */
   font-size: 16px;
-  /* overflow-x: hidden;
-  overflow-y: hidden;
-  overflow: hidden; */
-
-
 }
 
 body {
-  /* margin: 0; */
   font-family: raleway, sans-serif;
   font-style: normal;
   font-weight: 600;
@@ -18,8 +13,6 @@ body {
   color: #0b2a45;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  /* height: 100%; */
-
 }
 
 .dinosaur {

@@ -7,6 +7,8 @@ import "./ErrorPage.css";
 import OnboardingButton from "../../layout/buttons/onboardingButton/OnboardingButton";
 
 class ErrorPage extends Component {
+
+  // Om error te clearen in redux bij het verlaten van de errorpagina
   componentWillUnmount() {
     this.props.clearError();
   }
@@ -23,7 +25,8 @@ class ErrorPage extends Component {
         </div>
         <Link to="/">
           <OnboardingButton>
-            <p>retry!</p>
+            {/* Valse refresh van de app, keert gewoon terug naar landingpagina */}
+            <p>Retry!</p>
           </OnboardingButton>
         </Link>
       </Fragment>

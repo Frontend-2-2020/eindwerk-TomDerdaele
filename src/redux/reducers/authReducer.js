@@ -13,7 +13,6 @@ const authReducer = (state = initialState, action) => {
         ...state,
         loggedIn: true,
         currentUser: action.payload,
-        // signupSucces: null,
       };
 
     case SIGNUP_OK:

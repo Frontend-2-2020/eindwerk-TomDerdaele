@@ -1,3 +1,5 @@
+/* OVERKOEPELENDE CSS FILE VOOR BEIDE AUTHPAGES */
+
 /* //////////// */
 /* MOBILE FIRST */
 /* //////////// */
@@ -36,7 +38,7 @@
 }
 
 .authpage-container__link__btn--uderline {
-  -webkit-text-decoration-line: underline; /* Safari */
+  -webkit-text-decoration-line: underline; /* Safari doet anders rare dingen*/
   text-decoration-line: underline;
 }
 
