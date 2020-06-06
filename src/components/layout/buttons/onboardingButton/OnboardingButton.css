@@ -35,9 +35,9 @@
   margin-bottom: 8px;
 }
 
-/* ////////////////////// */
-/* TABLET PORTRAIT AND UP */
-/* ////////////////////// */
+/* /////////////// */
+/* TABLET PORTRAIT */
+/* /////////////// */
 
 @media screen and (min-width: 750px) {
   .onboarding-button {
@@ -49,5 +49,25 @@
   .onboarding-button__text {
     font-size: 2.2rem;
     margin-bottom: 10px;
+  }
+}
+
+/* //////////////// */
+/* TABLET LANDSCAPE */
+/* //////////////// */
+
+@media screen and (min-width: 992px) {
+  .onboarding-button {
+    top: 55vh;
+  }
+}
+
+/* //////////////// */
+/* LAP- and DESKTOP */
+/* //////////////// */
+
+@media screen and (min-width: 1300px) {
+  .onboarding-button {
+    top: 65vh;
   }
 }

@@ -3,15 +3,22 @@
 /* //////////// */
 
 .changepost-container {
-  position: absolute;
-  min-height: 100%;
-  width: 100%;
+  position: fixed;
+  height: 100%;
+  width: 100vw;
   display: flex;
   flex-direction: row;
   justify-content: center;
-  align-items: center;
   padding-top: 5rem;
+  padding-bottom: 5rem;
   z-index: 60;
+  background-color: white;
+  overflow-x: hidden;
+  overflow-y: visible;
+}
+
+.changepost-container::-webkit-scrollbar {
+  display: none;
 }
 
 .changepost-container__form {
@@ -45,6 +52,7 @@
 @media screen and (min-width: 750px) {
   .changepost-container {
     padding-top: 7rem;
+    padding-bottom: 7rem;
     z-index: 1;
   }
 

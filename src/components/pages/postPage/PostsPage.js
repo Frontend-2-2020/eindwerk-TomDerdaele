@@ -5,16 +5,15 @@ import { connect } from "react-redux";
 import { getPosts } from "../../../redux/actions/postActions";
 
 import "./PostsPage.css";
-import "./postSlider/PostSlider.css"
-
+import "./postSlider/PostSlider.css";
 
 import SmallRoundButton from "../../layout/buttons/smallRoundButton/SmallRoundButton";
 import TextButton from "../../layout/buttons/textButton/TextButton";
 import LoadingBox from "../../layout/loadingBox/LoadingBox";
 import PostSlider from "./postSlider/PostSlider";
+import { motion } from "framer-motion";
 
 class PostsPage extends Component {
-
   // Ophalen van posts met post-pagina als argument
   componentDidMount() {
     this.props.getPosts(this.props.posts.currentPage);
@@ -34,30 +33,75 @@ class PostsPage extends Component {
   };
 
   // Automatische link om de button te gebruiken.
-    pushHandler = () => {
+  pushHandler = () => {
     this.props.history.push("/posts/add");
   };
 
   render() {
     const { allposts, nextPage, prevPage, currentPage } = this.props.posts;
 
+    // Pre defined states van de animaties, zodat ze mooi in sync lopen.
+    const postVariants = {
+      initial: { opacity: 1, x: "100vw" },
+      in: { opacity: 1, x: 0 },
+      out: { opacity: 0, y: "100vh" },
+    };
+
+    const buttonVariants = {
+      initial: { opacity: 0 },
+      in: { opacity: 1 },
+      out: { opacity: 0 },
+    };
+
+    const postTransitions = {
+      type: "tween",
+      ease: "anticipate",
+      duration: 1,
+    };
+
     return (
       <div className="posts-page-container">
+        {this.props.auth.loggedIn === true ? (
+          <motion.div
+            initial="initial"
+            animate="in"
+            exit="out"
+            variants={buttonVariants}
+          >
+            <SmallRoundButton click={this.pushHandler} soort="set-addpost">
+              <p className="dinosaur">New!</p>
+            </SmallRoundButton>
+          </motion.div>
+        ) : null}
 
         {/* Alle posts */}
-        {allposts.length ? (
-          allposts.map((post) => <PostSlider key={post.id} post={post} />)
+        <motion.div
+          initial="initial"
+          animate="in"
+          exit="out"
+          variants={postVariants}
+          transition={postTransitions}
+        >
+          {allposts.length ? (
+            allposts.map((post) => <PostSlider key={post.id} post={post} />)
           ) : (
-          <LoadingBox/>
-        )}
+            <LoadingBox />
+          )}
+        </motion.div>
 
         {/* Scroll info onderaan */}
         <div className="posts-page-container__bottomtext">
-            <p>scroll for more</p>
+          <p>scroll for more</p>
         </div>
 
         {/* Paginatie bar onderaan */}
-        <div className="posts-page-container__pagineringbox">
+        <motion.div
+          initial="initial"
+          animate="in"
+          exit="out"
+          variants={buttonVariants}
+          className="posts-page-container__pagineringbox"
+        >
           <div className="posts-page-container__pagineringbox__item">
             {currentPage > 1 ? (
               <TextButton
@@ -85,13 +129,7 @@ class PostsPage extends Component {
               />
             ) : null}
           </div>
-        </div>
-
-        {this.props.auth.loggedIn === true ? (
-          <SmallRoundButton click={this.pushHandler} soort="set-addpost">
-            <p className="dinosaur">New!</p>
-          </SmallRoundButton>
-        ) : null}
+        </motion.div>
       </div>
     );
   }

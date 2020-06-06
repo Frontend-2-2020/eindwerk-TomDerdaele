@@ -1,19 +1,28 @@
 import React from "react";
 import PropTypes from "prop-types";
 import "./OnboardingButton.css";
+import { motion } from "framer-motion";
 
 const OnboardingButton = ({ children, type, onClick }) => {
 
   // Herbruikbare button voor de Landingpagina CTA en Auth pages.
+
+  const ctaVariants = {
+    up: { scale: 1.2, transition: {staggerChildren: 0.5} },
+    down: { scale: 0.8 }
+  }
   
   return (
-    <button
+    <motion.button
+      whileHover="up"
+      whileTap="down"
+      variants = {ctaVariants}
       type={type ? type : "button"}
       onClick={onClick}
       className="onboarding-button dinosaur"
     >
       <div className="dinosaur onboarding-button__text">{children}</div>
-    </button>
+    </motion.button>
   );
 };
 

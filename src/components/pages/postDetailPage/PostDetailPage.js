@@ -1,6 +1,9 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { getPostDetail, clearPostDetail } from "../../../redux/actions/postActions";
+import {
+  getPostDetail,
+  clearPostDetail,
+} from "../../../redux/actions/postActions";
 import "./PostDetailPage.css";
 import { Link } from "react-router-dom";
 import PostDetailCommentAdjust from "./postDetailComment/postDetailCommentAdjust/PostDetailCommentAdjust";
@@ -8,9 +11,9 @@ import PostDetailCommentItem from "./postDetailComment/postDetailCommentItem/Pos
 import DeleteChangeButton from "../../layout/buttons/deleteChangeButton/DeleteChangeButton";
 import { DELETE_POST, SET_EDIT_POST } from "../../../redux/actions/actionTypes";
 import LoadingBox from "../../layout/loadingBox/LoadingBox";
+import { motion } from "framer-motion";
 
 class PostDetailPage extends Component {
-
   // Ophalen van de Post d.m.v het id.
   componentDidMount() {
     this.props.getPostDetail(this.props.match.params.id);
@@ -24,8 +27,28 @@ class PostDetailPage extends Component {
   render() {
     const { postDetail } = this.props.posts;
 
+    // Pre defined states van de animaties, zodat ze mooi in sync lopen.
+    const detailVariants = {
+      initial: { opacity: 1, y: "-100vh" },
+      in: { opacity: 1, y: 0 },
+      out: { opacity: 1, x: "100vw" },
+    };
+
+    const detailTransitions = {
+      type: "tween",
+      ease: "anticipate",
+      duration: 1,
+    };
+
     return (
-      <div className="postdetail-page-container">
+      <motion.div
+        initial="initial"
+        animate="in"
+        exit="out"
+        variants={detailVariants}
+        transition={detailTransitions}
+        className="postdetail-page-container"
+      >
         {postDetail === null ? (
           <LoadingBox />
         ) : (
@@ -63,8 +86,10 @@ class PostDetailPage extends Component {
               </div>
             </div>
             <div className="grid-container__body">
-              <div className="grid-container__body__text" dangerouslySetInnerHTML={{__html: postDetail.body}}/>
-
+              <div
+                className="grid-container__body__text"
+                dangerouslySetInnerHTML={{ __html: postDetail.body }}
+              />
             </div>
             <div className="grid-container__comment">
               <div className="grid-container__comment__topbox">
@@ -95,7 +120,7 @@ class PostDetailPage extends Component {
             </div>
           </div>
         )}
-      </div>
+      </motion.div>
     );
   }
 }
