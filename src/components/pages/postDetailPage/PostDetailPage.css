@@ -81,6 +81,7 @@
   position: relative;
   grid-area: comment;
   padding-bottom: 3rem;
+  background-color: white;
 }
 
 .grid-container__comment__topbox {
@@ -175,6 +176,10 @@
   }
 
   .grid-container__body{
+    background-color: transparent;
+  }
+
+  .grid-container__comment {
     background-color: transparent;
   }
 
