@@ -9,7 +9,7 @@
   display: flex;
   flex-direction: row;
   justify-content: center;
-  padding-top: 5rem;
+  padding-top: 10rem; /* was 5 */
   padding-bottom: 5rem;
   z-index: 60;
   background-color: white;
@@ -51,7 +51,7 @@
 
 @media screen and (min-width: 750px) {
   .changepost-container {
-    padding-top: 7rem;
+    padding-top: 15rem; /* was 7 */
     padding-bottom: 7rem;
     z-index: 1;
   }
