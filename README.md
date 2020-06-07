@@ -1,4 +1,4 @@
-Working Beta version:
+Working final version:
 https://eindwerk-tom.netlify.app/
 
 Wireframe (lo res guideline) Desktop:
