@@ -19,7 +19,7 @@ const OnboardingButton = ({ children, type, onClick }) => {
       variants = {ctaVariants}
       type={type ? type : "button"}
       onClick={onClick}
-      className="onboarding-button dinosaur"
+      className="onboarding-button dinosaur link"
     >
       <div className="dinosaur onboarding-button__text">{children}</div>
     </motion.button>

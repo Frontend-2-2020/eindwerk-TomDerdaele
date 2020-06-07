@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Fragment } from "react";
 import { Formik } from "formik";
 import { connect } from "react-redux";
 import { addPost, editPost } from "../../../redux/actions/postActions";
@@ -8,6 +8,7 @@ import "./ChangePostPage.css";
 import "./ChangePostPageTextArea.css";
 import ChangePostPageForm from "./ChangePostPageForm";
 import { motion } from "framer-motion";
+import Cursor from "../../layout/cursor/Cursor";
 
 const ChangePostPage = (props) => {
   const history = useHistory();
@@ -57,24 +58,27 @@ const ChangePostPage = (props) => {
   };
 
   return (
-    <motion.div
-      initial="initial"
-      animate="in"
-      exit="out"
-      variants={detailVariants}
-      transition={detailTransitions}
-      className="changepost-container"
-    >
-      <div className="changepost-container__form">
-        <Formik
-          initialValues={{ title: "", body: "" }}
-          onSubmit={onSubmitHandler}
-          validationSchema={addPostSchema}
-        >
-          {(props) => <ChangePostPageForm {...props} />}
-        </Formik>
-      </div>
-    </motion.div>
+    <Fragment>
+      <Cursor color="#FF004F"/>
+      <motion.div
+        initial="initial"
+        animate="in"
+        exit="out"
+        variants={detailVariants}
+        transition={detailTransitions}
+        className="changepost-container"
+      >
+        <div className="changepost-container__form">
+          <Formik
+            initialValues={{ title: "", body: "" }}
+            onSubmit={onSubmitHandler}
+            validationSchema={addPostSchema}
+          >
+            {(props) => <ChangePostPageForm {...props} />}
+          </Formik>
+        </div>
+      </motion.div>
+    </Fragment>
   );
 };
 

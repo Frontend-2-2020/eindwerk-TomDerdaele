@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import "./ErrorPage.css";
 import OnboardingButton from "../../layout/buttons/onboardingButton/OnboardingButton";
 import { clearError } from "../../../redux/actions/errorActions";
+import Cursor from "../../layout/cursor/Cursor";
 
 class ErrorPage extends Component {
 
@@ -17,6 +18,7 @@ class ErrorPage extends Component {
 
     return (
       <Fragment>
+        <Cursor color="#83c0e6"/>
         <div className="errorpage-container">
           <h1 className="errorpage-container__title">
             {error ? error : "PAGE NOT FOUND"}

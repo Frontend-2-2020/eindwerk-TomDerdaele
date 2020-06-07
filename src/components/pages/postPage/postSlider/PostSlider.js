@@ -8,15 +8,16 @@ const PostSlider = ({ post }) => {
   return (
     <div className="main-post-container">
       <div className="main-post-container--inner">
-        <Link to={`/posts/${post.id}`}>
-          <div className="link">
+        <div className="link">
+          <Link to={`/posts/${post.id}`}>
             <div>{post.title}</div>
-            <div className="date-small">
+          </Link>
+          <div className="date-small">
             <Link to={`/users/${post.user_id}`}>
-              by {post.user.first_name} {post.user.last_name}</Link>
-            </div>
+              by {post.user.first_name} {post.user.last_name}
+            </Link>
           </div>
-        </Link>
+        </div>
       </div>
     </div>
   );

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Fragment } from "react";
 import { Formik } from "formik";
 import { connect } from "react-redux";
 import { Redirect, Link } from "react-router-dom";
@@ -8,6 +8,7 @@ import * as Yup from "yup";
 import "../Authpages.css";
 
 import LoginPageForm from "./LoginPageForm";
+import Cursor from "../../../layout/cursor/Cursor";
 
 const LoginPage = (props) => {
   const { auth, loginActie } = props;
@@ -25,8 +26,8 @@ const LoginPage = (props) => {
     loginActie(values, (path) => {
       props.history.push(path);
     }); // Fuctie uit Redux om Login token op te halen en doorverwijzen
-    // Fuctie uit Formik om Form te resetten 
-    actions.resetForm(); 
+    // Fuctie uit Formik om Form te resetten
+    actions.resetForm();
   };
 
   // LoginPage niet meer bereikbaar na inloggen
@@ -36,31 +37,36 @@ const LoginPage = (props) => {
   }
 
   return (
-    <div className="authpage-container">
-      <div className="authpage-container__form">
-        <Formik
-          initialValues={{ email: "", password: "" }}
-          onSubmit={onSubmitHandler}
-          validationSchema={loginSchema}
-        >
-          {(props) => <LoginPageForm {...props} />}
-        </Formik>
-      </div>
-      <div className="authpage-container__link">
-        {auth.signupSucces ? (
-          <p className="authpage-container__link__tagline">Just confirm your password and Blab!</p>
-        ) : (
-          <Link to="/register">
-            <p className="authpage-container__link__btn">
-              No account yet?{" "}
-              <span className="authpage-container__link__btn--uderline">
-                Please join here first...
-              </span>
+    <Fragment>
+      <Cursor color="#83c0e6"/>
+      <div className="authpage-container">
+        <div className="authpage-container__form">
+          <Formik
+            initialValues={{ email: "", password: "" }}
+            onSubmit={onSubmitHandler}
+            validationSchema={loginSchema}
+          >
+            {(props) => <LoginPageForm {...props} />}
+          </Formik>
+        </div>
+        <div className="authpage-container__link">
+          {auth.signupSucces ? (
+            <p className="authpage-container__link__tagline">
+              Just confirm your password and Blab!
             </p>
-          </Link>
-        )}
+          ) : (
+            <Link to="/register">
+              <p className="authpage-container__link__btn">
+                No account yet?{" "}
+                <span className="authpage-container__link__btn--uderline">
+                  Please join here first...
+                </span>
+              </p>
+            </Link>
+          )}
+        </div>
       </div>
-    </div>
+    </Fragment>
   );
 };
 

@@ -9,6 +9,7 @@
     "axios": "^0.19.2",
     "formik": "^2.1.4",
     "framer-motion": "^1.11.0",
+    "paper": "^0.12.8",
     "prop-types": "^15.7.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
@@ -19,6 +20,7 @@
     "react-textarea-autosize": "^8.0.1",
     "redux": "^4.0.5",
     "redux-thunk": "^2.3.0",
+    "simplex-noise": "^2.4.0",
     "slick-carousel": "^1.8.1",
     "yup": "^0.29.0"
   },

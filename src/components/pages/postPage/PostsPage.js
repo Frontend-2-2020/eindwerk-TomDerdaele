@@ -12,6 +12,7 @@ import TextButton from "../../layout/buttons/textButton/TextButton";
 import LoadingBox from "../../layout/loadingBox/LoadingBox";
 import PostSlider from "./postSlider/PostSlider";
 import { motion } from "framer-motion";
+import Cursor from "../../layout/cursor/Cursor";
 
 class PostsPage extends Component {
   // Ophalen van posts met post-pagina als argument
@@ -61,6 +62,7 @@ class PostsPage extends Component {
 
     return (
       <Fragment>
+        <Cursor color="#FF004F"/>
         <div className="posts-page-container">
           {this.props.auth.loggedIn === true ? (
             <motion.div
