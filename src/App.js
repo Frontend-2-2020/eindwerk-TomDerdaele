@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import { connect } from "react-redux";
@@ -12,6 +12,7 @@ import OnboardingRoutes from "./components/routing/OnboardingRoutes";
 import PostsRoutes from "./components/routing/PostsRoutes";
 import UserRoutes from "./components/routing/UserRoutes";
 import LockMobileLandscape from "./components/layout/lockMobileLandscape/LockMobileLandscape";
+import Cursor from "./components/layout/cursor/Cursor";
 
 class App extends Component {
   componentDidMount() {
@@ -21,14 +22,17 @@ class App extends Component {
 
   render() {
     return (
-      <Router>
-        <LockMobileLandscape />
-        <Switch>
-          <Route path="/users" component={UserRoutes} />
-          <Route path="/posts" component={PostsRoutes} />
-          <Route path="/" component={OnboardingRoutes} />
-        </Switch>
-      </Router>
+      <Fragment>
+        <Cursor/>
+        <Router>
+          <LockMobileLandscape />
+          <Switch>
+            <Route path="/users" component={UserRoutes} />
+            <Route path="/posts" component={PostsRoutes} />
+            <Route path="/" component={OnboardingRoutes} />
+          </Switch>
+        </Router>
+      </Fragment>
     );
   }
 }

@@ -1,0 +1,25 @@
+.cursor-custom{
+  display: none;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  transition: all 0.2s ease;
+  background-color: #EB4511;
+  transition-property: background-color, border, transform;
+  transform-origin: 150% 150%;
+  mix-blend-mode: multiply;
+  z-index: 999;
+}
+
+/* //////////////// */
+/* LAP- and DESKTOP */
+/* //////////////// */
+
+@media screen and (min-width: 1367px) {
+  .cursor-custom{
+    display: initial;
+  }
+}

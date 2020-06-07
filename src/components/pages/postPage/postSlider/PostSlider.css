@@ -20,15 +20,15 @@
   text-align: center;
 }
 
-.link {
+.main-post-container--inner__link {
   display: inline-flex;
   flex-direction: column;
   padding: 1rem;
 }
 
-.date-small {
+.name-small {
   font-size: 1rem;
-  color: rgb(26, 25, 32);
+  color: rgb(14, 14, 179);
 }
 
 /* ////////////////////// */
@@ -39,6 +39,9 @@
   .main-post-container--inner {
     font-size: 5rem;
   }
+  .name-small {
+    font-size: 2rem;
+  }
 }
 
 /* //////////////// */
@@ -46,9 +49,12 @@
 /* //////////////// */
 
 @media screen and (min-width: 1300px) {
-
-  .link {
+  .main-post-container--inner__link {
     padding: 2rem;
+    background-color: transparent;
+  }
+
+  .main-post-container--inner__link__effect--big {
     background-color: transparent;
   }
 }
