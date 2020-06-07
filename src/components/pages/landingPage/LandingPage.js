@@ -3,12 +3,10 @@ import "./LandingPage.css";
 import OnboardingButton from "../../layout/buttons/onboardingButton/OnboardingButton";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
-import Cursor from "../../layout/cursor/Cursor";
 
 const LandingPage = ({ auth: { loggedIn, currentUser } }) => {
   return (
     <Fragment>
-      <Cursor color="#83c0e6"/>
       <div className="landingpage-container">
         <h1 className="landingpage-container__title">
           Blab about anything!

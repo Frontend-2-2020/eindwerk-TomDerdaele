@@ -46,10 +46,6 @@
 /* //////////////// */
 
 @media screen and (min-width: 1300px) {
-  .date-small {
-    font-size: 2rem;
-    color: white;
-  }
 
   .link {
     padding: 2rem;

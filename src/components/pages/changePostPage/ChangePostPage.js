@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React from "react";
 import { Formik } from "formik";
 import { connect } from "react-redux";
 import { addPost, editPost } from "../../../redux/actions/postActions";
@@ -8,7 +8,6 @@ import "./ChangePostPage.css";
 import "./ChangePostPageTextArea.css";
 import ChangePostPageForm from "./ChangePostPageForm";
 import { motion } from "framer-motion";
-import Cursor from "../../layout/cursor/Cursor";
 
 const ChangePostPage = (props) => {
   const history = useHistory();
@@ -58,8 +57,6 @@ const ChangePostPage = (props) => {
   };
 
   return (
-    <Fragment>
-      <Cursor color="#FF004F"/>
       <motion.div
         initial="initial"
         animate="in"
@@ -78,7 +75,6 @@ const ChangePostPage = (props) => {
           </Formik>
         </div>
       </motion.div>
-    </Fragment>
   );
 };
 

@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React from "react";
 import { Formik } from "formik";
 import { connect } from "react-redux";
 import { Redirect, Link } from "react-router-dom";
@@ -8,7 +8,6 @@ import * as Yup from "yup";
 import "../Authpages.css";
 
 import LoginPageForm from "./LoginPageForm";
-import Cursor from "../../../layout/cursor/Cursor";
 
 const LoginPage = (props) => {
   const { auth, loginActie } = props;
@@ -37,8 +36,6 @@ const LoginPage = (props) => {
   }
 
   return (
-    <Fragment>
-      <Cursor color="#83c0e6"/>
       <div className="authpage-container">
         <div className="authpage-container__form">
           <Formik
@@ -66,7 +63,6 @@ const LoginPage = (props) => {
           )}
         </div>
       </div>
-    </Fragment>
   );
 };
 

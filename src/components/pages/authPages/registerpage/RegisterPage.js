@@ -1,10 +1,9 @@
-import React, { Fragment } from "react";
+import React from "react";
 import { Formik } from "formik";
 import * as Yup from "yup";
 import RegisterPageForm from "./RegisterPageForm";
 import { connect } from "react-redux";
 import { registerActie } from "../../../../redux/actions/authActions";
-import Cursor from "../../../layout/cursor/Cursor";
 
 const RegisterPage = (props) => {
   // Validatie van de inputvelden met Yup.
@@ -31,8 +30,6 @@ const RegisterPage = (props) => {
     actions.resetForm(); // Fuctie uit Formik om Form te resetten
   };
   return (
-    <Fragment>
-      <Cursor color="#FF0000"/>
       <div className="authpage-container authpage-container--register">
         <div className="authpage-container__form">
           <Formik
@@ -49,7 +46,6 @@ const RegisterPage = (props) => {
           </Formik>
         </div>
       </div>
-    </Fragment>
   );
 };
 

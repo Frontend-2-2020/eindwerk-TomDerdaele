@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from "react";
+import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import {
@@ -8,7 +8,6 @@ import {
 import "./UserDetailPage.css";
 import LoadingBox from "../../layout/loadingBox/LoadingBox";
 import UserPageCommentItem from "./userPageComment/UserPageCommentItem";
-import Cursor from "../../layout/cursor/Cursor";
 
 class UserDetailPage extends Component {
   // ophalen van userDetail met functie om door te verwijzen in case van error.
@@ -26,8 +25,6 @@ class UserDetailPage extends Component {
     const { userData } = this.props;
 
     return (
-      <Fragment>
-        <Cursor color="#FF0000" colorSmall="#FFFFFF"/>
         <div className="userdetail-page-container">
           {userData === null ? (
             <LoadingBox />
@@ -101,7 +98,6 @@ class UserDetailPage extends Component {
             </div>
           )}
         </div>
-      </Fragment>
     );
   }
 }

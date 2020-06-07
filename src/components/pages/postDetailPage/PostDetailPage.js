@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from "react";
+import React, { Component } from "react";
 import { connect } from "react-redux";
 import {
   getPostDetail,
@@ -12,7 +12,6 @@ import DeleteChangeButton from "../../layout/buttons/deleteChangeButton/DeleteCh
 import { DELETE_POST, SET_EDIT_POST } from "../../../redux/actions/actionTypes";
 import LoadingBox from "../../layout/loadingBox/LoadingBox";
 import { motion } from "framer-motion";
-import Cursor from "../../layout/cursor/Cursor";
 
 class PostDetailPage extends Component {
   // Ophalen van de Post d.m.v het id.
@@ -42,8 +41,6 @@ class PostDetailPage extends Component {
     };
 
     return (
-      <Fragment>
-        <Cursor color="#FF004F"/>
         <motion.div
           initial="initial"
           animate="in"
@@ -127,7 +124,6 @@ class PostDetailPage extends Component {
             </div>
           )}
         </motion.div>
-      </Fragment>
     );
   }
 }
