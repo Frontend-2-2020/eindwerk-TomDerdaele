@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 // import PostsSlider from "./postSlider/PostsSlider";
 
 import { connect } from "react-redux";
@@ -42,8 +42,8 @@ class PostsPage extends Component {
 
     // Pre defined states van de animaties, zodat ze mooi in sync lopen.
     const postVariants = {
-      initial: { opacity: 1, x: "100vw" },
-      in: { opacity: 1, x: 0 },
+      initial: { opacity: 1, y: "100vw" },
+      in: { opacity: 1, y: 0 },
       out: { opacity: 0, y: "100vh" },
     };
 
@@ -60,77 +60,79 @@ class PostsPage extends Component {
     };
 
     return (
-      <div className="posts-page-container">
-        {this.props.auth.loggedIn === true ? (
+      <Fragment>
+        <div className="posts-page-container">
+          {this.props.auth.loggedIn === true ? (
+            <motion.div
+              initial="initial"
+              animate="in"
+              exit="out"
+              variants={buttonVariants}
+            >
+              <SmallRoundButton click={this.pushHandler} soort="set-addpost">
+                <p className="dinosaur">New!</p>
+              </SmallRoundButton>
+            </motion.div>
+          ) : null}
+
+          {/* Alle posts */}
+          <motion.div
+            initial="initial"
+            animate="in"
+            exit="out"
+            variants={postVariants}
+            transition={postTransitions}
+          >
+            {allposts.length ? (
+              allposts.map((post) => <PostSlider key={post.id} post={post} />)
+            ) : (
+              <LoadingBox />
+            )}
+          </motion.div>
+
+          {/* Scroll info onderaan */}
+          <div className="posts-page-container__bottomtext">
+            <p>scroll for more</p>
+          </div>
+
+          {/* Paginatie bar onderaan */}
           <motion.div
             initial="initial"
             animate="in"
             exit="out"
             variants={buttonVariants}
+            className="posts-page-container__pagineringbox"
           >
-            <SmallRoundButton click={this.pushHandler} soort="set-addpost">
-              <p className="dinosaur">New!</p>
-            </SmallRoundButton>
+            <div className="posts-page-container__pagineringbox__item">
+              {currentPage > 1 ? (
+                <TextButton
+                  className={"posts-page-container__pagineringbox__item__link"}
+                  click={this.latestHandler}
+                  buttonText="latest"
+                />
+              ) : null}
+            </div>
+            <div className="posts-page-container__pagineringbox__item">
+              {prevPage ? (
+                <TextButton
+                  className={"posts-page-container__pagineringbox__item__link"}
+                  click={this.prevPageHandler}
+                  buttonText="newer"
+                />
+              ) : null}
+            </div>
+            <div className="posts-page-container__pagineringbox__item">
+              {nextPage ? (
+                <TextButton
+                  className="posts-page-container__pagineringbox__item__link"
+                  click={this.nextPageHandler}
+                  buttonText="older"
+                />
+              ) : null}
+            </div>
           </motion.div>
-        ) : null}
-
-        {/* Alle posts */}
-        <motion.div
-          initial="initial"
-          animate="in"
-          exit="out"
-          variants={postVariants}
-          transition={postTransitions}
-        >
-          {allposts.length ? (
-            allposts.map((post) => <PostSlider key={post.id} post={post} />)
-          ) : (
-            <LoadingBox />
-          )}
-        </motion.div>
-
-        {/* Scroll info onderaan */}
-        <div className="posts-page-container__bottomtext">
-          <p>scroll for more</p>
         </div>
-
-        {/* Paginatie bar onderaan */}
-        <motion.div
-          initial="initial"
-          animate="in"
-          exit="out"
-          variants={buttonVariants}
-          className="posts-page-container__pagineringbox"
-        >
-          <div className="posts-page-container__pagineringbox__item">
-            {currentPage > 1 ? (
-              <TextButton
-                className={"posts-page-container__pagineringbox__item__link"}
-                click={this.latestHandler}
-                buttonText="latest"
-              />
-            ) : null}
-          </div>
-          <div className="posts-page-container__pagineringbox__item">
-            {prevPage ? (
-              <TextButton
-                className={"posts-page-container__pagineringbox__item__link"}
-                click={this.prevPageHandler}
-                buttonText="newer"
-              />
-            ) : null}
-          </div>
-          <div className="posts-page-container__pagineringbox__item">
-            {nextPage ? (
-              <TextButton
-                className="posts-page-container__pagineringbox__item__link"
-                click={this.nextPageHandler}
-                buttonText="older"
-              />
-            ) : null}
-          </div>
-        </motion.div>
-      </div>
+      </Fragment>
     );
   }
 }

@@ -9,6 +9,7 @@
   overflow-x: hidden;
   overflow-y: hidden;
   padding: 25vh 0rem 0rem 0rem;
+  z-index: 2;
 }
 
 .landingpage-container__title {

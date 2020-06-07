@@ -53,6 +53,7 @@
   .changepost-container {
     padding-top: 15rem; /* was 7 */
     padding-bottom: 7rem;
+    background-color: transparent;
     z-index: 1;
   }
 

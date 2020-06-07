@@ -68,7 +68,9 @@ class PostDetailPage extends Component {
                     </span>
                   </p>
                 </Link>
-                <p>{postDetail.user.created_at}</p>
+                <p>at: {postDetail.created_at}</p>
+                {postDetail.created_at === postDetail.updated_at ? null :
+                <p>updated: {postDetail.updated_at}</p>}
               </div>
 
               <div className="deletechangebutton-container">

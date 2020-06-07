@@ -3,13 +3,20 @@ import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 
 const PostSlider = ({ post }) => {
-
   // Afzonderlijk component voor elke post.
 
   return (
     <div className="main-post-container">
       <div className="main-post-container--inner">
-        <Link to={`/posts/${post.id}`}>{post.title}</Link>
+        <Link to={`/posts/${post.id}`}>
+          <div className="link">
+            <div>{post.title}</div>
+            <div className="date-small">
+            <Link to={`/users/${post.user_id}`}>
+              by {post.user.first_name} {post.user.last_name}</Link>
+            </div>
+          </div>
+        </Link>
       </div>
     </div>
   );

@@ -11,6 +11,7 @@
   align-items: center;
   padding: 2rem;
   padding-bottom: 12rem;
+  z-index: 2;
 }
 
 .errorpage-container__title {

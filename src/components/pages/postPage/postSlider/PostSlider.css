@@ -20,13 +20,39 @@
   text-align: center;
 }
 
+.link {
+  display: inline-flex;
+  flex-direction: column;
+  padding: 1rem;
+}
+
+.date-small {
+  font-size: 1rem;
+  color: rgb(26, 25, 32);
+}
+
 /* ////////////////////// */
 /* TABLET PORTRAIT AND UP */
 /* ////////////////////// */
 
 @media screen and (min-width: 750px) {
-
   .main-post-container--inner {
     font-size: 5rem;
+  }
+}
+
+/* //////////////// */
+/* LAP- and DESKTOP */
+/* //////////////// */
+
+@media screen and (min-width: 1300px) {
+  .date-small {
+    font-size: 2rem;
+    color: white;
+  }
+
+  .link {
+    padding: 2rem;
+    background-color: transparent;
   }
 }

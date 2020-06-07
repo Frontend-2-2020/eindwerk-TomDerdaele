@@ -12,21 +12,33 @@ import { Link } from "react-router-dom";
 const PostDetailCommentItem = ({ commentData, auth }) => {
   return (
     <li className="postdetail-page-container__commentlist__item">
-      <div className="postdetail-page-container__commentlist__item__streep" style={{backgroundColor: commentData.user_id === auth.id ?  "#EB4511" : "#C7E0F0"}}></div>
+      <div
+        className="postdetail-page-container__commentlist__item__streep"
+        style={{
+          backgroundColor:
+            commentData.user_id === auth.id ? "#EB4511" : "#C7E0F0",
+        }}
+      ></div>
       <Link to={`/users/${commentData.user_id}`}>
-      <p className="postdetail-page-container__commentlist__item__userdata">
-        {commentData.user
-          ? commentData.user.first_name + " " + commentData.user.last_name
-          : null}
-      </p>
+        <p className="postdetail-page-container__commentlist__item__userdata">
+          {commentData.user
+            ? commentData.user.first_name + " " + commentData.user.last_name
+            : null}
+        </p>
       </Link>
       <p className="postdetail-page-container__commentlist__item__date">
         {commentData.created_at}
       </p>
-      {/* <p className="postdetail-page-container__commentlist__item__body">
-        {commentData.body}
-      </p> */}
-      <div className="postdetail-page-container__commentlist__item__body" dangerouslySetInnerHTML={{__html: commentData.body}}/>
+      {commentData.created_at === commentData.updated_at ? null : (
+        <p className="postdetail-page-container__commentlist__item__date">
+          updated: {commentData.updated_at}
+        </p>
+      )}
+
+      <div
+        className="postdetail-page-container__commentlist__item__body"
+        dangerouslySetInnerHTML={{ __html: commentData.body }}
+      />
 
       <div className="deletechangebutton-container">
         <DeleteChangeButton

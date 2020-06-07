@@ -51,8 +51,9 @@ class UserDetailPage extends Component {
                 >
                   <p>{userData.email}</p>
                 </a>
-                <p>{userData.created_at}</p>
-                <p>{userData.updated_at}</p>
+                <p>created: {userData.created_at}</p>
+                <p>updated: {userData.updated_at}</p>
+                <p>last login: {userData.last_login_at}</p>
                 <div
                   className="grid-container-user__name__avatar"
                   style={{ backgroundImage: `url(${userData.avatar})` }}

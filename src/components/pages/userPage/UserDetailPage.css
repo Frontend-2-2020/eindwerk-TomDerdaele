@@ -158,7 +158,7 @@
 @media screen and (min-width: 992px) {
   .userdetail-page-container {
     padding: 0 4rem;
-    z-index: 49;
+    z-index: 0;
   }
 
   .grid-container-user {

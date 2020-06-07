@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import "./CurrentUserNav.css";
 import SmallRoundButton from "../../layout/buttons/smallRoundButton/SmallRoundButton";
 import Kruisje from "../../layout/logo/Kruisje";
+import { motion } from "framer-motion";
 
 const CurrentUserNav = ({ auth: { currentUser, loggedIn }, logoutActie }) => {
 
@@ -13,15 +14,22 @@ const CurrentUserNav = ({ auth: { currentUser, loggedIn }, logoutActie }) => {
     logoutActie();
   };
 
+  const ctaVariants = {
+    up: { scale: 1.2, transition: { staggerChildren: 0.5 } },
+    down: { scale: 0.8 },
+  };
+
   return (
     <Fragment>
       {loggedIn ? (
         <div className="currentuser-nav-container">
           <Link to={`/users/${currentUser.id}`}>
-            <div
+          <motion.div
+              whileHover="up"
+              variants={ctaVariants}
               className="currentuser-nav-container__avatar"
               style={{ backgroundImage: `url(${currentUser.avatar})` }}
-            ></div>
+            ></motion.div>
           </Link>
           <SmallRoundButton click={logout} soort="logout">
             <Kruisje

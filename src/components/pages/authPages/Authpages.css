@@ -13,10 +13,11 @@
   justify-content: flex-start;
   align-items: center;
   padding: 12rem 2rem 0rem 2rem;
+  z-index: 2;
 }
 
 .authpage-container--register {
-  background-color: #c7e0f0;
+  background-color: rgba(82, 178, 243, 0.37);
 }
 
 .authpage-container__form {
