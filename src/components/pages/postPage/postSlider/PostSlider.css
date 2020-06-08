@@ -31,6 +31,10 @@
   color: rgb(14, 14, 179);
 }
 
+.name-small__extra-info {
+  font-size: 0.8rem;
+}
+
 /* ////////////////////// */
 /* TABLET PORTRAIT AND UP */
 /* ////////////////////// */
@@ -39,8 +43,13 @@
   .main-post-container--inner {
     font-size: 5rem;
   }
+
   .name-small {
     font-size: 2rem;
+  }
+  
+  .name-small__extra-info {
+    font-size: 1rem;
   }
 }
 

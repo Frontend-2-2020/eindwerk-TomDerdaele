@@ -12,6 +12,8 @@ import DeleteChangeButton from "../../layout/buttons/deleteChangeButton/DeleteCh
 import { DELETE_POST, SET_EDIT_POST } from "../../../redux/actions/actionTypes";
 import LoadingBox from "../../layout/loadingBox/LoadingBox";
 import { motion } from "framer-motion";
+import moment from "moment";
+
 
 class PostDetailPage extends Component {
   // Ophalen van de Post d.m.v het id.
@@ -68,9 +70,10 @@ class PostDetailPage extends Component {
                       </span>
                     </p>
                   </Link>
-                  <p>at: {postDetail.created_at}</p>
+                  
+                  <p>posted: {moment(postDetail.created_at).format("DD MM YYYY")}</p>
                   {postDetail.created_at === postDetail.updated_at ? null : (
-                    <p>updated: {postDetail.updated_at}</p>
+                    <p>updated: {moment(postDetail.updated_at).fromNow()}</p>
                   )}
                 </div>
 

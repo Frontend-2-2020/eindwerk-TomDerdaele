@@ -12,6 +12,10 @@
   z-index: 2;
 }
 
+.landingpage-container::-webkit-scrollbar {
+  display: none;
+}
+
 .landingpage-container__title {
   width: 100%;
   font-size: 17vw;

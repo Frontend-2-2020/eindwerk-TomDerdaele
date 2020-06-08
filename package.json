@@ -9,6 +9,7 @@
     "axios": "^0.19.2",
     "formik": "^2.1.4",
     "framer-motion": "^1.11.0",
+    "moment": "^2.26.0",
     "paper": "^0.12.8",
     "prop-types": "^15.7.2",
     "react": "^16.13.1",

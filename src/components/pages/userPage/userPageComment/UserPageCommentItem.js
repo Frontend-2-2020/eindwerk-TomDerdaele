@@ -1,7 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
+import moment from "moment";
 import "./UserPageCommentItem.css"
+
 
 const UserPageCommentItem = ({ commentData }) => {
   return (
@@ -17,11 +19,11 @@ const UserPageCommentItem = ({ commentData }) => {
 
       <Link to={`/posts/${commentData.blog_post.id}`}>
         <p className="userpage-container__commentlist__item__title">
-          at {commentData.blog_post.title}
+          at: {commentData.blog_post.title}
         </p>
       </Link>
       <p className="userpage-container__commentlist__item__date">
-        {commentData.blog_post.updated_at}
+        {moment(commentData.created_at).format("DD MM YYYY")}
       </p>
     </li>
   );

@@ -8,6 +8,8 @@ import DeleteChangeButton from "../../../../layout/buttons/deleteChangeButton/De
 import "./PostDetailCommentItem.css";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
+import moment from "moment";
+
 
 const PostDetailCommentItem = ({ commentData, auth }) => {
   return (
@@ -27,11 +29,11 @@ const PostDetailCommentItem = ({ commentData, auth }) => {
         </p>
       </Link>
       <p className="postdetail-page-container__commentlist__item__date">
-        {commentData.created_at}
+        posted: {moment(commentData.created_at).format("DD MM YYYY")}
       </p>
       {commentData.created_at === commentData.updated_at ? null : (
         <p className="postdetail-page-container__commentlist__item__date">
-          updated: {commentData.updated_at}
+          updated: {moment(commentData.updated_at).fromNow()}
         </p>
       )}
 
